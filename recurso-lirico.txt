@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recurso Lírico</title>
+  <link rel="stylesheet" href="estilos-novelas.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+<header class="encabezado">
+  <div class="portada">
+      <img src="galeria-obras/recurso-lirico.webp" alt="Portada de El Nuevo Templo" class="portada-imagen">
+</div>
+  <div class="info-libro">
+    <h1 class="titulo-libro">RECURSO LÍRICO</h1>
+    <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+</div>
+  </header>
+
+  <!-- Contenido del capítulo -->
+<main class="contenido">
+  <section class="estrofa">
+    <h3 class="titulo-estrofa">SELECCIÓN</h3>
+    <div style="text-align: justify;">
+      <p2 class="estrofa">Pienso hacer de ti el mayor recurso para la lírica
+        de mi existencia. Por ti burlo mi pacto con la soledad y me hago
+        cómplice del corazón. Por ti renuncio al hermoso silencio vital y torno
+        en pos de mi escándalo interior. Y lo hago porque espero mucho de ti:
+        en ti quedará plasmado cuán triste y feliz soy.
+      </p>
+    </div>
+    <br>
+    <h3 style="text-align: center;">*******</h3>
+      
+    <br>
+    <h3 class="titulo-estrofa">PROSA I</h3>
+    <h3 class="subtitulo">(Fragmento)</h3>
+    <div style="text-align: justify;">
+      <p2 class="estrofa">Sobre el amor se ha escrito mucho, pero pocas cosas
+        son ciertas. Todo es tan lógico al querer, pero nada concuerda. La música de los
+        enamorados suena hermosa, pero es un martirio; como la vibración de la
+        cuerda en hermosa simetría, pero en dolorosa elongación. El ermitaño
+        teme al amor carnal y huye de él para encontrar la verdad, pues esta no
+        se encuentra en aquel. Este amor es la trampa con la cual el corazón
+        engaña a la razón y le demuestra su impotencia, es ese recurso maléfico
+        que intenta darle una razón a la vida, pero pronto deja ver que esta
+        razón no es suficiente para animar a perdurar en la existencia… </p><br>
+      <p2>Y la última caída consiste en amar a la muerte, la
+        más sensual de todas las mujeres.</p>
+    </div>
+    <h3 style="text-align: center;">*******</h3>
+
+    <br>
+    <h3 class="titulo-poema">DANZA</h2>
+    <br>
+    <div class="estrofa">
+      <p class="estrofa">Danza,</p>
+      <p class="estrofa">danza espíritu mío,</p>
+      <p class="estrofa">danza.</p>
+      <p class="estrofa">Ahora que te arrulla la música de tu soledad,</p>
+    </div>
+        
+    <div class="estrofa">
+      <p class="estrofa">danza, danza.</p>
+      <p class="estrofa">Muévete solo, a tu ritmo;</p>
+      <p class="estrofa">muévete, pues aún vives…</p>
+      <p class="estrofa">Danza con la dulce vibración de tu tristeza;</p>
+      <p class="estrofa">danza y juega a ser feliz.</p>
+    </div>
+    <br>
+    <h3 style="text-align: center;">*******</h3>
+
+    <br>
+    <h3 class="titulo-poema">FRUTA MADURA</h3>
+    <br>
+
+
+
+    <div class="estrofa">
+      <p class="estrofa">Te me escapaste mujer,</p>
+      <p class="estrofa">te me fuiste como un destello,</p>
+      <p class="estrofa">como un cardo llevado por el viento,</p>
+      <p class="estrofa">como el gozo sutil del pensamiento,</p>
+      <p class="estrofa">como el ir y venir de esto y aquello.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Te me fuiste en una noche,</p>
+      <p class="estrofa">te marchaste en mi día,</p>
+      <p class="estrofa">te perdiste en un instante.</p>
+      <p class="estrofa">Mi idealismo se fugó con tu figura:</p>
+      <p class="estrofa">ahora sólo me inquieta, madura,</p>
+      <p class="estrofa">la fruta de tu cuerpo.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">No pienso en los románticos paseos,</p>
+      <p class="estrofa">ni en los tiernos momentos a la luna.</p>
+      <p class="estrofa">Únicamente me interesa tu materia:</p>
+      <p class="estrofa">el grueso de tus piernas,</p>
+      <p class="estrofa">el danzar de tu cintura,</p>
+      <p class="estrofa">la fantasía de tu vientre.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Te imagino sin tules ni cortinas,</p>
+      <p class="estrofa">sin disfraces de espíritu y ternura,</p>
+      <p class="estrofa">solo cuerpo, cuerpo limpio de armadura,</p>
+      <p class="estrofa">solo mujer, sin más valor que tu secreto,</p>
+      <p class="estrofa">sin más color que tus rincones.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Así eres hoy.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">No existe complemento,</p>
+      <p class="estrofa">de ti solo queda ese momento</p>
+      <p class="estrofa">de placer tal vez fugaz.</p>
+      <p class="estrofa">Tu esencia ahora es ser noche…</p>
+      <p class="estrofa">y pasión… y desvelo.</p>
+    </div>
+
+
+    <br>
+    <h3 style="text-align: center;">*******</h3>
+
+    <br>
+    <h3 class="titulo-poema">POEMARIO</h3>
+    <br>
+
+
+
+
+    <div class="estrofa">
+
+      <p class="estrofa">Hay un poema en cada cosa </p>
+      <p class="estrofa">y una canción en cada corazón, </p>
+      <p class="estrofa">alguna melodía mana de la tierra </p>
+      <p class="estrofa">y algunas notas evocan el amor. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Me suena al ritmo de la vida: </p>
+      <p class="estrofa">un joven, una vieja, </p>
+      <p class="estrofa">un perro, un tambor, </p>
+      <p class="estrofa">el soldado que asesina </p>
+      <p class="estrofa">y el pobre que busca redención. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Camina un hombre por las calles, </p>
+      <p class="estrofa">sus pasos suenan a oración; </p>
+      <p class="estrofa">lleva al trabajo sus pesares </p>
+      <p class="estrofa">y a la casa el hambre y la ilusión. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Hay un niño peleando en la esquina </p>
+      <p class="estrofa">y un anciano retirado en su mansión </p>
+      <p class="estrofa">y un político engañando a su vecina </p>
+      <p class="estrofa">y una dama engañando a su señor. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">El canto de la vida se eleva y vuela… </p>
+      <p class="estrofa">Un pájaro aletea en el espacio </p>
+      <p class="estrofa">y vuela con el ritmo de la tierra.</p>
+      <p class="estrofa">Como él va de prisa o va despacio, </p>
+      <p class="estrofa">como él lleva paz o trae guerra. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Muere un hombre sin razón, </p>
+      <p class="estrofa">se levantan las sospechas: </p>
+      <p class="estrofa">fue su madre, </p>
+      <p class="estrofa">pues fue ella quien lo crio: </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Marchan inocentes al cadalso </p>
+      <p class="estrofa">llevando en su pecho una canción; </p>
+      <p class="estrofa">huyen delincuentes, paso manso, </p>
+      <p class="estrofa">fueron buenos según una versión. </p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Hay una canción para las penas, </p>
+      <p class="estrofa">hay un recital para el dolor, </p>
+      <p class="estrofa">se construye un himno a las cadenas </p>
+      <p class="estrofa">y se pide un funeral para el amor.</p>
+    </div>
+      <br>
+      <h3 style="text-align: center;">*******</h3>
+
+      <br>
+      <h3 class="titulo-poema">PREMONICIÓN</h3>
+      <br>
+
+
+    <div class="estrofa">
+
+      <p class="estrofa">Antes de saber de ti</p>
+      <p class="estrofa">mi mente se creó tu figura</p>
+      <p class="estrofa">y los vacíos de mi soledad</p>
+      <p class="estrofa">se llenaron con tu presencia…</p>
+      <p class="estrofa">presencia lejana,</p>
+      <p class="estrofa">presencia de sueños.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Aprendí a vivir</p>
+      <p class="estrofa">pensando en el futuro de encontrarte,</p>
+      <p class="estrofa">y entre tinieblas,</p>
+      <p class="estrofa">un poco triste, un poco solo,</p>
+      <p class="estrofa">necesité de mi sueño para continuar.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Ahora, ahora es otro tiempo</p>
+      <p class="estrofa">y me hace falta decirte que te quiero.</p>
+    </div>
+
+      <br>
+      <h3 style="text-align: center;">*******</h3>
+
+      <br>
+      <h3 class="titulo-poema">EXILIO</h3>
+      <br>
+
+
+    <div class="estrofa">
+
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+      <p class="estrofa">Ella era el aire limpio</p>
+      <p class="estrofa">y era el suave olor de las flores;</p>
+      <p class="estrofa">era la luz de alborada</p>
+      <p class="estrofa">y la tiniebla de la noche;</p>
+      <p class="estrofa">el calor del sol dorado,</p>
+      <p class="estrofa">la humedad de las nubes,</p>
+      <p class="estrofa">la libertad del camino</p>
+      <p class="estrofa">y el motivo de mis versos.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">en ella pensaba yo no colocar paredes,</p>
+      <p class="estrofa">no demarcar fronteras ni limitar mi entrada;</p>
+      <p class="estrofa">dejar que las gotas de agua me regaran en las noches,</p>
+      <p class="estrofa">que la luz de las estrellas en las noches me
+          inspirara.</p>
+    </div>
+
+    <div class="estrofa">
+
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">En ella pensaba yo no colocar mi cama,</p>
+      <p class="estrofa">dejar que mi cuerpo, al viento, descansara sobre el
+          prado,</p>
+      <p class="estrofa">no disfrazar lo rudo con lo blando de una almohada</p>
+      <p class="estrofa">y mitigar el frío con el cobijo de un árbol.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">ella era el viento feroz</p>
+      <p class="estrofa">con susurros y secretos,</p>
+      <p class="estrofa">era el sabor de un beso</p>
+      <p class="estrofa">y la pasión del abrazo;</p>
+      <p class="estrofa">la medida del tiempo,</p>
+      <p class="estrofa">el ritmo de mi canto;</p>
+      <p class="estrofa">las estrellas del cielo</p>
+      <p class="estrofa">y las lágrimas del llanto.</p>
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+      <p class="estrofa">en ella pensaba yo no colocar un techo,</p>
+      <p class="estrofa">abrir puertas y ventanas desde todos los rincones,</p>
+      <p class="estrofa">dejar que las hojas secas me sirvieran de lecho</p>
+      <p class="estrofa">y entonar sin instrumentos mis más sentidas
+          canciones.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">ahora me arrepiento.</p>
+      <p class="estrofa">Se quedó… fue sólo un sueño.</p>
+      <p class="estrofa">Y hoy me encuentro encerrado</p>
+      <p class="estrofa">entre estas cuatro paredes.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Ya pasó… fue luz fugaz,</p>
+      <p class="estrofa">presentimiento frustrado.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">La casa de mis sueños se perdió en el olvido.</p>
+    </div>
+      <br>
+      <h3 style="text-align: center;">*******</h3>
+
+      <br>
+      <h3 class="titulo-poema">FIN DE AÑO</h3>
+      <br>
+
+    <div class="estrofa">
+      <h3 class="subtitulo">PARA UNA COPA </h3>
+      <p class="estrofa">El año es viejo,</p>
+      <p class="estrofa">decae,</p>
+      <p class="estrofa">se esfuma</p>
+      <p class="estrofa">como espuma…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Ya son muchos los días,</p>
+      <p class="estrofa">ya no caben los meses…</p>
+      <p class="estrofa">los números llegan a su orilla.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Han pasado mil cosas,</p>
+      <p class="estrofa">todas las cosas…</p>
+      <p class="estrofa">no cabe un suceso más,</p>
+      <p class="estrofa">no hay espacio…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Ya han muerto los que habrían de morir,</p>
+      <p class="estrofa">ya han nacido los que habrían de nacer,</p>
+      <p class="estrofa">continúan su gestación</p>
+      <p class="estrofa">quienes no tuvieron cupo,</p>
+      <p class="estrofa">continúan su agonía</p>
+      <p class="estrofa">quienes no alcanzaron boleto.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">No hay un día más,</p>
+      <p class="estrofa">no hay una hora más,</p>
+      <p class="estrofa">ni un minuto,</p>
+      <p class="estrofa">ni un segundo.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Las campanas suenan:</p>
+      <p class="estrofa">es el último dong…</p>
+      <p class="estrofa">las sirenas estallan,</p>
+      <p class="estrofa">las personas se agitan,</p>
+      <p class="estrofa">saltan,</p>
+      <p class="estrofa">besan,</p>
+      <p class="estrofa">lloran,</p>
+      <p class="estrofa">corren,</p>
+      <p class="estrofa">abrazan…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Qué ha pasado?</p>
+      <p class="estrofa">¿Se rompió el hilo impertérrito del destino?</p>
+      <p class="estrofa">¿Ha cesado en su manar el tiempo?</p>
+      <p class="estrofa">¿Han surgido nuevas fuerzas?</p>
+      <p class="estrofa">¿Se han extinguido viejas formas?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Nada ocurre!,</p>
+      <p class="estrofa">todo es lo mismo,</p>
+      <p class="estrofa">excepto por la algarabía</p>
+      <p class="estrofa">la noche es igual:</p>
+      <p class="estrofa">las estrellas no se inmutan,</p>
+      <p class="estrofa">la brisa no deja de correr,</p>
+      <p class="estrofa">el aire sigue deslizándose en tenues capas,</p>
+      <p class="estrofa">imperceptible,</p>
+      <p class="estrofa">invisible,</p>
+      <p class="estrofa">inodoro,</p>
+      <p class="estrofa">incoloro…</p>
+      <p class="estrofa">los grillos cantan y saltan;</p>
+      <p class="estrofa">las luces brillan.</p>
+      <p class="estrofa">Todo es lo mismo…</p>
+      <p class="estrofa">y sin embargo…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Hay un gran alboroto:</p>
+      <p class="estrofa">¡Muere un año!</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Dicen que se va</p>
+      <p class="estrofa">arrugado y canoso,</p>
+      <p class="estrofa">enjuto y cansado,</p>
+      <p class="estrofa">por las veredas del viento,</p>
+      <p class="estrofa">furtivo entre las cuevas del recuerdo,</p>
+      <p class="estrofa">oculto en los rincones del pasado…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Quién lo ha visto huir?</p>
+      <p class="estrofa">dicen que lleva el saco de la esperanza vacío</p>
+      <p class="estrofa">y que no puede con el peso del tiempo.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Quién ha sentido sus pasos lerdos?</p>
+      <p class="estrofa">El eco de sus pies pesados</p>
+      <p class="estrofa">reverbera en el recuerdo.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Quién lo recordará con todas sus alegrías,</p>
+      <p class="estrofa">con todas sus tristezas,</p>
+      <p class="estrofa">con todos sus pelos y señales?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">En su veloz carrera</p>
+      <p class="estrofa">sólo deja</p>
+      <p class="estrofa">pedazos de momentos…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Todo es lo mismo esta noche…</p>
+      <p class="estrofa">bebamos una copa.</p>
+      <p class="estrofa">¿Por qué motivo?</p>
+      <p class="estrofa">Bebamos, total,</p>
+      <p class="estrofa">eso no importa.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Bebamos porque queremos,</p>
+      <p class="estrofa">porque amamos, porque soñamos,</p>
+      <p class="estrofa">porque ansiamos otros vientos;</p>
+      <p class="estrofa">bebamos por los recuerdos,</p>
+      <p class="estrofa">por las cosas absurdas en que creemos,</p>
+      <p class="estrofa">por los que estamos,</p>
+      <p class="estrofa">por los que se fueron,</p>
+      <p class="estrofa">por los que vendrán…</p>
+      <p class="estrofa">por el futuro</p>
+      <p class="estrofa">y por el pasado.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Una copa más, solo una más</p>
+      <p class="estrofa">con esta última campanada</p>
+      <p class="estrofa">que resuena y ya se apaga</p>
+      <p class="estrofa">como final suspiro</p>
+      <p class="estrofa">de aquel año</p>
+      <p class="estrofa">que ya</p>
+      <p class="estrofa">está</p>
+      <p class="estrofa">muerto.</p>
+    </div>
+      <br>
+      <h3 style="text-align: center;">*******</h3>
+
+      <br>
+      <h3 class="titulo-poema">HAS LLEGADO</h3>
+      <br>
+
+    <div class="estrofa">
+        <p class="estrofa">¡Esta noche es diferente!</p>
+        <p class="estrofa">¿Por qué?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Las mismas estrellas suspendidas en el cielo:</p>
+      <p class="estrofa">Aldebarán brillante,</p>
+      <p class="estrofa">Betelgeuse gigantesca,</p>
+      <p class="estrofa">Orión sobresaliente…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">El mismo viento que baja de la Sierra:</p>
+      <p class="estrofa">frío en la noche cálida,</p>
+      <p class="estrofa">rápido sobre el suelo muerto,</p>
+      <p class="estrofa">ágil entre las palmas…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">El mismo mar que brilla con la luna:</p>
+      <p class="estrofa">olas cíclicas que avanzan,</p>
+      <p class="estrofa">reflujos que saltan en gotas,</p>
+      <p class="estrofa">brillo de algas y batalla de peces…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Esta noche es diferente!</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Los mismos nácares en la arena,</p>
+      <p class="estrofa">a la distancia los mismos barcos,</p>
+      <p class="estrofa">algún pelícano perdido,</p>
+      <p class="estrofa">algún pescador furtivo…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Los mismos pasos marcados en la playa,</p>
+      <p class="estrofa">huellas de mi esencia vigilante.</p>
+      <p class="estrofa">Allá, distantes,</p>
+      <p class="estrofa">las mismas chozas que navegan en la oscuridad.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Esta noche es diferente!</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Sobre el ruido del mar</p>
+      <p class="estrofa">se imponen las notas de un acordeón</p>
+      <p class="estrofa">y una caja marca</p>
+      <p class="estrofa">y una guacharaca bulle…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Una voz solitaria repite la misma canción.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Impasible, el mismo perro solitario deambula</p>
+      <p class="estrofa">y el mismo aullido se esconde en la penumbra…</p>
+      <p class="estrofa">se repiten los ruidos de otras noches</p>
+      <p class="estrofa">y las luces y las sombras no son otras.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Pero… ¡Esta noche es diferente!...</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Mi espíritu está alegre,</p>
+      <p class="estrofa">y mi mirada, extasiada en tu figura,</p>
+      <p class="estrofa">refleja mi estado interior:</p>
+      <p class="estrofa">una esperanza, un anhelo…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Ahora el verde del mar no es solo verde,</p>
+      <p class="estrofa">ni una conjunción hermosa de matices,</p>
+      <p class="estrofa">es el verde de tus ojos.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">El viento de la Sierra no es solo el aire en
+            movimiento,</p>
+      <p class="estrofa">es blandir de tus cabellos en bello desorden.</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">De nácar es tu piel sembrada en mi recuerdo</p>
+      <p class="estrofa">y de estrellas se corona en mi memoria tu figura;</p>
+      <p class="estrofa">el susurro de tu voz está grabado en mis oídos,</p>
+      <p class="estrofa">es música que alegra mis momentos.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Esta noche es diferente!</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">En mi memoria estás tú</p>
+      <p class="estrofa">y cada paso que doy quiere avanzar hacia ti.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Esta noche es diferente!...</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">Por tu presencia;</p>
+      <p class="estrofa">presencia que seguirá en mí,</p>
+      <p class="estrofa">presencia que me alegra,</p>
+      <p class="estrofa">presencia que quiere hacerse eterna…</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¡Esta noche es diferente!</p>
+    </div>
+        <br>
+        <h3 style="text-align: center;">*******</h3>
+
+        <br>
+        <h3 class="titulo-poema">¡A QUÉ ESCRIBIR!</h3>
+        <br>
+        
+    <div class="estrofa">
+    
+        <h3 class="subtitulo">(Segunda Versión)</h3>
+      <p class="estrofa">¿A qué le echo pluma?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Al sol de una mañana que no existe,</p>
+      <p class="estrofa">que se fugó veloz y ya es un sueño,</p>
+      <p class="estrofa">al lecho de una hoguera ya sin leño…</p>
+      <p class="estrofa">sin perfume ni humo,</p>
+      <p class="estrofa">al chiste que furtivo se ha contado</p>
+      <p class="estrofa">y que sin prisa</p>
+      <p class="estrofa">voló de boca en boca hasta la risa</p>
+      <p class="estrofa">de aquel que se ha marchado sin regreso?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿A qué le echo pluma?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿A la razón ausente de tus manos,</p>
+      <p class="estrofa">al roce lujurioso de tus dedos,</p>
+      <p class="estrofa">a la rara coincidencia con que amamos</p>
+      <p class="estrofa">pecados y deseos?</p>
+      <p class="estrofa">¿Acaso al húmedo riego de tus besos,</p>
+      <p class="estrofa">al rocío salado de tu cuerpo,</p>
+      <p class="estrofa">al temblor de tu piel cuando la rozo,</p>
+      <p class="estrofa">a tu cabello claro?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿A qué le echo pluma?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿Al aire que ha inundado nuestros cielos,</p>
+      <p class="estrofa">y nos envuelve con su aroma, dos en uno,</p>
+      <p class="estrofa">a ese brillo universal que nos conjuga?,</p>
+      <p class="estrofa">¿a eso he de echar pluma?</p>
+      <p class="estrofa">¿He de echar pluma a este vacío,</p>
+      <p class="estrofa">a la nimiedad que me inunda y me fastidia,</p>
+      <p class="estrofa">a la sinrazón del hastío que me aísla,</p>
+      <p class="estrofa">calor y frío?</p>
+    </div>
+
+    <div class="estrofa">
+
+      <p class="estrofa">¿A qué le echo pluma?</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">¿A qué, si estoy tan triste,</p>
+      <p class="estrofa">si vago solitario por el mundo</p>
+      <p class="estrofa">gritando mis canciones de poeta,</p>
+      <p class="estrofa">profeta a quien no escucha su rebaño?</p>
+      <p class="estrofa">¿A qué, si nada importa,</p>
+      <p class="estrofa">si igual sigue el mundo tras la absorta</p>
+      <p class="estrofa">realidad, sin un camino y sin buscar</p>
+      <p class="estrofa">un sino que ilumine su destino?</p>
+    </div>
+      <br>
+      <h3 style="text-align: center;">*******</h3>
+      <br>
+      <h3 class="titulo-poema">EPÍLOGO</h3>
+      <br>
+
+    <div class="estrofa">
+
+      <p class="estrofa">Mi corazón está repleto de versos</p>
+      <p class="estrofa">y las sombras de la noche los inspiran.</p>
+      <p class="estrofa">Una mano un tanto flácida,</p>
+      <p class="estrofa">una pluma un tanto lenta…</p>
+      <p class="estrofa">se extiende azul la tinta.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">En su reguero meditado</p>
+      <p class="estrofa">brotan designios del hado,</p>
+      <p class="estrofa">laberintos de la historia;</p>
+      <p class="estrofa">rueda como una noria</p>
+      <p class="estrofa">mi pensamiento agitado.</p>
+    </div>
+
+    <div class="estrofa">
+      <p class="estrofa">En definitiva, ¡Nada concuerda!</p>
+      <p class="estrofa">estaba rota la cuerda</p>
+      <p class="estrofa">y doy esto por terminado.</p>
+    </div>
+
+
+
+
+    </section>
+  </main>
+
+  <!-- BOTONES DE ACCIÓN -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+
+</body>
+</html>

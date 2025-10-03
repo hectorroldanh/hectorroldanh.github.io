@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+      <html lang="es">
+      <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primer Capítulo - SINFONÍA CELESTE</title>
+  <link rel="stylesheet" href="estilos-novelas.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+        <header class="encabezado">
+    <div class="portada">
+      <img src="galeria-obras/sinfonia-celeste.webp" alt="Portada de Sinfonía Celeste" class="portada-imagen">
+    </div>
+    <div class="info-libro">
+            <h1 class="titulo-libro">SINFONÍA CELESTE</h1>
+            <h2 class="titulo-libro">El Canto de Dios</h2>
+            <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+    </div>
+  </header>
+
+  <!-- Contenido del capítulo -->
+  <main class="contenido">
+    <section class="estrofa">
+
+      <h1 class='titulo poema'>PRIMER ACTO</h1>
+      <p2 class='estrofa'><i>Un grupo de hombres, conformado por un pensador, un nihilista, un científico y un creyente, reunido en torno a una esfera terrestre, expresa ordenadamente sus ideas sobre la existencia. Al fondo, una pantalla proyecta imágenes que acompañan los diálogos.</i></p>
+      <br>
+      <h2 class='titulo-estrofa'>EXISTENCIA</h2>
+      <br>
+        <div class="estrofa">
+        <p2 class='estrofa'><i>El pensador (dirigiéndose primero al grupo y luego al público)</i></p><br>
+        <p class='estrofa'>Pensar me apremia sobre la razón</p>
+        <p class='estrofa'>de existir cercado entre muerte y vida:</p>
+        <p class='estrofa'>ser un inciso, una acotación,</p>
+        <p class='estrofa'>fútil instante que en la nada anida.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Sin dar permiso para su creación</p>
+        <p class='estrofa'>trae el ser consigo la cierta partida,</p>
+        <p class='estrofa'>¿Es sentencia cierta su aniquilación?</p>
+        <p class='estrofa'>¿Tal vez ser penado con Eterna vida?</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Pondero en la ciencia y en cada ecuación,</p>
+        <p class='estrofa'>busco en el cosmos la ruta perdida,</p>
+        <p class='estrofa'>algo que revele tras esta obsesión,</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>una luz, un hito, alguna salida:</p>
+        <p class='estrofa'>el ser o el no ser, esa es la cuestión,</p>
+        <p class='estrofa'>la voraz duda que asedia escondida.</p>
+      </div>
+      <br><br>
+      <h2 class='titulo-poema'>I – EL CANTO DE DIOS</h2>
+      </div>
+      <br>
+      <p2 class='estrofa'><i>El hombre de ciencia</i></p>
+      <br>
+      
+      <div class="estrofa">
+        <p class='estrofa'>Una gota cae sobre el quedo charco.</p>
+        <p class='estrofa'>Su turbación se extiende armoniosa</p>
+        <p class='estrofa'>en flotantes círculos que se hacen vastos</p>
+        <p class='estrofa'>para perderse en lontananza, hasta el olvido…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Un botón, punto génico, será una rosa,</p>
+        <p class='estrofa'>desbordará de pétalos el nido; </p>
+        <p class='estrofa'>dimensión que se proyecta cadenciosa, </p>
+        <p class='estrofa'>a su vez, conteniendo y contenido…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El tiempo es el maestro que, en su avance, </p>
+        <p class='estrofa'>guía tal contraste sin sentido; </p>
+        <p class='estrofa'>es el ir y el devenir, él es el trance, </p>
+        <p class='estrofa'>es el tejido del silencio y el sonido…</p>
+      </div>
+      <div class="estrofa">
+        <p2 class='estrofa'><i> (El científico deja caer una canica sobre el cristal del escritorio)</i></p>
+        
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Se excita el aire, se propaga el ruido. </p>
+        <p class='estrofa'>Muchos ruidos concertados son sonido, </p>
+        <p class='estrofa'>son la música y el himno, </p>
+        <p class='estrofa'>la Palabra y el misterio trascendido. </p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Un hilillo de agua es una fuente, </p>
+        <p class='estrofa'>y una fuente y otra fuente son un río, </p>
+        <p class='estrofa'>y un río y otro río, son creciente, </p>
+        <p class='estrofa'>alternar de conteniendo y contenido.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Una pendiente tras otra son un monte,</p>
+        <p class='estrofa'>y dos montes y otro monte son cadena,</p>
+        <p class='estrofa'>y cadenas, valles y corrientes</p>
+        <p class='estrofa'>son los recodos del camino.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El punto su razón halla en el plano,</p>
+        <p class='estrofa'>desde plano es el espacio su propuesta…</p>
+        <p class='estrofa'>Se multiplica hasta formar denso vilano;</p>
+        <p class='estrofa'>en él se desdobla y se proyecta.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El átomo, imitación del firmamento</p>
+        <p class='estrofa'>se expresa en tránsitos y giros,</p>
+        <p class='estrofa'>¿Quién sabrá si rota el universo?,</p>
+        <p class='estrofa'>dimensiones conteniendo y contenido.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El tiempo es el mentor,</p>
+        <p class='estrofa'>es la guía del contraste,</p>
+        <p class='estrofa'>la ligazón de los extremos,</p>
+        <p class='estrofa'>es el ir y el devenir, silencio e himno…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Pasado, presente y futuro;</p>
+        <p class='estrofa'>inmensos límites, anodino lapso,</p>
+        <p class='estrofa'>historia – suceso – consecuencia,</p>
+        <p class='estrofa'>disgregados y fundidos,</p>
+        <p class='estrofa'>uno mismo y tres distintos,</p>
+        <p class='estrofa'>(misterio trinitario),</p>
+        <p class='estrofa'>lo que fue, lo que ahora es</p>
+        <p class='estrofa'>y aquello que no ha sido,</p>
+        <p class='estrofa'>el proyecto, el acto y lo esperado,</p>
+        <p class='estrofa'>secreta relación: origen, ser y resultado,</p>
+        <p class='estrofa'>ley, teorema y corolario.</p>
+      </div>
+      <div class="estrofa">
+        <p2 class='estrofa'><i>Interrumpe el creyente</i></p>
+      </div>
+
+      <div class="estrofa">
+        <p class='estrofa'>Un sonido y otro más,</p>
+        <p class='estrofa'>y otro sonido son un ruido.</p>
+        <p class='estrofa'>¡Oh maravilla!,</p>
+        <p class='estrofa'>si hay un Plan, se entona un salmo:</p>
+        <p class='estrofa'>el canto del Creador.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>¡La existencia es el Canto de Dios!</p>
+        <p class='estrofa'></p>      </div>
+      <br>
+
+    </section>
+  </main>
+
+  <!-- Botones de acción -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+</body>
+</html>

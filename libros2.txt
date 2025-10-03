@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obras del Autor</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: fondoAnimado 18s ease infinite;
+  }
+  @keyframes fondoAnimado {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  h1 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    padding: 30px 20px 10px 20px;
+  }
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .tarjeta {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  }
+  .tarjeta img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .titulo {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #333;
+  }
+  .genero {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  .boton {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .boton:hover {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+  }
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    overflow: auto;
+    padding-top: 30px;
+  }
+  .modal-contenido {
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    animation: aparecer 0.4s ease;
+  }
+  @keyframes aparecer {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+  .modal-header {
+  text-align: center;
+  padding: 60px 15px 15px 15px; /* Aumentamos el padding superior */
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+  .cerrar {
+  position: fixed; /* Cambiamos de absolute a fixed para que sea flotante */
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001; /* Aseguramos que esté por encima de todo */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cerrar:hover {
+  color: #fff;
+  background-color: rgba(220, 53, 69, 0.9); /* Rojo al hacer hover */
+  transform: rotate(90deg); /* Efecto de rotación al pasar el mouse */
+}
+  .modal-body {
+    overflow-y: auto;
+    padding: 15px 20px;
+    flex: 1;
+    text-align: justify;
+  }
+  .portada-flotante {
+    float: left;
+    max-width: 120px;
+    margin: 0 15px 10px 0;
+    border-radius: 6px;
+  }
+  .modal-footer {
+    border-top: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .boton-compra {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s;
+  }
+  .boton-compra:nth-child(1) {
+    background: #2575fc; /* Leer capítulo */
+  }
+  .boton-compra:nth-child(1):hover {
+    background: #1558c0;
+  }
+  .boton-compra:nth-child(2) {
+    background: #ff9900; /* Amazon */
+  }
+  .boton-compra:nth-child(2):hover {
+    background: #e68a00;
+  }
+  .boton-compra:nth-child(3) {
+    background: #28a745; /* Autor */
+  }
+  .boton-compra:nth-child(3):hover {
+    background: #218838;
+  }
+</style>
+</head>
+<body>
+
+<h1 id="libros">📚 Obras del Autor 📚</h1>
+
+<div class="contenedor">
+  <div id="novela" class="tarjeta">
+    <img src="MediaPortada_Sociopata_en_Familia.webp" alt="Sociópata en Familia">
+    <p class="titulo">Sociópata en Familia</p>
+    <p class="genero">Novela</p>
+    <a href="#" class="boton" onclick="abrirModal('modal1')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_El_Nuevo_Templo.webp" alt="El Nuevo Templo">
+    <p class="titulo">El Nuevo Templo</p>
+    <p class="genero">Novela</p>
+    <a href="#" class="boton" onclick="abrirModal('modal2')">Sinopsis</a>
+  </div>
+  <div id="poesia" class="tarjeta">
+    <img src="MediaPortada_Sinfonia_Celeste.webp" alt="Sinfonía Celeste">
+    <p class="titulo">Sinfonía Celeste, el canto de Dios</p>
+    <p class="genero">Teatro y Poesía</p>
+    <a href="#" class="boton" onclick="abrirModal('modal3')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_Sabiduria_Haikai.webp" alt="Sabiduría Haikai">
+    <p class="titulo">Sabiduría Haikai</p>
+    <p class="genero">Poesía</p>
+    <a href="#" class="boton" onclick="abrirModal('modal4')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_Recurso_Lirico.webp" alt="Recurso Lírico">
+    <p class="titulo">Recurso Lírico, un canto al amor</p>
+    <p class="genero">Poesía</p>
+    <a href="#" class="boton" onclick="abrirModal('modal5')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_Debajo_del_Manzano.webp" alt="Debajo del Manzano">
+    <p class="titulo">Debajo del Manzano / Proverbios</p>
+    <p class="genero">Poesía</p>
+    <a href="#" class="boton" onclick="abrirModal('modal6')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_Epopeya.webp" alt="Epopeya Colombia">
+    <p class="titulo">Epopeya Colombia, cantos de la violencia</p>
+    <p class="genero">Poesía</p>
+    <a href="#" class="boton" onclick="abrirModal('modal7')">Sinopsis</a>
+  </div>
+  <div id="ensayo" class="tarjeta">
+    <img src="MediaPortada_La_Esperanza_del_Cristiano.webp" alt="La esperanza del Cristiano">
+    <p class="titulo">La esperanza del Cristiano</p>
+    <p class="genero">Ensayo</p>
+    <a href="#" class="boton" onclick="abrirModal('modal8')">Sinopsis</a>
+  </div>
+  <div class="tarjeta">
+    <img src="MediaPortada_Don_del_Sufrimiento.webp" alt="El Don del Sufrimiento">
+    <p class="titulo">El Don del Sufrimiento</p>
+    <p class="genero">Ensayo</p>
+    <a href="#" class="boton" onclick="abrirModal('modal9')">Sinopsis</a>
+  </div>
+  <div id="otro" class="tarjeta">
+    <img src="MediaPortada_Simon_Bolivar.webp" alt="Simón Bolívar, una visión crítica">
+    <p class="titulo">Simón Bolívar, una visión crítica</p>
+    <p class="genero">Historia</p>
+    <a href="#" class="boton" onclick="abrirModal('modal10')">Sinopsis</a>
+  </div>
+</div>
+
+<!-- Modales -->
+
+<!-- Modal 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+      <h2>Sociópata en Familia</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/sociopata-en-familia1.webp" alt="" class="portada-flotante">
+      <p>Novela potente y profundamente humana que reconstruye la historia de Andrés Parra Navarro, un hombre de principios arrasado por una falsa acusación de abuso sexual, orquestada desde el corazón de su propia familia. Con una narrativa entre el drama íntimo y la crónica judicial, esta obra nos sumerge en un universo donde lo verdadero naufraga en las sospechas y donde el sistema legal, en lugar de proteger al inocente, puede condenarlo al infierno de la sospecha.</p>
+      <p>A través de una prosa sobria, emotiva y cuidadosamente documentada, Héctor Emilio Roldán Hoyos revela las grietas del sistema judicial, el poder destructivo de la calumnia, y el dolor invisible de los hombres que enfrentan acusaciones infundadas en un contexto que no les concede el beneficio de la duda.</p>
+      <p>Esta novela se convierte en un llamado urgente a la justicia con perspectiva equilibrada, al reconocimiento del dolor masculino silenciado y a la resiliencia como forma de resistencia espiritual y moral.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="sociopata-en-familia.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-sociopata" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+      <h2>El Nuevo Templo</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/el-nuevo-templo1.webp" alt="" class="portada-flotante">
+      <p>Novela histórica y espiritual que narra un viaje de conversión ambientado en el siglo I, entre Asia Menor, Palestina y Roma. A través de una historia conmovedora y profundamente humana, el autor teje una trama en la que personajes ficticios se entrecruzan con figuras históricas y bíblicas, en el marco de acontecimientos trascendentales como el incendio de Roma bajo Nerón, la destrucción del Templo de Jerusalén y la expansión del cristianismo primitivo.</p>
+      <p>Teófilo, un joven herido por su pasado, emprende una búsqueda, impulsado por la última voluntad de un anciano moribundo. Sin saberlo, esa búsqueda lo confrontará con su dolor, su vacío existencial y su destino. En su camino, encontrará a las primeras comunidades cristianas, su testimonio, su fe y su fuerza transformadora. A través de él, el lector recorrerá los paisajes del mundo antiguo y descubrirá la profundidad espiritual de una época marcada por el martirio, la esperanza y el amor de un Dios cercano.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="el-nuevo-templo.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-templo" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="modal3" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
+      <h2>Sinfonía Celeste, el canto de Dios</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/sinfonia-celeste1.webp" alt="" class="portada-flotante">
+    <p>Obra teatral de carácter poético y filosófico que representa, como una ópera en verso, el diálogo eterno entre fe, razón, ciencia y nihilismo. Mediante una puesta en escena que alterna poesía, reflexión y dramatización, el autor desarrolla el dilema existencial del ser humano y su encuentro progresivo con la fe.</p>  
+    <p>A través de personajes simbólicos (el pensador, el nihilista, el hombre de ciencia y el creyente), y con intervenciones de figuras bíblicas y mitológicas, la obra escenifica los grandes interrogantes de la humanidad: ¿quién soy?, ¿para qué vivo?, ¿por qué existe el mal?, ¿cuál es el sentido del sufrimiento? Las respuestas no son impuestas, sino reveladas paulatinamente en un crescendo poético que culmina en la revelación del amor de Dios como sentido último de la existencia.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="sinfonia-celeste.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-sinfonia" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div id="modal4" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal4')">&times;</span>
+      <h2>Sabiduría Haikai</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/sabiduria-haikai1.webp" alt="" class="portada-flotante">
+      <p>Colección de haikus contemporáneos escritos desde una sensibilidad poética que fusiona la tradición japonesa con una mirada filosófica occidental. El autor, Héctor Emilio Roldán Hoyos, presenta tres secciones que abordan con maestría los aspectos fundamentales de la vida: la reflexión moral y existencial (Sabiduría Haikai), la contemplación de la naturaleza (Paisajes y Bagatelas) y la expresión del amor humano en clave lírica (Haikus a tu belleza).</p>
+      <p>Cada poema es una chispa de lucidez, un aforismo en miniatura que revela, cuestiona o acaricia. A lo largo de la obra, el lector encontrará belleza, ironía, ternura, crítica y profundidad, todo ello condensado en el brevísimo formato del haikú, con su clásica métrica 5-7-5.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="sabiduria-haikai.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-haikai" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div id="modal5" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal5')">&times;</span>
+      <h2>Recurso Lírico, un canto al amor</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/recurso-lirico1.webp" alt="" class="portada-flotante">
+      <p>Compendio de textos poéticos escritos durante la juventud del autor, donde la pasión, el desasosiego, la búsqueda del sentido y el despertar espiritual se entrelazan para construir una oda profunda y sincera al amor en todas sus formas.</p>
+      <p>Desde la exaltación de la belleza femenina hasta la reflexión metafísica sobre la soledad y la muerte, pasando por el deseo, la nostalgia, el erotismo y el idealismo, la obra se convierte en un retrato íntimo del alma humana en tránsito. Héctor Emilio Roldán Hoyos ofrece en este libro una voz joven, vibrante y sensible que, desde el dolor y la esperanza, descubre el amor como camino de madurez, de autodescubrimiento y de encuentro con lo divino.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="recurso-lirico.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-recurso" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div id="modal6" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal6')">&times;</span>
+      <h2>Debajo del Manzano / Proverbios</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/debajo-del-manzano1.webp" alt="" class="portada-flotante">
+      <p>Obra poética de profunda raíz espiritual que entrelaza el lirismo con el misticismo cristiano. En un tono intimista y reverente, el autor se vale de pasajes bíblicos y reflexiones teológicas para hablar del amor divino, la redención, la conversión y la búsqueda de sentido.</p>
+      <p>La primera parte, "Debajo del Manzano", es un canto lírico que explora la creación, la caída y la redención del ser humano desde una sensibilidad cristocéntrica. En cada poema, el alma dialoga con su Creador en un viaje que va desde la desolación hasta la restauración espiritual.</p>
+      <p>La segunda parte, "Proverbios – De la Imitación de Cristo", es una adaptación poética de pensamientos inspirados en la obra clásica de Tomás de Kempis. Aquí el lector encontrará una guía espiritual para la vida cotidiana: una poesía sapiencial que invita a la humildad, la templanza, el perdón y la comunión con Dios.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="debajo-del-manzano.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-manzano" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div id="modal7" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal7')">&times;</span>
+      <h2>Epopeya Colombia, cantos de la violencia</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/epopeya-colombia1.webp" alt="" class="portada-flotante">
+      <p>Canto desgarrado y profundamente humano a la historia reciente de Colombia, escrita desde la perspectiva de un testigo moral. A través de una lírica poderosa y comprometida, Roldán Hoyos reconstruye poéticamente algunas de las más atroces masacres y heridas de la nación, desde Bojayá hasta Machuca, pasando por las falsedades del conflicto armado, el accionar de guerrillas, paramilitares y el Estado.</p>
+      <p>Este libro es más que un poemario: es un testimonio poético que clama por memoria, justicia y verdad. Su fuerza reside en la denuncia, pero también en la esperanza, en el amor a la patria, en el deseo de redención y en la reconstrucción ética de lo colectivo.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="epopeya-colombia.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-epopeya" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 8 -->
+<div id="modal8" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal8')">&times;</span>
+      <h2>La esperanza del Cristiano</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/la-esperanza.webp" alt="" class="portada-flotante">
+      <p>Ensayo teológico y antropológico que explora la noción de esperanza en medio del vacío espiritual de la sociedad contemporánea. En un diálogo profundo con religiones del mundo, corrientes filosóficas, ciencias humanas y la doctrina cristiana, el autor expone cómo la fe cristiana responde con sentido, consuelo y plenitud al anhelo de trascendencia del ser humano.</p>
+      <p>Desde un análisis crítico del nihilismo, el materialismo y el relativismo moderno, pasando por una revisión sistemática de las religiones no cristianas, hasta llegar a la proclamación de la esperanza en el Reino de Dios y la vida eterna, esta obra se presenta como una guía de discernimiento para creyentes y buscadores sinceros.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="la-esperanza.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-esperanza" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 9 -->
+<div id="modal9" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal9')">&times;</span>
+      <h2>El Don del Sufrimiento</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/don-del-sufrimiento1.webp" alt="" class="portada-flotante">
+      <p>Un ensayo sobre el misterio del dolor y el sufrimiento humano. Lejos de ser absurdo, el sufrimiento puede convertirse en don transformador cuando se une al amor de Dios, abriendo camino a la compasión y a la esperanza.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="don-del-sufrimiento.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-don" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 10 -->
+<div id="modal10" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <span class="cerrar" onclick="cerrarModal('modal10')">&times;</span>
+      <h2>Simón Bolívar, una visión crítica</h2>
+    </div>
+    <div class="modal-body">
+      <img src="galeria-obras/simon_bolivar1.webp" alt="" class="portada-flotante">
+      <p>Aquí va la sinopsis completa de Simón Bolívar, una visión crítica...</p>
+    </div>
+    <div class="modal-footer">
+      <a href="simon-bolivar.html" class="boton-compra">Leer capítulo</a>
+      <a href="https://amazon.com/tu-enlace-bolivar" target="_blank" class="boton-compra">Amazon</a>
+      <a href="contacto.html" class="boton-compra">Autor</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function abrirModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+function cerrarModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+window.onclick = function(event) {
+  document.querySelectorAll('.modal').forEach(m => {
+    if (event.target == m) m.style.display = "none";
+  });
+}
+</script>
+
+</body>
+</html>

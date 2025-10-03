@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Héctor Emilio Roldán Hoyos — Escritor, Poeta y Ensayista</title>
+  <meta name="description" content="Página oficial de Héctor Emilio Roldán Hoyos. Descubre sus libros, proyectos, entrevistas y reflexiones literarias." />
+  <meta name="keywords" content="Héctor Emilio Roldán Hoyos, escritor, poeta, ensayista, novelas, poesía, ensayo, literatura colombiana" />
+  
+  <!-- Fuentes y iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* =========================================================
+       VARIABLES, RESET Y TIPOGRAFÍA
+    ========================================================= */
+    :root {
+      --color-primary: #7b1e1e;
+      --color-secondary: #aa0000;
+      --color-accent: #ffcc00;
+      --color-dark: #222;
+      --color-light: #f9f9f9;
+      --color-testimonio: #fcf0a7;
+      --color-entrevista: #a3f7a6;
+      --color-text: #333;
+      --color-email: #0000ee;
+      --color-white: #fff;
+      --divider: #d3d3d3;
+      --shadow: 0 4px 6px rgba(0, 0, 0, .1);
+      --shadow-hover: 0 8px 15px rgba(0, 0, 0, .15);
+      --transition: all .28s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--color-text);
+      background: var(--color-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .divider { border-top: 1px solid var(--divider); margin: 20px auto; width: 80%; max-width: 800px; }
+
+    /* =========================================================
+       HEADER / NAVEGACIÓN
+    ========================================================= */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 2200;
+      background: var(--color-dark); box-shadow: var(--shadow);
+    }
+    nav.menu { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 72px; }
+    .logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 22px; }
+    nav.menu ul { display: flex; gap: 6px; list-style: none; align-items: center; }
+    nav.menu li { position: relative; margin-left: 6px; }
+    nav.menu a {
+      display: block; padding: 18px 12px; color: var(--color-white); font-weight: 700; transition: var(--transition);
+    }
+    nav.menu a:focus, nav.menu a:hover { background: var(--color-secondary); color: var(--color-white); border-radius: 4px; }
+    /* Submenus (desktop) */
+    nav.menu ul ul {
+      position: absolute; top: 100%; left: 0; display: flex; flex-direction: column; min-width: 200px;
+      background: var(--color-dark); border-top: 3px solid var(--color-secondary);
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition);
+    }
+    nav.menu li:hover > ul { opacity: 1; visibility: visible; transform: translateY(0); }
+    nav.menu ul ul a { padding: 12px 16px; }
+    /* Menú hamburguesa (mobile) */
+    .menu-toggle {
+      display: none; background: none; border: 0; color: var(--color-white); font-size: 20px; cursor: pointer; padding: 12px;
+    }
+    .menu-toggle[aria-expanded="true"] { opacity: 0.9; }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+    .hero {
+      height: 100vh; margin-top: 72px; position: relative;
+      background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('photo-5g1.webp') center/cover no-repeat;
+    }
+    .carrusel { position: relative; width: 100%; height: 100%; }
+    .carrusel img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease;
+    }
+    .carrusel img.active { opacity: 1; }
+    .hero-content {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 90%; max-width: 420px; background: rgba(255, 255, 255, .95);
+      padding: 26px; border-radius: 12px; box-shadow: 0 14px 30px rgba(0, 0, 0, .2); text-align: center;
+    }
+    .hero-content h1 { font-family: 'Great Vibes', cursive; color: var(--color-primary); font-size: 2rem; margin-bottom: 6px; }
+    .hero-content h2 { font-family: 'Dancing Script', cursive; color: var(--color-secondary); font-size: 1.3rem; margin-bottom: 12px; font-weight: 400; }
+    .hero-content p { font-size: 1rem; color: var(--color-text); margin-bottom: 16px; }
+    .hero-content .btn {
+      display: inline-block; padding: 10px 22px; border-radius: 30px; background: var(--color-primary); color: var(--color-white); font-weight: 700;
+    }
+
+    /* =========================================================
+       SECCIONES (LIBROS, BIO, PROYECTOS, TESTIMONIOS, CONTACTO)
+    ========================================================= */
+    section { padding: 42px 0; }
+    .section-title { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-accent); text-align: center; margin-bottom: 12px; }
+    .section-title::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-accent); margin: 10px auto; }
+    .section-title1 { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-primary); text-align: center; margin-bottom: 12px; }
+    .section-title1::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-primary); margin: 10px auto; }
+    .section-dark { background: var(--color-dark); color: var(--color-white); }
+    .section-light { background: var(--color-light); }
+    .section-testimonio { background: var(--color-testimonio); }
+    .section-entrevista { background: var(--color-entrevista); }
+
+    /* LIBROS */
+    .libros-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px; align-items: start; }
+    .libro { perspective: 1000px; }
+    .libro-inner {
+      position: relative; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow); height: 330px; transition: transform .45s; transform-style: preserve-3d;
+    }
+    .libro-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .libro-inner:hover { transform: rotateY(10deg) translateY(-10px); }
+    .libro-overlay {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 14px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .75) 100%);
+      color: var(--color-white); transform: translateY(100%); transition: var(--transition);
+    }
+    .libro-inner:hover .libro-overlay { transform: translateY(0); }
+    .libro-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+    .libro-author { font-style: italic; font-size: .9rem; margin-bottom: 8px; }
+
+    /* BIOGRAFÍA */
+    .bio-content { display: flex; gap: 32px; align-items: flex-start; }
+    .bio-image-container { flex: 0 0 20%; max-width: 20%; }
+    .bio-image { border-radius: 10px; box-shadow: var(--shadow); width: 100%; height: auto; }
+    .bio-text { flex: 1; font-size: 1rem; text-align: justify; line-height: 1.6; }
+    .bio-text p { margin-bottom: 1.1rem; }
+
+.conoce-mas {
+  position: relative;
+  color: var(--color-testimonio); /* Color del texto */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color var(--transition);
+}
+
+.conoce-mas::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent); /* Color del subrayado */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.conoce-mas:hover::after {
+  transform: scaleX(1); /* Animación de subrayado */
+}
+
+.conoce-mas:hover {
+  color: var(--color-accent); /* Cambia el color del texto al pasar el mouse */
+}
+
+    /* PROYECTOS */
+    .proyectos-grid { display: grid; grid-template-columns: repeat(4, minmax(200px, 1fr)); gap: 18px; }
+    .proyecto-card {
+      background: var(--color-white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: transform .28s;
+    }
+    .proyecto-card:hover { transform: translateY(-6px); }
+    .proyecto-img img { width: 100%; display: block; }
+    .proyecto-content { padding: 14px; }
+    .proyecto-title { font-size: 1.1rem; color: var(--color-primary); margin-bottom: 6px; }
+    .proyecto-desc { font-size: .98rem; color: var(--color-text); margin-bottom: 10px; }
+
+    /* TESTIMONIOS */
+    .testimonios-container {
+      column-count: 2; column-gap: 1.5rem;
+    }
+    .testimonio {
+      display: inline-block; width: 100%; margin: 0 0 1.5rem; background: #fff; border-radius: 10px; padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; break-inside: avoid;
+    }
+    .testimonio:hover { transform: translateY(-5px); }
+    .testimonio-text { font-size: 1rem; margin-bottom: 1rem; }
+    .testimonio-author { font-size: 0.9rem; color: #666; }
+
+    /* CONTACTO */
+    .contacto-container { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+    .contacto-info { flex: 1; min-width: 220px; }
+    .contacto-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+    .contacto-item i { font-size: 1.2rem; color: var(--color-primary); min-width: 28px; }
+    .contacto-form { flex: 1; min-width: 260px; }
+    .contacto-form input, .contacto-form textarea {
+      width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; font-family: inherit;
+    }
+    .contacto-form button {
+      padding: 12px 20px; border-radius: 30px; border: 0; background: var(--color-accent); color: var(--color-dark);
+      font-weight: 700; cursor: pointer; transition: var(--transition);
+    }
+    .contacto-form button:hover { background: var(--color-secondary); color: #fff; }
+
+.email-link {
+  color: var(--color-email); /* Usa el mismo azul de los enlaces */
+  text-decoration: underline; /* Opcional: subrayado para mayor claridad */
+}
+
+    /* =========================================================
+       MODALES
+    ========================================================= */
+    .modal {
+      display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, .65); z-index: 3000; overflow: auto; padding: 60px 18px;
+    }
+    .modal[aria-hidden="false"] { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-contenido {
+      background: #fff; border-radius: 10px; max-width: 900px; width: 100%; max-height: 88vh; overflow: hidden;
+      display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    }
+    .modal-header { padding: 14px 18px; border-bottom: 1px solid #eee; position: relative; }
+    .modal-header h2 { margin: 0; font-size: 1.25rem; color: var(--color-primary); }
+    .cerrar {
+      position: absolute; right: 10px; top: 6px; background: none; border: 0; font-size: 26px; cursor: pointer; color: #777; padding: 10px;
+    }
+    .modal-body { padding: 18px; overflow: auto; }
+    .portada-flotante { float: left; max-width: 120px; margin: 0 14px 10px 0; border-radius: 6px; }
+    .modal-footer {
+      padding: 12px; border-top: 1px solid #eee; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    }
+    .boton-compra {
+      padding: 8px 14px; border-radius: 6px; color: #fff; text-decoration: none; font-weight: 700; display: inline-block;
+    }
+    .boton-azul { background: #2575fc; }
+    .boton-naranja { background: #ff9900; }
+    .boton-verde { background: #28a745; }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    footer { background: var(--color-dark); color: var(--color-white); padding: 36px 20px; }
+    .footer-content { display: grid; grid-template-columns: 1fr 220px; gap: 20px; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .footer-logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 1.2rem; margin-bottom: 8px; }
+    .footer-links ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .footer-links a { color: #ddd; text-decoration: none; }
+    .footer-links a:hover { color: var(--color-accent); }
+
+    /* =========================================================
+       UTILIDADES, REVEAL, BACK-TO-TOP, RESPONSIVE
+    ========================================================= */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.active { opacity: 1; transform: none; }
+    #back-to-top {
+      position: fixed; right: 18px; bottom: 18px; display: none; background: var(--color-primary); color: #fff; padding: 10px;
+      border-radius: 7px; text-decoration: none; z-index: 4000;
+    }
+    #back-to-top:hover { transform: translateY(-3px); background: var(--color-secondary); }
+    @media (max-width: 992px) {
+      .footer-content { grid-template-columns: 1fr; }
+      .bio-image-container { max-width: 30%; }
+    }
+    @media (max-width: 768px) {
+      .bio-content { flex-direction: column; }
+      .bio-image-container { max-width: 100%; }
+      .menu-toggle { display: block; }
+      nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
+      nav.menu ul.show { display: flex; }
+      .hero-content { max-width: 92%; }
+      .libro-inner { height: 280px; }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 1.6rem; }
+      .hero-content p { font-size: .95rem; }
+      .libro-inner { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / MENÚ -->
+  <header>
+    <nav class="menu container" role="navigation" aria-label="Menú principal">
+      <div class="logo">Héctor Roldán</div>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <ul>
+        <li><a href="#inicio">INICIO</a></li>
+        <li>
+          <a href="autor.html#autor">EL AUTOR</a>
+          <ul class="submenu" role="menu" aria-label="Submenú autor">
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="autor.html#entrevistas">Entrevistas</a></li>
+            <li><a href="autor.html#galeria">Galería</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="libros.html#libros">LIBROS</a>
+          <ul class="submenu" role="menu" aria-label="Submenú libros">
+            <li><a href="libros.html#novela">Novela</a></li>
+            <li><a href="libros.html#poesia">Poesía</a></li>
+            <li><a href="libros.html#ensayo">Ensayo</a></li>
+            <li><a href="libros.html#otro">Otros</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#viva-voz">DE VIVA VOZ</a>
+          <ul class="submenu" role="menu" aria-label="Submenú viva voz">
+            <li><a href="#lecturas">Lecturas</a></li>
+            <li><a href="#podcast">PodCast</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="#testimonios">TESTIMONIOS</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero" aria-labelledby="hero-title">
+    <div class="carrusel" aria-hidden="false">
+      <img src="photo-5g1.webp" alt="Paisaje - portada" class="active" loading="lazy" aria-hidden="false">
+      <img src="photo-1g.webp" alt="Interior - imagen secundaria" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="hero-content" role="banner">
+      <h1 id="hero-title">Héctor Roldán</h1>
+      <h2>Escritor, poeta y ensayista</h2>
+      <p>Bienvenido a mi obra. Aquí hallarás palabras nacidas del alma, que en libros y poemas buscan tender un puente entre Dios y el hombre.</p>
+      <a href="#libros" class="btn">Explora mi universo literario</a>
+    </div>
+  </section>
+
+  <!-- LIBROS -->
+  <section id="libros" class="section-light" aria-labelledby="libros-title">
+    <div class="container">
+      <h2 id="libros-title" class="section-title1 reveal">Libros Destacados</h2>
+      <div class="divider"></div>
+      <div class="libros-grid">
+        <article class="libro reveal" aria-labelledby="l1-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Sociopata_en_Familia.webp" alt="Portada Sociópata en Familia" loading="lazy">
+            <div class="libro-overlay" role="region" aria-label="Sociópata en Familia">
+              <div class="libro-title" id="l1-title">Sociópata en Familia</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal1'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l2-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_El_Nuevo_Templo.webp" alt="Portada El Nuevo Templo" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l2-title">El Nuevo Templo</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal2'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l3-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Sinfonia_Celeste.webp" alt="Portada Sinfonía Celeste" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l3-title">Sinfonía Celeste</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal3'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l4-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Sabiduria_Haikai.webp" alt="Portada Sabiduría Haikai" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l4-title">Sabiduría Haikai</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal4'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l5-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Recurso_Lirico.webp" alt="Portada Recurso Lírico" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l5-title">Recurso Lírico</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal5'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l6-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Debajo_del_Manzano.webp" alt="Portada Debajo del Manzano" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l6-title">Debajo del Manzano</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal6'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l7-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Epopeya.webp" alt="Portada Epopeya Colombia" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l7-title">Epopeya Colombia</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal7'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l8-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_La_Esperanza_del_Cristiano.webp" alt="Portada La Esperanza del Cristiano" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l8-title">La Esperanza del Cristiano</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal8'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l9-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Don_del_Sufrimiento.webp" alt="Portada El Don del Sufrimiento" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l9-title">El Don del Sufrimiento</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal9'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="libro reveal" aria-labelledby="l10-title">
+          <div class="libro-inner">
+            <img src="MediaPortada_Simon_Bolivar.webp" alt="Portada Simón Bolívar, una visión crítica" loading="lazy">
+            <div class="libro-overlay">
+              <div class="libro-title" id="l10-title">Simón Bolívar, una visión crítica</div>
+              <div class="libro-author">Héctor Roldán</div>
+              <a href="#" class="btn" onclick="abrirModal('modal10'); return false;" aria-haspopup="dialog">Sinopsis</a>
+            </div>
+          </div>
+        </article>
+        <!-- Repetir para otros libros -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOGRAFÍA -->
+  <section id="biografia" class="section-dark" aria-labelledby="bio-title">
+    <div class="container">
+      <h2 id="bio-title" class="section-title reveal">Biografía</h2>
+      <div class="divider"></div>
+      <div class="bio-content">
+        <div class="bio-image-container reveal">
+          <img src="hector-roldan-ini.webp" alt="Héctor Emilio Roldán Hoyos, retrato" class="bio-image" loading="lazy">
+        </div>
+        <div class="bio-text reveal">
+          <p>Héctor Emilio Roldán Hoyos es un escritor, poeta y ensayista colombiano cuya obra literaria explora las complejidades del alma humana y su relación con lo divino. Nacido en Pereira, desde temprana edad mostró un profundo interés por la literatura y las humanidades.</p>
+          <p>Su obra abarca novela, poesía y ensayo, con un estilo distintivo que combina profundidad filosófica con una prosa elegante y accesible. Ha participado en ferias del libro, conferencias y eventos culturales, compartiendo su pasión por la literatura y su visión del papel del arte en la sociedad.</p>
+          <p>Además de su labor como escritor, Roldán Hoyos ha participado en diversas ferias del libro, conferencias y eventos culturales, compartiendo su pasión por la literatura y su visión única sobre el papel del arte en la sociedad contemporánea.</p>
+          <a href="autor.html" class="conoce-mas" aria-label="Conoce más sobre el autor">Conoce más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section-light" aria-labelledby="proy-title">
+    <div class="container">
+      <h2 id="proy-title" class="section-title1 reveal">Proyectos</h2>
+      <div class="divider"></div>
+      <div class="proyectos-grid">
+        <article class="proyecto-card reveal">
+          <div class="proyecto-img"><img src="galeria-obras/proyecto1a.webp" alt="Proyecto: Nueva Colección de Poesía" loading="lazy"></div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Desde el Alma</h3>
+            <p class="proyecto-desc">Una compilación de poemas inéditos que exploran temas de fe, esperanza y trascendencia.</p>
+            <a href="#" class="btn" aria-label="Proyecto Nueva Colección de Poesía">Próximamente</a>
+          </div>
+        </article>
+
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-img"><img src="galeria-obras/proyecto2a.webp" alt="Proyecto: Novela Histórica" loading="lazy"></div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">El Cuento del Coco</h3>
+            <p class="proyecto-desc">Serie de cuentos infantiles creados alrededor del famoso "Cuento del coco" (que ni usted lo sabe, ni yo tampoco).</p>
+            <a href="#" class="btn">Próximamente</a>
+          </div>
+        </article>
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-img"><img src="galeria-obras/proyecto3a.webp" alt="Proyecto: Biografía del Libertador" loading="lazy"></div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Bolívar bajo mirada crítica</h3>
+            <p class="proyecto-desc">Más allá de las estatuas y los discursos, este proyecto se atreve a mirar al Libertador con ojos críticos, explorando al hombre que habitó detrás del héroe.</p>
+            <a href="#" class="btn">Próximamente</a>
+          </div>
+        </article>
+
+        <article class="proyecto-card reveal">
+          <div class="proyecto-img"><img src="galeria-obras/proyecto4a.webp" alt="Proyecto: Tras bambalinas" loading="lazy"></div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Puertas</h3>
+            <p class="proyecto-desc">Cada puerta es un umbral. Desde la calle, todas parecen semejantes. Pero al cruzarlas se abre un universo irrepetible.</p>
+            <a href="#" class="btn">Próximamente</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="section-testimonio" aria-labelledby="testi-title">
+    <div class="container">
+      <h2 id="testi-title" class="section-title1 reveal">Testimonios</h2>
+      <div class="divider"></div>
+      <div class="testimonios-container">
+        <div class="testimonio reveal">
+          <p class="testimonio-text">"La obra de Héctor Emilio Roldán Hoyos trasciende lo meramente literario para adentrarse en lo espiritual..."</p>
+          <p class="testimonio-author">— Revista Literaria Latinoamericana</p>
+        </div>
+
+        <div class="testimonio reveal">
+          <p class="testimonio-text">"He leído toda la obra publicada de Roldán Hoyos y cada libro es una joya que merece ser descubierta. Su poesía especialmente resuena con una autenticidad y belleza que conmueve profundamente."</p>
+          <p class="testimonio-author">— María González, Crítica literaria</p>
+        </div>
+
+        <div class="testimonio reveal">
+          <p class="testimonio-text">"Como lector, encuentro en los escritos de Roldán Hoyos una rara combinación de profundidad espiritual y maestría literaria. Sus obras no solo entretienen sino que transforman y elevan."</p>
+          <p class="testimonio-author">— Javier Mendez, Lector</p>
+        </div>
+
+        <div class="testimonio reveal">
+          <p class="testimonio-text">"Su escritura está colmada de imágenes potentes, recursos que encienden la imaginación y el alma. Recurso Lírico nos lleva del silencio interior al éxtasis del encuentro amoroso, recorriendo también los parajes de la soledad."</p>
+          <p class="testimonio-author">— Maya Chales, Poeta y embajadora cultural</p>
+        </div>
+
+        <div class="testimonio reveal">
+          <p class="testimonio-text">"(En Epopeya Colombia) Héctor Emilio Roldán logra traspasar la frontera entre el ser y el tiempo... Este hecho se ve impreso en cada metáfora, que con graciosa elocuencia, Roldán sabe franquear. Cada estrofa evoca los más profundos desatinos del 
+            hombre latinoamericano olvidado en las entrañas de la tierra metamorfoseando el autoflagelo por saber y no querer saber, por olvidar y no querer olvidar, por vivir y no querer existir... Por luchar y no querer ser uno más de la lista de los que 
+            abrieron la boca... asume aquella loable misión de sentenciar con el lenguaje lo que el cuerpo temeroso no deja".</p>
+          <p class="testimonio-author">— Edwin Sánchez Benjumea - Crítico literario</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section-light" aria-labelledby="contacto-title">
+    <div class="container">
+      <h2 id="contacto-title" class="section-title1 reveal">Contacto</h2>
+      <div class="divider"></div>
+      <div class="contacto-container">
+        <div class="contacto-info reveal">
+          <div class="contacto-item">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <div><strong>Correo</strong><br><a href="mailto:roldanpublicaciones@gmail.com" class="email-link">roldanpublicaciones@gmail.com</a></div>
+          </div>
+          <div style="height: 12px;"></div>
+          <div class="contacto-item">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <div><strong>Teléfono</strong><br>+57 300 340 8399</div>
+          </div>
+          <div style="height: 12px;"></div>
+          <div class="contacto-item">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <div><strong>Ubicación</strong><br>Pereira — Colombia</div>
+          </div>
+        </div>
+        <div class="contacto-form reveal">
+          <form id="form-contacto" action="https://formspree.io/f/xnnblpop" method="POST" novalidate>
+            <input type="text" name="name" placeholder="Nombre completo" required aria-label="Nombre completo">
+            <input type="email" name="email" placeholder="Correo electrónico" required aria-label="Correo electrónico">
+            <input type="text" name="subject" placeholder="Asunto" aria-label="Asunto">
+            <textarea name="message" placeholder="Mensaje" rows="6" required aria-label="Mensaje"></textarea>
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">Héctor Roldán Hoyos</div>
+        <p style="color: #ccc;">Escritor, poeta y ensayista colombiano cuya obra trasciende géneros literarios y conecta con lo esencial del ser humano.</p>
+      </div>
+      <div class="footer-links">
+        <h3 style="color: var(--color-accent);">Enlaces rápidos</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#libros">Libros</a></li>
+          <li><a href="#biografia">Biografía</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 18px; color: #aaa;">&copy; 2025 Héctor Emilio Roldán Hoyos. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <a href="#inicio" id="back-to-top" aria-label="Volver arriba"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
+
+  <!-- MODALES -->
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal1-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal1-title">Sociópata en Familia</h2>
+        <button class="cerrar" aria-label="Cerrar Sociópata en Familia" data-modal="modal1">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/sociopata-en-familia1.webp" alt="Portada Sociópata en Familia" class="portada-flotante" loading="lazy">
+        <p>Novela potente y profundamente humana que reconstruye la historia de Andrés Parra Navarro, un hombre de principios arrasado por una falsa acusación de abuso sexual, orquestada desde el corazón de su propia familia. Con una narrativa entre el drama íntimo y la crónica judicial, esta obra nos sumerge en un universo donde lo verdadero naufraga en las sospechas y donde el sistema legal, en lugar de proteger al inocente, puede condenarlo al infierno de la sospecha.</p>
+        <p>A través de una prosa sobria, emotiva y cuidadosamente documentada, Héctor Emilio Roldán Hoyos revela las grietas del sistema judicial, el poder destructivo de la calumnia, y el dolor invisible de los hombres que enfrentan acusaciones infundadas en un contexto que no les concede el beneficio de la duda.</p>
+        <p>Esta novela se convierte en un llamado urgente a la justicia con perspectiva equilibrada, al reconocimiento del dolor masculino silenciado y a la resiliencia como forma de resistencia espiritual y moral.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="sociopata-en-familia.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-sociopata" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal2-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal2-title">El Nuevo Templo</h2>
+        <button class="cerrar" aria-label="Cerrar El Nuevo Templo" data-modal="modal2">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/el-nuevo-templo1.webp" alt="Portada El Nuevo Templo" class="portada-flotante" loading="lazy">
+        <p>Novela histórica y espiritual que narra un viaje de conversión ambientado en el siglo I, entre Asia Menor, Palestina y Roma. A través de una historia conmovedora y profundamente humana, el autor teje una trama en la que personajes ficticios se entrecruzan con figuras históricas y bíblicas, en el marco de acontecimientos trascendentales como el incendio de Roma bajo Nerón, la destrucción del Templo de Jerusalén y la expansión del cristianismo primitivo.</p>
+        <p>Teófilo, un joven herido por su pasado, emprende una búsqueda, impulsado por la última voluntad de un anciano moribundo. Sin saberlo, esa búsqueda lo confrontará con su dolor, su vacío existencial y su destino. En su camino, encontrará a las primeras comunidades cristianas, su testimonio, su fe y su fuerza transformadora. A través de él, el lector recorrerá los paisajes del mundo antiguo y descubrirá la profundidad espiritual de una época marcada por el martirio, la esperanza y el amor de un Dios cercano.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="el-nuevo-templo.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-templo" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal3-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal3-title">Sinfonía Celeste, el canto de Dios</h2>
+        <button class="cerrar" aria-label="Cerrar Sinfonía Celeste" data-modal="modal3">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/sinfonia-celeste1.webp" alt="Portada Sinfonía Celeste" class="portada-flotante" loading="lazy">
+        <p>Obra teatral de carácter poético y filosófico que representa, como una ópera en verso, el diálogo eterno entre fe, razón, ciencia y nihilismo. Mediante una puesta en escena que alterna poesía, reflexión y dramatización, el autor desarrolla el dilema existencial del ser humano y su encuentro progresivo con la fe.</p>
+        <p>A través de personajes simbólicos (el pensador, el nihilista, el hombre de ciencia y el creyente), y con intervenciones de figuras bíblicas y mitológicas, la obra escenifica los grandes interrogantes de la humanidad: ¿quién soy?, ¿para qué vivo?, ¿por qué existe el mal?, ¿cuál es el sentido del sufrimiento? Las respuestas no son impuestas, sino reveladas paulatinamente en un crescendo poético que culmina en la revelación del amor de Dios como sentido último de la existencia.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="sinfonia-celeste.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-sinfonia" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal4-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal4-title">Sabiduría Haikai</h2>
+        <button class="cerrar" aria-label="Cerrar Sabiduría Haikai" data-modal="modal4">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/sabiduria-haikai1.webp" alt="Portada Sabiduría Haikai" class="portada-flotante" loading="lazy">
+        <p>Colección de haikus contemporáneos escritos desde una sensibilidad poética que fusiona la tradición japonesa con una mirada filosófica occidental. El autor, Héctor Emilio Roldán Hoyos, presenta tres secciones que abordan con maestría los aspectos fundamentales de la vida: la reflexión moral y existencial (Sabiduría Haikai), la contemplación de la naturaleza (Paisajes y Bagatelas) y la expresión del amor humano en clave lírica (Haikus a tu belleza).</p>
+        <p>Cada poema es una chispa de lucidez, un aforismo en miniatura que revela, cuestiona o acaricia. A lo largo de la obra, el lector encontrará belleza, ironía, ternura, crítica y profundidad, todo ello condensado en el brevísimo formato del haikú, con su clásica métrica 5-7-5.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="sabiduria-haikai.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-haikai" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal5-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal5-title">Recurso Lírico, un canto al amor</h2>
+        <button class="cerrar" aria-label="Cerrar Recurso Lírico" data-modal="modal5">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/recurso-lirico1.webp" alt="Portada Recurso Lírico" class="portada-flotante" loading="lazy">
+        <p>Compendio de textos poéticos escritos durante la juventud del autor, donde la pasión, el desasosiego, la búsqueda del sentido y el despertar espiritual se entrelazan para construir una oda profunda y sincera al amor en todas sus formas.</p>
+        <p>Desde la exaltación de la belleza femenina hasta la reflexión metafísica sobre la soledad y la muerte, pasando por el deseo, la nostalgia, el erotismo y el idealismo, la obra se convierte en un retrato íntimo del alma humana en tránsito. Héctor Emilio Roldán Hoyos ofrece en este libro una voz joven, vibrante y sensible que, desde el dolor y la esperanza, descubre el amor como camino de madurez, de autodescubrimiento y de encuentro con lo divino.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="recurso-lirico.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-recurso" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal6-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal6-title">Debajo del Manzano / Proverbios</h2>
+        <button class="cerrar" aria-label="Cerrar Debajo del Manzano" data-modal="modal6">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/debajo-del-manzano1.webp" alt="Portada Debajo del Manzano" class="portada-flotante" loading="lazy">
+        <p>Obra poética de profunda raíz espiritual que entrelaza el lirismo con el misticismo cristiano. En un tono intimista y reverente, el autor se vale de pasajes bíblicos y reflexiones teológicas para hablar del amor divino, la redención, la conversión y la búsqueda de sentido.</p>
+        <p>La primera parte, "Debajo del Manzano", es un canto lírico que explora la creación, la caída y la redención del ser humano desde una sensibilidad cristocéntrica. En cada poema, el alma dialoga con su Creador en un viaje que va desde la desolación hasta la restauración espiritual.</p>
+        <p>La segunda parte, "Proverbios – De la Imitación de Cristo", es una adaptación poética de pensamientos inspirados en la obra clásica de Tomás de Kempis. Aquí el lector encontrará una guía espiritual para la vida cotidiana: una poesía sapiencial que invita a la humildad, la templanza, el perdón y la comunión con Dios.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="debajo-del-manzano.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-manzano" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal7-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal7-title">Epopeya Colombia, cantos de la violencia</h2>
+        <button class="cerrar" aria-label="Cerrar Epopeya Colombia" data-modal="modal7">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/epopeya-colombia1.webp" alt="Portada Epopeya Colombia" class="portada-flotante" loading="lazy">
+        <p>Canto desgarrado y profundamente humano a la historia reciente de Colombia, escrita desde la perspectiva de un testigo moral. A través de una lírica poderosa y comprometida, Roldán Hoyos reconstruye poéticamente algunas de las más atroces masacres y heridas de la nación, desde Bojayá hasta Machuca, pasando por las falsedades del conflicto armado, el accionar de guerrillas, paramilitares y el Estado.</p>
+        <p>Este libro es más que un poemario: es un testimonio poético que clama por memoria, justicia y verdad. Su fuerza reside en la denuncia, pero también en la esperanza, en el amor a la patria, en el deseo de redención y en la reconstrucción ética de lo colectivo.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="epopeya-colombia.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-epopeya" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div id="modal8" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal8-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal8-title">La esperanza del Cristiano</h2>
+        <button class="cerrar" aria-label="Cerrar La esperanza del Cristiano" data-modal="modal8">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/la-esperanza.webp" alt="Portada La esperanza del Cristiano" class="portada-flotante" loading="lazy">
+        <p>Ensayo teológico y antropológico que explora la noción de esperanza en medio del vacío espiritual de la sociedad contemporánea. En un diálogo profundo con religiones del mundo, corrientes filosóficas, ciencias humanas y la doctrina cristiana, el autor expone cómo la fe cristiana responde con sentido, consuelo y plenitud al anhelo de trascendencia del ser humano.</p>
+        <p>Desde un análisis crítico del nihilismo, el materialismo y el relativismo moderno, pasando por una revisión sistemática de las religiones no cristianas, hasta llegar a la proclamación de la esperanza en el Reino de Dios y la vida eterna, esta obra se presenta como una guía de discernimiento para creyentes y buscadores sinceros.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="la-esperanza.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-esperanza" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div id="modal9" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal9-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal9-title">El Don del Sufrimiento</h2>
+        <button class="cerrar" aria-label="Cerrar El Don del Sufrimiento" data-modal="modal9">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/don-del-sufrimiento1.webp" alt="Portada El Don del Sufrimiento" class="portada-flotante" loading="lazy">
+        <p>Un ensayo sobre el misterio del dolor y el sufrimiento humano. Lejos de ser absurdo, el sufrimiento puede convertirse en don transformador cuando se une al amor de Dios, abriendo camino a la compasión y a la esperanza.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="don-del-sufrimiento.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-don" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div id="modal10" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal10-title">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="modal10-title">Simón Bolívar, una visión crítica</h2>
+        <button class="cerrar" aria-label="Cerrar Simón Bolívar" data-modal="modal10">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="galeria-obras/simon_bolivar1.webp" alt="Portada Simón Bolívar" class="portada-flotante" loading="lazy">
+        <p>Aquí va la sinopsis completa de Simón Bolívar, una visión crítica...</p>
+      </div>
+      <div class="modal-footer">
+        <a href="simon-bolivar.html" class="boton-compra boton-azul">Leer capítulo</a>
+        <a href="https://amazon.com/tu-enlace-bolivar" target="_blank" rel="noopener noreferrer" class="boton-compra boton-naranja">Amazon</a>
+        <a href="contacto.html" class="boton-compra boton-verde">Autor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Carrusel
+        const slides = document.querySelectorAll('.carrusel img');
+        let current = 0;
+        if (slides.length > 1) {
+          setInterval(() => {
+            slides[current].classList.remove('active');
+            slides[current].setAttribute('aria-hidden', 'true');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+            slides[current].setAttribute('aria-hidden', 'false');
+          }, 5000);
+        }
+
+        // Menú móvil
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('nav.menu ul');
+        toggle && toggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('show');
+        });
+
+      // Submenús en móvil: abrir tocando el item padre
+      document.querySelectorAll('nav.menu li').forEach(li => {
+        const submenu = li.querySelector('.submenu');
+        if (submenu) {
+          li.querySelector('a').addEventListener('click', function(e){
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              submenu.classList.toggle('show');
+            }
+          });
+        }
+      });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+          a.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              if (menu && menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+              }
+              const headerOffset = document.querySelector('header').offsetHeight || 72;
+              const rect = target.getBoundingClientRect();
+              const top = rect.top + window.pageYOffset - headerOffset + 6;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
+          });
+        });
+
+        // Reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12 });
+          reveals.forEach(r => io.observe(r));
+        } else {
+          function revealOnScroll() {
+            reveals.forEach(el => {
+              const top = el.getBoundingClientRect().top;
+              if (top < window.innerHeight - 120) el.classList.add('active');
+            });
+          }
+          window.addEventListener('scroll', revealOnScroll);
+          revealOnScroll();
+        }
+
+        // Formulario
+        const form = document.getElementById('form-contacto');
+        if (form) {
+          form.addEventListener('submit', function() {
+            alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+          });
+        }
+
+        // Back to top
+        const back = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+          back.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        back.addEventListener('click', e => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Modales
+        let lastFocused = null;
+        function abrirModal(id) {
+          const modal = document.getElementById(id);
+          if (!modal) return;
+          lastFocused = document.activeElement;
+          modal.setAttribute('aria-hidden', 'false');
+          modal.style.display = 'flex';
+          const btnClose = modal.querySelector('.cerrar');
+          if (btnClose) btnClose.focus();
+          document.body.style.overflow = 'hidden';
+        }
+        function cerrarModal(id) {
+          const modal = document.getElementById(id);
+          if (!modal) return;
+          modal.setAttribute('aria-hidden', 'true');
+          modal.style.display = 'none';
+          if (lastFocused) lastFocused.focus();
+          document.body.style.overflow = '';
+        }
+        window.abrirModal = abrirModal;
+        window.cerrarModal = cerrarModal;
+
+        // Cerrar modales al hacer clic fuera o en botón cerrar
+        document.querySelectorAll('.cerrar').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.modal;
+            if (id) cerrarModal(id);
+          });
+        });
+        window.addEventListener('click', e => {
+          document.querySelectorAll('.modal').forEach(mod => {
+            if (e.target === mod) {
+              mod.setAttribute('aria-hidden', 'true');
+              mod.style.display = 'none';
+              document.body.style.overflow = '';
+            }
+          });
+        });
+
+        // Cerrar modales con ESC
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') {
+            document.querySelectorAll('.modal[aria-hidden="false"]').forEach(modal => {
+              modal.setAttribute('aria-hidden', 'true');
+              modal.style.display = 'none';
+              document.body.style.overflow = '';
+            });
+          }
+        });
+
+        // Exponer abrir/cerrar para compatibilidad (algunos botones usan onclick inline)
+        window.abrirModal = abrirModal;
+        window.cerrarModal = cerrarModal;
+
+        /* -------------------
+           Evita errores si se ejecuta antes de DOM
+        ------------------- */
+      }); // Fin de DOMContentLoaded
+    })();
+  </script>
+</body>
+</html>

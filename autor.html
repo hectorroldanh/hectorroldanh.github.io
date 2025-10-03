@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Autor - Héctor Emilio Roldán Hoyos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary: #7b1e1e;
+      --color-secondary: #aa0000;
+      --color-accent: #ffcc00;
+      --color-dark: #222;
+      --color-testimonio: #fcf0a7;
+      --color-entrevista: #a3f7a6;
+      --color-light: #f9f9f9;
+      --color-text: #333;
+      --color-white: #fff;
+      --shadow: 0 4px 6px rgba(0,0,0,.1);
+      --shadow-hover: 0 8px 15px rgba(0,0,0,.2);
+      --transition: all .3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--color-text);
+      background: var(--color-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .divider { border-top: 1px solid var(--divider); margin: 20px auto; width: 80%; max-width: 800px; }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 2200;
+      background: var(--color-dark); box-shadow: var(--shadow);
+    }
+    nav.menu { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 72px; }
+    .logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 22px; }
+    nav.menu ul { display: flex; gap: 6px; list-style: none; align-items: center; }
+    nav.menu li { position: relative; margin-left: 6px; }
+    nav.menu a {
+      display: block; padding: 18px 12px; color: var(--color-white); font-weight: 700; transition: var(--transition);
+    }
+    nav.menu a:focus, nav.menu a:hover { background: var(--color-secondary); color: var(--color-white); border-radius: 4px; }
+    nav.menu ul ul {
+      position: absolute; top: 100%; left: 0; display: flex; flex-direction: column; min-width: 200px;
+      background: var(--color-dark); border-top: 3px solid var(--color-secondary);
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition);
+    }
+    nav.menu li:hover > ul { opacity: 1; visibility: visible; transform: translateY(0); }
+    nav.menu ul ul a { padding: 12px 16px; }
+    .menu-toggle {
+      display: none; background: none; border: 0; color: var(--color-white); font-size: 20px; cursor: pointer; padding: 12px;
+    }
+    .menu-toggle[aria-expanded="true"] { opacity: 0.9; }
+
+    .hero {
+      height: 60vh; margin-top: 72px; position: relative;
+      background: url('hector-roldan-ini.webp') center/cover no-repeat;
+    }
+    .hero-content {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 90%; max-width: 420px; background: rgba(255, 255, 255, .95);
+      padding: 26px; border-radius: 12px; box-shadow: 0 14px 30px rgba(0, 0, 0, .2); text-align: center;
+    }
+    .hero-content h1 { font-family: 'Great Vibes', cursive; color: var(--color-primary); font-size: 2rem; margin-bottom: 6px; }
+    .hero-content h2 { font-family: 'Dancing Script', cursive; color: var(--color-secondary); font-size: 1.3rem; margin-bottom: 12px; font-weight: 400; }
+    .hero-content p { font-size: 1rem; color: var(--color-text); margin-bottom: 16px; }
+
+    section { padding: 42px 0; }
+    .section-title { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-accent); text-align: center; margin-bottom: 12px; }
+    .section-title::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-accent); margin: 10px auto; }
+    .section-title1 { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-primary); text-align: center; margin-bottom: 12px; }
+    .section-title1::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-primary); margin: 10px auto; }
+    .section-dark { background: var(--color-dark); color: var(--color-white); }
+    .section-light { background: var(--color-light); }
+    .section-testimonio { background: var(--color-testimonio); }
+    .section-entrevista { background: var(--color-entrevista); }
+
+    .bio-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .bio-images {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bio-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .bio-text {
+      font-size: 1.0rem;
+      margin-bottom: 1.2em;
+      line-height: 1.6;
+    }
+    .bio-text p {
+      margin-bottom: 1.2em;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .btn:hover {
+      background: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .proyecto-card {
+      background: var(--color-white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .proyecto-card:hover { transform: translateY(-6px); }
+    .proyecto-desc {
+      font-size: 1.0rem;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      padding: 0px 20px 0px 20px;
+    }
+    .proyecto-title {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      padding: 0px 20px 0px 20px;
+    }
+    .proyecto-img {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e6e6e6;
+      color: #777;
+      border-radius: 8px;
+      font-style: italic;
+      transition: var(--transition);
+    }
+    .proyecto-img img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s;
+    }
+    .proyecto-card:hover .proyecto-img img{transform:scale(1.05);}
+
+    /* MEJORAS VISUALES PARA LA GALERÍA */
+    #galeria {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-attachment: fixed;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #galeria::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    #galeria .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #galeria h2 {
+      color: #fff;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    #galeria h2::after {
+      background: var(--color-accent);
+      width: 100px;
+      height: 4px;
+    }
+
+    .galeria {
+      column-count: 4;
+      column-gap: 20px;
+    }
+    @media (max-width: 1200px) { .galeria { column-count: 3; } }
+    @media (max-width: 768px) { .galeria { column-count: 2; } }
+    @media (max-width: 480px) { .galeria { column-count: 1; } }
+    
+    .galeria a {
+      display: inline-block;
+      margin-bottom: 20px;
+      width: 100%;
+      position: relative;
+    }
+    
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(255,255,255,0.2);
+      transition: all 0.5s ease;
+    }
+    
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+      border-color: var(--color-accent);
+    }
+
+    /* Efecto de brillo al pasar el mouse */
+    .galeria a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+
+    .galeria a:hover::before {
+      opacity: 1;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0, 0, 0, 0.95);
+    }
+    .lightbox img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .lightbox:target { display: block; }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 10000;
+      transition: all 0.3s ease;
+    }
+    .close:hover { 
+      color: var(--color-accent);
+      transform: scale(1.1);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .video-thumbnail {
+      position: relative;
+      cursor: pointer;
+    }
+    .video-thumbnail img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: white;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      padding: 15px 25px;
+      transition: all 0.3s ease;
+    }
+    .video-thumbnail:hover .play-button {
+      background: rgba(0,0,0,0.8);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    footer { background: var(--color-dark); color: var(--color-white); padding: 36px 20px; }
+    .footer-content { display: grid; grid-template-columns: 1fr 220px; gap: 20px; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .footer-logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 1.2rem; margin-bottom: 8px; }
+    .footer-links ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .footer-links a { color: #ddd; text-decoration: none; }
+    .footer-links a:hover { color: var(--color-accent); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.active { opacity: 1; transform: none; }
+    #back-to-top {
+      position: fixed; right: 18px; bottom: 18px; display: none; background: var(--color-primary); color: #fff; padding: 10px;
+      border-radius: 7px; text-decoration: none; z-index: 4000;
+    }
+    #back-to-top:hover { transform: translateY(-3px); background: var(--color-secondary); }
+    @media (max-width: 992px) {
+      .footer-content { grid-template-columns: 1fr; }
+      .bio-image-container { max-width: 30%; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
+      nav.menu ul.show { display: flex; }
+      .hero-content { max-width: 92%; }
+    }
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 1.6rem; }
+      .hero-content p { font-size: .95rem; }
+      #galeria h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / MENÚ -->
+  <header>
+    <nav class="menu container" role="navigation" aria-label="Menú principal">
+      <div class="logo">Héctor Roldán</div>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <ul>
+        <li><a href="index.html#inicio">INICIO</a></li>
+        <li>
+          <a href="#autor">EL AUTOR</a>
+          <ul class="submenu" role="menu" aria-label="Submenú autor">
+            <li><a href="#biografia">Biografía</a></li>
+            <li><a href="#entrevistas">Entrevistas</a></li>
+            <li><a href="#galeria">Galería</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="libros.html#libros">LIBROS</a>
+          <ul class="submenu" role="menu" aria-label="Submenú libros">
+            <li><a href="libros.html#novela">Novela</a></li>
+            <li><a href="libros.html#poesia">Poesía</a></li>
+            <li><a href="libros.html#ensayo">Ensayo</a></li>
+            <li><a href="libros.html#otro">Otros</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="vivavoz.html#viva-voz">DE VIVA VOZ</a>
+          <ul class="submenu" role="menu" aria-label="Submenú viva voz">
+            <li><a href="vivavoz.html#lecturas">Lecturas</a></li>
+            <li><a href="vivavoz.html#podcast">PodCast</a></li>
+            <li><a href="vivavoz.html#blog">Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#testimonios">TESTIMONIOS</a></li>
+        <li><a href="index.html#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content" role="banner">
+      <h1>El Autor</h1>
+      <h2>Héctor Emilio Roldán Hoyos</h2>
+      <p>Escritor, poeta y ensayista colombiano</p>
+    </div>
+  </section>
+
+  <!-- BIOGRAFÍA -->
+  <section id="biografia" class="section-dark">
+    <div class="container">
+      <h2 class="section-title">Biografía</h2>
+      <div class="bio-content">
+        <!-- Contenedor de imágenes en columna -->
+        <div class="bio-images">
+          <img src="hector-roldan-bioa.webp" alt="Héctor Emilio Roldán Hoyos" class="bio-image" loading="lazy" width="300" height="400">
+          <img src="herh27.webp" alt="Héctor Emilio Roldán Hoyos" class="bio-image" loading="lazy" width="300" height="400">
+          <img src="paisaje-cafetero.webp" alt="Paisaje cafetero" class="bio-image" loading="lazy" width="300" height="200">
+          <img src="recital.webp" alt="Recital de poesía" class="bio-image" loading="lazy" width="300" height="200">
+        </div>
+        <!-- Texto al lado derecho -->
+        <div class="bio-text">
+          <p>Héctor Emilio Roldán Hoyos nació el 28 de noviembre de 1958 en Pereira, Risaralda, Colombia. Su infancia transcurrió entre las montañas caldenses de Manizales y Riosucio, donde descubrió tempranamente la magia de las palabras y el poder transformador de la lectura. Desde muy joven, su voz encontró eco en la escritura.</p>
+          <p>A los nueve años ya redactaba discursos para las celebraciones patrias de su escuela, un gesto que anticipaba su vocación por narrar y reflexionar sobre el mundo. Durante su juventud, en el Colegio Salesiano San Juan Bosco de Dosquebradas, dio vida a su primera gran obra: <em>Pingala</em>, la historia de un peregrino que sembraba paz y armonía en medio de la adversidad. Su profesor de literatura la comparó con <em>El Profeta</em> de Khalil Gibrán, aunque Héctor aún no había leído esa obra. Desafortunadamente, aquel manuscrito, junto con sus primeros poemas y artículos, se perdió tras un robo de equipaje. Sin embargo, la llama de su pasión por escribir nunca se apagó.</p>
+          <p>En 1975, con apenas diecisiete años, escribió <em>Libertador</em>, una semblanza de Simón Bolívar que narra la gesta de un hombre decidido a liberar a su pueblo y guiarlo hacia los ideales de igualdad. Este trabajo de 160 páginas marcó su primer ejercicio de madurez literaria y dejó claro su profundo interés por la historia y los destinos de Colombia.</p>
+          <p>Años más tarde, inmerso en intensas búsquedas filosóficas entre los autores nihilistas, escribió <em>La Sombra</em>, una novela psicológica en la que el protagonista, perseguido por la paranoia personificada como sombra, interpretaba ese acoso como un llamado a una misión "profiláctica" en la sociedad. En un acto simbólico de purificación y renovación espiritual, Héctor decidió quemar el manuscrito. Aquel gesto representó su regreso a la fe católica y su compromiso con una literatura que construyera y elevara. Así, definió el propósito central de su escritura: "Libros para crecer".</p>
+          <p>Ingeniero Eléctrico de formación por la Universidad Tecnológica de Pereira (1982) y especialista en Gestión de la Seguridad y el Riesgo, Héctor ejerció su profesión en diversas ciudades de Colombia, incluidas Pereira, Barranquilla, Cali y Medellín. A pesar de su trayectoria técnica, la literatura siempre fue su raíz y su horizonte.</p>
+          <p>Su obra abarca múltiples géneros, cada uno impregnado de su deseo de tender puentes entre lo humano y lo trascendente, entre la herida y la esperanza. En poesía, ha publicado títulos como <em>Recurso Lírico, un canto al amor</em>; <em>Epopeya Colombia, cantos de la violencia</em>; <em>Sinfonía Celeste, el canto de Dios</em>; <em>Debajo del Manzano / Proverbios</em>, y <em>Sabiduría Haikai</em>. En el ensayo destacan <em>La Esperanza del Cristiano</em> y <em>El Maravilloso Don del Sufrimiento</em>, obras que exploran la fe y el significado del dolor.</p>
+          <p>Como novelista, ha dado vida a dos obras notables. <em>El Nuevo Templo</em> recrea la vida de las comunidades cristianas del siglo I, mientras que <em>Sociópata en familia</m> explora la fragilidad de la justicia y la fuerza transformadora de la verdad en una sociedad contemporánea.</p>
+          <p>Actualmente, trabaja en varios proyectos literarios. <em>Puertas</em> reúne relatos que retratan la cotidianidad dentro de los muros residenciales de una ciudad agitada: familias, solitarios, desesperados, todos encerrados en sus pequeños mundos, aislados de un medio que muchas veces los ignora. <em>De la Vida</em> es una colección de poemas sobre lo cotidiano, lo elemental y lo rutinario, capturando aquello que suele pasar desapercibido para la mayoría. Además, planea retomar <em>Libertador</em> para reescribirla con la madurez de los años y sus convicciones personales sobre el verdadero significado de la libertad.</p>
+          <p>En todas sus obras, late un hilo conductor: su necesidad de conectar al ser humano con lo trascendente, de transformar el dolor en esperanza y de dejar huella en la memoria de su tiempo. Para Héctor Emilio Roldán, la escritura no es solo un oficio, sino un camino hacia la luz, un puente entre el corazón y el infinito.</p>
+          <a href="galeria/biografia.pdf" class="btn">Descargar biografía en PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREVISTAS -->
+  <section id="entrevistas" class="section-light">
+    <div class="container">
+      <h2 class="section-title1">Entrevistas</h2>
+      <div class="proyectos-grid">
+        <div class="proyecto-card">
+          <div class="video-wrapper">
+            <div class="video-thumbnail" onclick="cargarVideo(this, 'xjxlJjZ4suY')">
+              <img src="https://img.youtube.com/vi/xjxlJjZ4suY/hqdefault.jpg" alt="Vista previa del video" loading="lazy" width="480" height="360">
+              <div class="play-button">▶</div>
+            </div>
+          </div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Feria del Libro Internacional de Bucaramanga</h3>
+            <p class="proyecto-desc">Con la embajadora cultural Maya Chales - Entrevista realizada el 14 de octubre de 2024.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card">
+          <div class="video-wrapper">
+            <div class="video-thumbnail" onclick="cargarVideo(this, 'y5esD7tsbTw')">
+              <img src="https://img.youtube.com/vi/y5esD7tsbTw/hqdefault.jpg" alt="Vista previa del video" loading="lazy" width="480" height="360">
+              <div class="play-button">▶</div>
+            </div>
+          </div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Feria del Libro Pereira</h3>
+            <p class="proyecto-desc">Entrevista sobre su obra <em>Epopeya Colombia, Cantos de la Violencia</em>.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card">
+          <div class="video-wrapper">
+            <div class="video-thumbnail" onclick="cargarVideo(this, 'IyXYz27XOLM')">
+              <img src="https://img.youtube.com/vi/IyXYz27XOLM/hqdefault.jpg" alt="Vista previa del video" loading="lazy" width="480" height="360">
+              <div class="play-button">▶</div>
+            </div>
+          </div>
+          <div class="proyecto-content">
+            <h3 class="proyecto-title">Emisora Virtual Alternativa</h3>
+            <p class="proyecto-desc">Entrevista radial sobre su obra <em>Recurso Lírico, un Canto al Amor</em> - 2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA MEJORADA -->
+  <section id="galeria">
+    <div class="container">
+      <h2 class="section-title1">Galería</h2>
+      <div class="galeria">
+        <a href="#img1"><img src="galeria/galfiLCalb908x1200px.webp" alt="Feria del Libro Cali" loading="lazy" width="300" height="400"></a>
+        <a href="#img2"><img src="galeria/galfilPerb1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="143"></a>
+        <a href="#img3"><img src="galeria/galfilPerd1200x715px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="179"></a>
+        <a href="#img4"><img src="galeria/galPrsLibi1200x573px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="143"></a>
+        <a href="#img5"><img src="galeria/galfilPerc1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="143"></a>
+        <a href="#img6"><img src="galeria/galfiLCala908x1200px.webp" alt="Feria del Libro Cali" loading="lazy" width="300" height="400"></a>
+        <a href="#img7"><img src="galeria/galPrsLibe1200x1200px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="300"></a>
+        <a href="#img8"><img src="galeria/galfilPere1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="143"></a>
+        <a href="#img9"><img src="galeria/galfilPerf1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="143"></a>
+        <a href="#img10"><img src="galeria/galfilboj1200x708px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="177"></a>
+        <a href="#img11"><img src="galeria/galfilboe1200x750px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="188"></a>
+        <a href="#img12"><img src="galeria/galfilbof1200x750px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="188"></a>
+        <a href="#img13"><img src="galeria/lanzamiento01.webp" alt="feria de lanzamiento Librería Nacional" loading="lazy" width="300" height="200"></a>
+        <a href="#img14"><img src="galeria/galfilbog1200x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="300"></a>
+        <a href="#img15"><img src="galeria/galfilboh1200x910px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="228"></a>
+        <a href="#img16"><img src="galeria/galfilboi908x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="400"></a>
+        <a href="#img17"><img src="galeria/galPrsLiba1200x708px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="177"></a>
+        <a href="#img18"><img src="galeria/galPrsLibb1200x714px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="179"></a>
+        <a href="#img19"><img src="galeria/galPrsLibc1200x573px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="143"></a>
+        <a href="#img20"><img src="galeria/galPrsLibd1200x800px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="200"></a>
+        <a href="#img21"><img src="galeria/librosherh1200x800px.webp" alt="Libros del Autor" loading="lazy" width="300" height="200"></a>
+        <a href="#img22"><img src="galeria/photo1200x1133px.webp" alt="Fotografía" loading="lazy" width="300" height="283"></a>
+        <a href="#img23"><img src="galeria/DiaMundial20251200x1200px.webp" alt="Día Mundial del Libro" loading="lazy" width="300" height="300"></a>
+        <a href="#img24"><img src="galeria/Agora1200x1200px.webp" alt="Presentación en Ágora Manizales" loading="lazy" width="300" height="300"></a>
+        <a href="#img25"><img src="galeria/ReconocimientoLEmay20251200x848px.webp" alt="Reconocimiento" loading="lazy" width="300" height="212"></a>
+        <a href="#img26"><img src="galeria/galeriafilbua.jpg" alt="Feria del Libro Bucaramanga" loading="lazy" width="300" height="200"></a>
+        <a href="#img27"><img src="galeria/galfilbo1200x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy" width="300" height="300"></a>
+        <a href="#img28"><img src="galeria/galeriafilbua1200x809px.webp" alt="Feria del Libro Bucaramanga" loading="lazy" width="300" height="202"></a>
+        <a href="#img29"><img src="galeria/galPerLibj1200x955px.webp" alt="Presentación de Libros" loading="lazy" width="300" height="239"></a>
+        <a href="#img30"><img src="galeria/galPalestra1200x1074px.webp" alt="Periódico estudiantil Palestra" loading="lazy" width="300" height="269"></a>
+        <a href="#img31"><img src="galeria/caratulaSimonBolivar1535x1024px.webp" alt="Carátula Simón Bolívar" loading="lazy" width="300" height="200"></a>
+        <a href="#img32"><img src="galeria/LibrosSimonBolivar1200x804px.webp" alt="Libros Simón Bolívar" loading="lazy" width="300" height="201"></a>
+        <a href="#img33"><img src="galeria/LibrosSimonBolivara1200x800.webp" alt="Libros Simón Bolívar" loading="lazy" width="300" height="200"></a>
+        <a href="#img34"><img src="galeria/galfiLCald908x1200px.webp" alt="Feria del Libro Cali" loading="lazy" width="300" height="400"></a>
+      </div>
+
+      <!-- Lightbox mejorado -->
+      <div id="img1" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfiLCalb908x1200px.webp" alt="Feria del Libro Cali" loading="lazy"></div>
+      <div id="img2" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilPerb1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img3" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilPerd1200x715px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img4" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLibi1200x573px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img5" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilPerc1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img6" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfiLCala908x1200px.webp" alt="Feria del Libro Cali" loading="lazy"></div>
+      <div id="img7" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLibe1200x1200px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img8" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilPere1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img9" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilPerf1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img10" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilboj1200x708px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img11" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilboe1200x750px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img12" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilbof1200x750px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img13" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/lanzamiento01.webp" alt="Feria de lanzamientos Librería Nacional" loading="lazy"></div>
+      <div id="img14" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilbog1200x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img15" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilboh708x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img16" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilboi908x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img17" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLiba1200x708px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img18" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLibb1200x714px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img19" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLibc1200x573px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img20" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPrsLibd1200x800px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img21" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/librosherh1200x800px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img22" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/photo1200x1133px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img23" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/DiaMundial20251200x1200px.webp" alt="Feria del Libro" loading="lazy"></div>
+      <div id="img24" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/Agora1200x1200px.webp" alt="Agora café-librería" loading="lazy"></div>
+      <div id="img25" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/ReconocimientoLEmay20251200x848px.webp" alt="Diploma reconocimiento" loading="lazy"></div>
+      <div id="img26" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galeriafilbua.webp" alt="Feria del Libro Bucaramanga" loading="lazy"></div>
+      <div id="img27" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfilbo1200x1200px.webp" alt="Feria del Libro Bogotá" loading="lazy"></div>
+      <div id="img28" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galeriafilbua1200x809px.webp" alt="Feria del Libro Bucaramanga" loading="lazy"></div>
+      <div id="img29" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPerLibj1200x955px.webp" alt="Feria del Libro Pereira" loading="lazy"></div>
+      <div id="img30" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galPalestra1200x1074px.webp" alt="Palestra periódico estudiantil" loading="lazy"></div>
+      <div id="img31" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/caratulaSimonBolivar1535x1024px.webp" alt="Simón Bolívar" loading="lazy"></div>
+      <div id="img32" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/LibrosSimonBolivar1200x804px.webp" loading="lazy"></div>
+      <div id="img33" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/LibrosSimonBolivara1200x800.webp" alt="Simón Bolívar" loading="lazy"></div>
+      <div id="img34" class="lightbox"><a href="#" class="close">&times;</a><img src="galeria/galfiLCald908x1200px.webp" alt="Feria del Libro Cali" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">Héctor Roldán Hoyos</div>
+        <p style="color: #ccc;">Escritor, poeta y ensayista colombiano cuya obra trasciende géneros literarios y conecta con lo esencial del ser humano.</p>
+      </div>
+      <div class="footer-links">
+        <h3 style="color: var(--color-accent);">Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="libros.html#libros">Libros</a></li>
+          <li><a href="#biografia">Biografía</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 18px; color: #aaa;">&copy; 2025 Héctor Emilio Roldán Hoyos. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <a href="#inicio" id="back-to-top" aria-label="Volver arriba"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
+
+  <script>
+    // Botón "Volver arriba"
+    window.addEventListener('scroll', () => {
+        const backToTop = document.getElementById('back-to-top');
+        backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    document.getElementById('back-to-top').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Función para cargar videos
+    function cargarVideo(el, videoId) {
+      el.outerHTML = `
+        <iframe width="100%" height="200"
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>`;
+    }
+
+    // Menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('nav.menu ul');
+    
+    menuToggle.addEventListener('click', function() {
+      menu.classList.toggle('show');
+      const isExpanded = menu.classList.contains('show');
+      menuToggle.setAttribute('aria-expanded', isExpanded);
+    });
+
+    // Animación reveal al hacer scroll
+    const elementosReveal = document.querySelectorAll('.reveal');
+    
+    function revelarElementos() {
+      elementosReveal.forEach(elemento => {
+        const posicion = elemento.getBoundingClientRect();
+        if (posicion.top < window.innerHeight - 100) {
+          elemento.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', revelarElementos);
+    revelarElementos(); // Verificar elementos visibles al cargar la página
+
+    // Efecto de entrada suave para la galería
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observar todas las imágenes de la galería
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.galeria img');
+      galleryImages.forEach(img => {
+        img.style.opacity = '0';
+        img.style.transform = 'translateY(20px)';
+        img.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(img);
+      });
+    });
+  </script>
+</body>
+</html>

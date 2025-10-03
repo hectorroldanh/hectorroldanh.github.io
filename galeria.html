@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería Masonry</title>
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    /* Fondo festivo degradado */
+    background: linear-gradient(135deg, #f9d423, #ff4e50, #1e90ff, #32cd32);
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+  }
+  @keyframes fondoAnimado {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+  }
+  .galeria {
+    column-count: 3;
+    column-gap: 15px;
+  }
+  @media (max-width: 1000px) {
+    .galeria { column-count: 2; }
+  }
+  @media (max-width: 600px) {
+    .galeria { column-count: 1; }
+  }
+  .galeria img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    display: block;
+    break-inside: avoid;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  }
+</style>
+</head>
+<body>
+
+<h1>🌟 Galería de Imágenes 🌟</h1>
+
+<div class="galeria">
+  <!-- Inicio con imágenes variadas de impacto -->
+  <img src="galeria/photo1200x1133px.webp" alt="">
+  <img src="galeria/DiaMundial20251200x1200px.webp" alt="">
+  <img src="galeria/Agora1200x1200px.webp" alt="">
+  <img src="galeria/ReconocimientoLEmay20251200x848px.webp" alt="">
+  <img src="galeria/galfiLCalb908x1200px.webp" alt="">
+  <img src="galeria/galfilPerb1200x573px.webp" alt="">
+  <img src="galeria/galfilPerd1200x715px.webp" alt="">
+  <img src="galeria/galPrsLibi1200x573px.webp" alt="">
+  <img src="galeria/galfilPerc1200x573px.webp" alt="">
+  <img src="galeria/galfiLCala908x1200px.webp" alt="">
+  <img src="galeria/galPrsLibe1200x1200px.webp" alt="">
+  <img src="galeria/galfilPere1200x573px.webp" alt="">
+  <img src="galeria/galfilPerf1200x573px.webp" alt="">
+  <img src="galeria/galfilboj1200x708px.webp" alt="">
+  <img src="galeria/galfilboe1200x750px.webp" alt="">
+  <img src="galeria/galfilbof1200x750px.webp" alt="">
+  <img src="galeria/galfiLCald908x1200px.webp" alt="">
+  <img src="galeria/galfilbog1200x1200px.webp" alt="">
+  <img src="galeria/galfilboh708x1200px.webp" alt="">
+  <img src="galeria/galfilboi908x1200px.webp" alt="">
+  <img src="galeria/galPrsLiba1200x708px.webp" alt="">
+  <img src="galeria/galPrsLibb1200x714px.webp" alt="">
+  <img src="galeria/galPrsLibc1200x573px.webp" alt="">
+  <img src="galeria/galPrsLibd1200x800px.webp" alt="">
+  <img src="galeria/librosherh1200x800px.webp" alt="">
+  <img src="galeria/galeriafilbua.jpg" alt="">
+  <img src="galeria/galfilbo1200x1200px.jpg" alt="">
+  <img src="galeria/galeriafilbua1200x809px.webp" alt="">
+  <img src="galeria/galPerLibj1200x955px.webp" alt="">
+  <img src="galeria/galPalestra1200x1074px.webp" alt="">
+  <img src="galeria/LibrosSimonBolivar1200x804px.webp" alt="">
+  <img src="galeria/LibrosSimonBolivara1200x800.webp" alt="">
+  <img src="galeria/Lanzamiento01.webp" alt="">
+  <!-- La carátula va al final -->
+  <img src="galeria/caratulaSimonBolivar1535x1024px.webp" alt="">
+</div>
+
+</body>
+</html>

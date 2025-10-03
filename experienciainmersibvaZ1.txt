@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Héctor Emilio Roldán Hoyos - Experiencia de Lectura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary: #7b1e1e;
+      --color-secondary: #aa0000;
+      --color-accent: #ffcc00;
+      --color-dark: #222;
+      --color-light: #f9f9f9;
+      --color-text: #333;
+      --color-white: #fff;
+      --shadow: 0 4px 6px rgba(0,0,0,.1);
+      --shadow-hover: 0 8px 15px rgba(0,0,0,.2);
+      --transition: all .3s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--color-text);
+      background: var(--color-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .divider { border-top: 1px solid var(--divider); margin: 20px auto; width: 80%; max-width: 800px; }
+
+    /* HEADER Y NAVEGACIÓN */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 2200;
+      background: var(--color-dark); box-shadow: var(--shadow);
+    }
+    nav.menu { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 72px; }
+    .logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 22px; }
+    nav.menu ul { display: flex; gap: 6px; list-style: none; align-items: center; }
+    nav.menu li { position: relative; margin-left: 6px; }
+    nav.menu a {
+      display: block; padding: 18px 12px; color: var(--color-white); font-weight: 700; transition: var(--transition);
+    }
+    nav.menu a:focus, nav.menu a:hover { background: var(--color-secondary); color: var(--color-white); border-radius: 4px; }
+    nav.menu ul ul {
+      position: absolute; top: 100%; left: 0; display: flex; flex-direction: column; min-width: 200px;
+      background: var(--color-dark); border-top: 3px solid var(--color-secondary);
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition);
+    }
+    nav.menu li:hover > ul { opacity: 1; visibility: visible; transform: translateY(0); }
+    nav.menu ul ul a { padding: 12px 16px; }
+    .menu-toggle {
+      display: none; background: none; border: 0; color: var(--color-white); font-size: 20px; cursor: pointer; padding: 12px;
+    }
+    .menu-toggle[aria-expanded="true"] { opacity: 0.9; }
+
+    /* SECCIONES */
+    section { padding: 42px 0; }
+    .section-title { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-accent); text-align: center; margin-bottom: 12px; }
+    .section-title::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-accent); margin: 10px auto; }
+    .section-title1 { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-primary); text-align: center; margin-bottom: 12px; }
+    .section-title1::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-primary); margin: 10px auto; }
+    .section-dark { background: var(--color-dark); color: var(--color-white); }
+    .section-light { background: var(--color-light); }
+    .section-lectura { background: linear-gradient(135deg, #f5f5f5, #e8e8e8); }
+    .section-viva-voz { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: #fff; position: relative; overflow: hidden; }
+    .section-viva-voz::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .section-viva-voz .container { position: relative; z-index: 2; }
+
+    /* EXPERIENCIA DE LECTURA INMERSIVA */
+    .lectura-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .lectura-card {
+      background: var(--color-white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .lectura-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .lectura-header {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      color: var(--color-white);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .lectura-header h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    
+    .lectura-header p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .lectura-body {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .lectura-extracto {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 1.8;
+    }
+    
+    .lectura-opciones {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .btn-lectura {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .btn-lectura-texto {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+    
+    .btn-lectura-texto:hover {
+      background: var(--color-secondary);
+    }
+    
+    .btn-lectura-audio {
+      background: var(--color-accent);
+      color: var(--color-dark);
+    }
+    
+    .btn-lectura-audio:hover {
+      background: #e6b800;
+    }
+    
+    /* MODAL DE LECTURA AMPLIADO */
+    .modal-lectura {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    
+    .modal-lectura-contenido {
+      background: #fefefe;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 60px;
+      border-radius: 15px;
+      position: relative;
+    }
+    
+    .modal-lectura-cerrar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #666;
+      cursor: pointer;
+      z-index: 10001;
+      transition: var(--transition);
+    }
+    
+    .modal-lectura-cerrar:hover {
+      color: var(--color-primary);
+      transform: scale(1.1);
+    }
+    
+    .texto-capitulo {
+      font-family: 'Crimson Text', serif;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #1a1a1a;
+      max-width: 70ch;
+      margin: 0 auto;
+      text-align: justify;
+    }
+    
+    .texto-capitulo h2 {
+      color: var(--color-primary);
+      margin-bottom: 1.5em;
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+    }
+    
+    .texto-capitulo .verso {
+      margin-bottom: 1.2em;
+      text-indent: 2em;
+    }
+    
+    .texto-capitulo .dialogo {
+      font-style: italic;
+      margin: 1.5em 0;
+      padding-left: 2em;
+      border-left: 3px solid var(--color-primary);
+    }
+    
+    /* Para poesía */
+    .estrofa {
+      margin-bottom: 2em;
+    }
+    
+    .verso-poema {
+      text-align: center;
+      margin-bottom: 0.8em;
+    }
+    
+    /* CONTROLES DE LECTURA */
+    .controles-lectura {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 200px;
+    }
+    
+    .control-tamano {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .btn-tamano {
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .btn-modo {
+      background: var(--color-accent);
+      color: var(--color-dark);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    /* Modo concentración */
+    body.modo-concentracion .modal-lectura-contenido {
+      background: #f5f5dc;
+      color: #2c3e50;
+    }
+    
+    body.modo-concentracion .controles-lectura {
+      display: none;
+    }
+    
+    /* SECCIÓN DE VIVA VOZ */
+    .viva-voz-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+    
+    .viva-voz-intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    
+    .viva-voz-intro p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    
+    .viva-voz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .viva-voz-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .viva-voz-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    
+    .viva-voz-placeholder {
+      background: linear-gradient(135deg, #ddd, #bbb);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 3rem;
+    }
+    
+    .viva-voz-content {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .viva-voz-content h3 {
+      color: var(--color-primary);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .viva-voz-content p {
+      color: #555;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    
+    .viva-voz-footer {
+      margin-top: auto;
+      font-style: italic;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    
+    /* FOOTER */
+    footer { background: var(--color-dark); color: var(--color-white); padding: 36px 20px; margin-top: 50px; }
+    .footer-content { display: grid; grid-template-columns: 1fr 220px; gap: 20px; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .footer-logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 1.2rem; margin-bottom: 8px; }
+    .footer-links ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .footer-links a { color: #ddd; text-decoration: none; }
+    .footer-links a:hover { color: var(--color-accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
+      nav.menu ul.show { display: flex; }
+      
+      .modal-lectura-contenido {
+        margin: 20px;
+        padding: 40px 20px;
+      }
+      
+      .controles-lectura {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        min-width: 150px;
+      }
+      
+      .texto-capitulo {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / MENÚ -->
+  <header>
+    <nav class="menu container" role="navigation" aria-label="Menú principal">
+      <div class="logo">Héctor Roldán</div>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <ul>
+        <li><a href="index.html#inicio">INICIO</a></li>
+        <li>
+          <a href="autor.html#autor">EL AUTOR</a>
+          <ul class="submenu" role="menu" aria-label="Submenú autor">
+            <li><a href="autor.html#biografia">Biografía</a></li>
+            <li><a href="autor.html#entrevistas">Entrevistas</a></li>
+            <li><a href="autor.html#galeria">Galería</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="libros.html#libros">LIBROS</a>
+          <ul class="submenu" role="menu" aria-label="Submenú libros">
+            <li><a href="libros.html#novela">Novela</a></li>
+            <li><a href="libros.html#poesia">Poesía</a></li>
+            <li><a href="libros.html#ensayo">Ensayo</a></li>
+            <li><a href="libros.html#otro">Otros</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#viva-voz">DE VIVA VOZ</a>
+          <ul class="submenu" role="menu" aria-label="Submenú viva voz">
+            <li><a href="#lecturas">Lecturas</a></li>
+            <li><a href="#podcast">PodCast</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#testimonios">TESTIMONIOS</a></li>
+        <li><a href="index.html#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div style="margin-top: 72px;">
+    <!-- SECCIÓN DE EXPERIENCIA DE LECTURA -->
+    <section id="lecturas" class="section-lectura">
+      <div class="container">
+        <h2 class="section-title1">Experiencia de Lectura Inmersiva</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #555;">
+          Sumérgete en la obra de Héctor Emilio Roldán Hoyos. Descubre la profundidad de su poesía, la intensidad de sus novelas y la claridad de sus ensayos en una experiencia diseñada para la contemplación y el disfrute literario.
+        </p>
+        
+        <div class="lectura-grid">
+          <!-- TARJETA DE NOVELA -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>Sociópata en Familia</h3>
+              <p>Novela</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "Hay momentos en la vida en que uno ya no escribe por vocación, sino por necesidad. Es como si las palabras brotaran no de la inspiración, sino de una herida abierta..."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('sociopata')">
+                  <i class="fas fa-book-open"></i> Leer capítulo
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA DE NOVELA -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>El Nuevo Templo</h3>
+              <p>Novela</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "El Nuevo Templo narra la historia de Teófilo, un hombre marcado por el dolor y la culpa que, al borde del abismo, descubre en una fe inesperada la certeza de ser amado por Dios. Una novela intensa y luminosa que, aunque ambientada en otro tiempo, puede ser también tu propia historia."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('el-nuevo-templo')">
+                  <i class="fas fa-book-open"></i> Leer capítulo
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- TARJETA DE POESÍA -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>Recurso Lírico</h3>
+              <p>Poesía</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "Pienso hacer de ti el mayor recurso para la lírica de mi existencia. Por ti burlo mi pacto con la soledad y me hago cómplice del corazón..."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('recurso-lirico')">
+                  <i class="fas fa-book-open"></i> Leer poemas
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+
+<!-- TARJETA DE POESÍA -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>Debajo del Manzano</h3>
+              <p>Poesía</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "... una invitación a detenerse bajo la sombra del Creador y descubrir, en la sencillez de sus versos, los frutos de paz, alegría y amor que Dios ha sembrado para tu vida."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('debajo-del-manzano')">
+                  <i class="fas fa-book-open"></i> Leer poemas
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- TARJETA DE ENSAYO -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>La Esperanza del Cristiano</h3>
+              <p>Ensayo</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "Ensayo teológico y antropológico que explora la noción de esperanza en medio del vacío espiritual de la sociedad contemporánea..."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('esperanza')">
+                  <i class="fas fa-book-open"></i> Leer capítulo
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+           
+          <!-- TARJETA DE ENSAYO -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>El Don del Sufrimiento</h3>
+              <p>Ensayo</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "En este ensayo (teológico y antropológico) el autor se sumerge en la exploración del sentido del sufrimiento. ¿Por qué sufrimos?, ¿para qué sufrimos?, ¿cuál es el papel de Dios en tu sufrimiento?... Para encontrar que sí, el sufrimiento tiene sentido"
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('don-del-sufrimiento')">
+                  <i class="fas fa-book-open"></i> Leer capítulo
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+                   
+          <!-- TARJETA DE TEATRO -->
+          <div class="lectura-card">
+            <div class="lectura-header">
+              <h3>Sinfonía Celeste</h3>
+              <p>Teatro y Poesía</p>
+            </div>
+            <div class="lectura-body">
+              <div class="lectura-extracto">
+                "Obra teatral de carácter poético y filosófico que representa, como una ópera en verso, el diálogo eterno entre fe, razón, ciencia y nihilismo..."
+              </div>
+              <div class="lectura-opciones">
+                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('sinfonia-celeste')">
+                  <i class="fas fa-book-open"></i> Leer acto
+                </button>
+                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                  <i class="fas fa-headphones"></i> Escuchar lectura
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE VIVA VOZ -->
+    <section id="viva-voz" class="section-viva-voz">
+      <div class="container">
+        <div class="viva-voz-intro">
+          <h2 class="section-title1">De Viva Voz</h2>
+          <p>Un espacio dedicado a la palabra hablada, donde la poesía y la prosa cobran vida a través de la voz del autor. Próximamente encontrarás aquí lecturas grabadas, podcasts y reflexiones literarias en formato audiovisual.</p>
+        </div>
+        
+        <div class="viva-voz-grid">
+          <!-- TARJETA DE LECTURAS -->
+          <div class="viva-voz-card">
+            <div class="viva-voz-placeholder">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <div class="viva-voz-content">
+              <h3>Lecturas Poéticas</h3>
+              <p>Selección de poemas leídos por el autor, con análisis y contexto de cada obra.</p>
+              <div class="viva-voz-footer">
+                Próximamente: Primera quincena de junio
+              </div>
+            </div>
+          </div>
+          
+          <!-- TARJETA DE PODCAST -->
+          <div class="viva-voz-card">
+            <div class="viva-voz-placeholder">
+              <i class="fas fa-podcast"></i>
+            </div>
+            <div class="viva-voz-content">
+              <h3>PodCast Literario</h3>
+              <p>Conversaciones sobre literatura, creación literaria y reflexiones sobre el oficio de escribir.</p>
+              <div class="viva-voz-footer">
+                Próximamente: Segunda quincena de junio
+              </div>
+            </div>
+          </div>
+          
+          <!-- TARJETA DE BLOG -->
+          <div class="viva-voz-card">
+            <div class="viva-voz-placeholder">
+              <i class="fas fa-blog"></i>
+            </div>
+            <div class="viva-voz-content">
+              <h3>Blog de Reflexiones</h3>
+              <p>Artículos y ensayos breves sobre literatura, actualidad literaria y pensamiento crítico.</p>
+              <div class="viva-voz-footer">
+                Próximamente: Primera semana de julio
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">Héctor Roldán Hoyos</div>
+        <p style="color: #ccc;">Escritor, poeta y ensayista colombiano cuya obra trasciende géneros literarios y conecta con lo esencial del ser humano.</p>
+      </div>
+      <div class="footer-links">
+        <h3 style="color: var(--color-accent);">Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="libros.html#libros">Libros</a></li>
+          <li><a href="#lecturas">Experiencia de Lectura</a></li>
+          <li><a href="#viva-voz">De Viva Voz</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 18px; color: #aaa;">&copy; 2025 Héctor Emilio Roldán Hoyos. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- MODAL DE LECTURA AMPLIADO -->
+  <div id="modal-lectura" class="modal-lectura">
+    <div class="modal-lectura-contenido">
+      <span class="modal-lectura-cerrar" onclick="cerrarModalLectura()">&times;</span>
+      <div id="contenido-lectura"></div>
+    </div>
+  </div>
+
+  <!-- CONTROLES DE LECTURA -->
+  <div class="controles-lectura" id="controles-lectura" style="display: none;">
+    <div class="control-tamano">
+      <span>Tamaño:</span>
+      <button class="btn-tamano" onclick="cambiarTamano('disminuir')" title="Disminuir tamaño">A-</button>
+      <button class="btn-tamano" onclick="cambiarTamano('aumentar')" title="Aumentar tamaño">A+</button>
+    </div>
+    <button class="btn-modo" onclick="toggleConcentracion()">Modo concentración</button>
+  </div>
+
+  <script>
+    // Contenido de las obras para los modales
+    const contenidoObras = {
+      'sociopata': `
+        <h2>Sociópata en Familia - Capítulo 1</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+            <p>Hay momentos en la vida en que uno ya no escribe por vocación, sino por necesidad. Es como si las palabras brotaran no de la inspiración, sino de una herida abierta.</p>
+          </div>
+          
+          <div class="verso">
+            <p>Lo que aquí presento no es solo una historia. Es el eco de muchas. Una entre miles que nunca llegan a contarse, porque la vergüenza, la soledad o el sistema las acallan antes de que encuentren voz.</p>
+          </div>
+          
+          <div class="dialogo">
+            <p>—¿Cómo llegamos aquí? —murmuró, más para sí que para Dios.</p>
+          </div>
+          
+          <div class="verso">
+            <p>Este libro nació del silencio forzado, de la impotencia de ver cómo la verdad —esa verdad limpia, desnuda y sin aderezos— se pierde entre papeles fríos, procedimientos tibios y miradas que prefieren no ver.</p>
+          </div>
+          
+          <div class="verso">
+            <p>A través de una prosa sobria, emotiva y cuidadosamente documentada, Héctor Emilio Roldán Hoyos revela las grietas del sistema judicial, el poder destructivo de la calumnia, y el dolor invisible de los hombres que enfrentan acusaciones infundadas en un contexto que no les concede el beneficio de la duda.</p>
+          </div>
+        </div>
+      `,
+      
+      'recurso-lirico': `
+        <h2>Recurso Lírico - Selección</h2>
+        <div class="texto-capitulo">
+          <div class="estrofa">
+            <p class="verso-poema">Pienso hacer de ti el mayor recurso</p>
+            <p class="verso-poema">para la lírica de mi existencia.</p>
+            <p class="verso-poema">Por ti burlo mi pacto con la soledad</p>
+            <p class="verso-poema">y me hago cómplice del corazón.</p>
+          </div>
+          
+          <div class="estrofa">
+            <p class="verso-poema">Y lo hago porque espero mucho de ti:</p>
+            <p class="verso-poema">en ti quedará plasmado cuán triste</p>
+            <p class="verso-poema">y feliz soy.</p>
+          </div>
+          
+          <div class="estrofa">
+            <h3 style="text-align: center; font-family: 'Dancing Script', cursive; color: var(--color-primary); margin: 2em 0 1em;">PROSA I</h3>
+            <p class="verso">Sobre el amor se ha escrito mucho, pero pocas cosas son ciertas. Todo es tan lógico al querer, pero nada concuerda. La música de los enamorados suena hermosa, pero es un martirio; como la vibración de la cuerda en hermosa simetría, pero en dolorosa elongación. El ermitaño teme al amor carnal y huye de él para encontrar la verdad, pues esta no se encuentra en aquel. Este amor es la trampa con la cual el corazón engaña a la razón y le demuestra su impotencia, es ese recurso maléfico que intenta darle una razón a la vida, pero pronto deja ver que esta razón no es suficiente para animar a perdurar en la existencia…</p>
+            <p class="verso">Y la última caída consiste en amar a la muerte, la más sensual de todas las mujeres.</p>
+          </div>
+        </div>
+      `,
+      
+      'esperanza': `
+        <h2>La Esperanza del Cristiano - Capítulo 1</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+            <p>Ensayo teológico y antropológico que explora la noción de esperanza en medio del vacío espiritual de la sociedad contemporánea. En un diálogo profundo con religiones del mundo, corrientes filosóficas, ciencias humanas y la doctrina cristiana, el autor expone cómo la fe cristiana responde con sentido, consuelo y plenitud al anhelo de trascendencia del ser humano.</p>
+          </div>
+          
+          <div class="verso">
+            <p>Desde un análisis crítico del nihilismo, el materialismo y el relativismo moderno, pasando por una revisión sistemática de las religiones no cristianas, hasta llegar a la proclamación de la esperanza en el Reino de Dios y la vida eterna, esta obra se presenta como una guía de discernimiento para creyentes y buscadores sinceros.</p>
+          </div>
+          
+          <div class="verso">
+            <p>La esperanza cristiana no es una evasión de la realidad, sino la fuerza que permite transformarla desde dentro. No es una espera pasiva, sino una virtud activa que compromete al creyente en la construcción de un mundo mejor, anticipando ya desde ahora la plenitud del Reino que ha de venir.</p>
+          </div>
+        </div>
+      `,
+      
+      'sinfonia-celeste': `
+        <h2>Sinfonía Celeste - Primer Acto</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+            <p><strong>ESCENA</strong></p>
+            <p>Un grupo de hombres, conformado por un pensador, un nihilista, un científico y un creyente, reunido en torno a una esfera terrestre, expresa ordenadamente sus ideas sobre la existencia. Al fondo, una pantalla proyecta imágenes que acompañan los diálogos.</p>
+          </div>
+          
+          <div class="verso">
+            <p><strong>EXISTENCIA</strong></p>
+            <p><em>El pensador (dirigiéndose primero al grupo y luego al público)</em></p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Pensar me apremia sobre la razón de existir cercado entre muerte y vida: ser un inciso, una acotación, fútil instante que en la nada anida.</p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Sin dar permiso para su creación, trae el ser consigo la sentencia cierta de su aniquilación: ¿Es sentencia cierta su aniquilación? ¿Tal vez ser penado con Eterna vida?</p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Pondero en la ciencia y en cada ecuación, busco en el cosmos la ruta perdida, algo que revele tras esta obsesión: el ser o el no ser, esa es la cuestión.</p>
+          </div>
+        </div>
+      `,
+
+
+
+    'el-nuevo-templo': `
+        <h2>El Nuevo Templo - Capítulo 1</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+     <h1>CAPÍTULO I</h1>
+      <h3>EN LA ORILLA DEL RÍO</h3>
+      <h3>Río Ἁλυς - año 67.</h3>
+      <p>(Uçhisar, región de Capadocia, cerca de Cesarea Mazaca)</p>
+      <p>
+        El anciano yacía sobre un lecho de mantas ásperas, en el interior de una caverna sombría. El eco de su fragilidad lo rodeaba como un silencio espeso. De aquel vigor que lo había caracterizado años atrás, no quedaba más que un leve temblor en las manos. Frente a él estaba Teófilo, un joven alto, de tez oscura y musculatura firme. El contraste entre ambos era abismal: uno, rebosante de juventud; el otro, como una rama otoñal doblegada por el peso de las estaciones.
+      </p>
+      <p class="dialogo">—Mi apreciado Teófilo, una sed inmensa me devora.</p>
+      <p>
+        La voz entrecortada del anciano fue apenas un murmullo. Tenía la garganta reseca como el lecho de un río agrietado por el sol.
+      </p>
+      <p>
+        El joven destapó un odre y vertió agua en un recipiente de barro. Lo acercó al anciano, quien lo tomó con manos temblorosas. Bebió a pequeños sorbos, con dificultad. En su rostro se reflejó una mezcla de alivio y agotamiento. Apenas pasó el fugaz aliento, continuó hablando con el hilo de su voz fatigada:
+      </p>
+      <p class="dialogo">
+        —Pero no es esta sed del cuerpo la que me consume. Es otra... una que nace desde lo hondo y arde sin tregua, y que ninguna fuente terrenal puede calmar. Yo, que en otro tiempo bebí de las aguas puras del Jordán, aquellas que nacen bajo el rocío perfumado del חרמון, ¡cómo añoro aquellos días! Vivir entre los hermanos, compartir el pan y las palabras... todo era maravilloso entonces.
+      </p>
+      <p>
+        Atrás habían quedado los días en que el anciano luchaba dominado por sus impulsos y su orgullo. Ahora, al borde del viaje definitivo, comprendía la futilidad de aquellas batallas. La sed que lo consumía no era del cuerpo, sino del alma: una sed de redención, de misericordia, de un mortal a quien no logró encontrar. Llevaba cinco años buscando a Pablo, y el reencuentro nunca llegó. Sin embargo, en su rostro marchito había una paz difícil de explicar: la serenidad de quien, tras haberse extraviado, vislumbra el camino de regreso.
+      </p>
+      <p>
+        Teófilo recordaba al hombre que había conocido tres años antes: enérgico, decidido, jovial y generoso. Pero ahora lo veía consumido por la enfermedad, frágil como un soplo, en los umbrales de su último día.
+      </p>
+      <p class="dialogo">—¡No hables más, tus fuerzas son pocas! —exclamó el joven, preocupado.</p>
+      <p>
+        El anciano levantó débilmente su brazo derecho y agitó la mano con suavidad, restándole importancia.
+      </p>
+      <p class="dialogo">
+        —Déjame hablar, Teófilo. Es lo único que aún puedo hacer. Quiero confesarte algo que he guardado demasiado tiempo... Renuncié a la fe. Sí. Después de haber recibido el conocimiento, acepté la oferta del enemigo. Me atraparon sus redes, y abandoné las aguas del Jordán. He buscado a Pablo durante cinco años, pero el Señor no permitió que lo encontrara. En su lugar, me invadió esta enfermedad, y la bendigo, porque con ella he recibido el castigo que merecía por mi desprecio.
+      </p>
+      <p>
+        Bernabé era consciente de que el lapso de su existencia llegaba a su extremo final. En otro momento de lucidez, Bernabé continuó con su confidencia.
+      </p>
+      <p>
+        —Fui un soberbio. Con mis ínfulas de sabio rompí la unidad, herí la caridad, y destruí lo que otros sembraban con amor.
+      </p>
+      <p>
+        Teófilo escuchaba con paciencia, pero sin darle importancia a los recuerdos del anciano.
+      </p>
+      <p class="dialogo">
+        —Este cuerpo desgastado, este hedor, esta debilidad, no son castigos, sino regalos: medios que Dios usa para purificarme y darme otra oportunidad. Porque solo en la resurrección de Cristo puedo ver la resurrección desde mi propia ruina. Solo con su Espíritu tengo la posibilidad de que mis huesos secos sean cubiertos de carne nueva. Solo reconociéndole puedo recibir un corazón de carne que tome el lugar de este corazón de piedra, donde estaban grabados mis juicios y valoraciones, y mi vana creencia de que podía hacer las cosas mejor que Dios.
+      </p>
+      <p>
+        El anciano se detuvo, tratando de acomodarse para tomar aire. Cada respiración era una lucha, un jadeo ahogado que parecía escapársele del pecho. Después de unos instantes, continuó con voz entrecortada:
+      </p>
+      <p class="dialogo">
+        —Creía que Dios se había equivocado con mi historia... que la había tejido mal. No entendía que mi vida, tal como había transcurrido, obedecía a un plan perfecto. No podía ver que, desde antes de crearme, Dios ya me amaba y tenía una historia para mí, para arrancarme de las garras del malo. Ahora sé que nunca tuve fe sólida. Solo esta pena y este rechazo, después de haberlo perdido todo, me han entregado un don maravilloso: la disposición a aceptar la voluntad de Aquel que me amó hasta dar su vida por mí.
+      </p>
+      <p>
+        La falta de aire lo obligó a detenerse nuevamente. Intentó cambiar de posición, buscando desesperadamente un soplo de aire que calmara su ahogo.
+      </p>
+      <p class="dialogo">
+        —Traicioné el Espíritu que me fue dado —murmuró al tiempo que tenía los ojos cerrados—. Y no sé si ese pecado puede ser perdonado. La muerte está a mi puerta. El tentador vendrá una vez más... ¡Pero tengo esperanza! Como David, confieso: he pecado. ¿Quién podrá asegurar que no moriré por ello?
+      </p>
+      <p>
+        Teófilo aprovechó la pausa para expresar su impresión con firmeza, pero visiblemente desconcertado:
+      </p>
+          </div>
+          
+          <div class="verso">
+            <p>A través de una prosa sobria, emotiva y cuidadosamente documentada, Héctor Emilio Roldán Hoyos revela las grietas del sistema judicial, el poder destructivo de la calumnia, y el dolor invisible de los hombres que enfrentan acusaciones infundadas en un contexto que no les concede el beneficio de la duda.</p>
+          </div>
+        </div>
+      `,
+      
+      'debajo-del-manzano': `
+        <h2>Debajo del Manzano - Selección</h2>
+        <div class="texto-capitulo">
+          <div class="estrofa">
+            <p> </p>
+            <p> </p>
+          </div>
+          
+          <div class="estrofa">
+            <p> </p>
+            <p> </p>
+          </div>
+          
+          <div class="estrofa">
+            <h3 style="text-align: center; font-family: 'Dancing Script', cursive; color: var(--color-primary); margin: 2em 0 1em;">PROSA I</h3>
+            <p class="verso"></p>
+            <p> </p>
+            <p> </p>
+          </div>
+        </div>
+      `,
+      
+      'don-del-sufrimiento': `
+        <h2>El Don del Sufrimiento - Capítulo 1</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+            <p> </p>
+            <p> </p>
+          </div>
+          
+          <div class="verso">
+            <p>La esperanza cristiana no es una evasión de la realidad, sino la fuerza que permite transformarla desde dentro. No es una espera pasiva, sino una virtud activa que compromete al creyente en la construcción de un mundo mejor, anticipando ya desde ahora la plenitud del Reino que ha de venir.</p>
+          </div>
+        </div>
+      `,
+      
+      'epopeya-colombia': `
+        <h2>Epopeya Colombia - Primer Capítulo</h2>
+        <div class="texto-capitulo">
+          <div class="verso">
+            <p><strong>ESCENA</strong></p>
+            <p>Un grupo de hombres, conformado por un pensador, un nihilista, un científico y un creyente, reunido en torno a una esfera terrestre, expresa ordenadamente sus ideas sobre la existencia. Al fondo, una pantalla proyecta imágenes que acompañan los diálogos.</p>
+          </div>
+          
+          <div class="verso">
+            <p><strong>EXISTENCIA</strong></p>
+            <p><em>El pensador (dirigiéndose primero al grupo y luego al público)</em></p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Pensar me apremia sobre la razón de existir cercado entre muerte y vida: ser un inciso, una acotación, fútil instante que en la nada anida.</p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Sin dar permiso para su creación, trae el ser consigo la sentencia cierta de su aniquilación: ¿Es sentencia cierta su aniquilación? ¿Tal vez ser penado con Eterna vida?</p>
+          </div>
+          
+          <div class="dialogo">
+            <p>Pondero en la ciencia y en cada ecuación, busco en el cosmos la ruta perdida, algo que revele tras esta obsesión: el ser o el no ser, esa es la cuestión.</p>
+          </div>
+        </div>
+      `
+    };
+
+
+    // Funciones para los modales
+    function abrirModalLectura(obraId) {
+      const modal = document.getElementById('modal-lectura');
+      const contenido = document.getElementById('contenido-lectura');
+      
+      contenido.innerHTML = contenidoObras[obraId] || '<p>Contenido no disponible</p>';
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      
+      // Mostrar controles de lectura
+      document.getElementById('controles-lectura').style.display = 'flex';
+    }
+
+    function cerrarModalLectura() {
+      const modal = document.getElementById('modal-lectura');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      
+      // Ocultar controles de lectura
+      document.getElementById('controles-lectura').style.display = 'none';
+    }
+
+    // Controles de lectura
+    function cambiarTamano(accion) {
+      const contenido = document.getElementById('contenido-lectura');
+      const tamanoActual = parseInt(window.getComputedStyle(contenido).fontSize);
+      
+      if (accion === 'aumentar' && tamanoActual < 24) {
+        contenido.style.fontSize = (tamanoActual + 2) + 'px';
+      } else if (accion === 'disminuir' && tamanoActual > 14) {
+        contenido.style.fontSize = (tamanoActual - 2) + 'px';
+      }
+    }
+
+    function toggleConcentracion() {
+      document.body.classList.toggle('modo-concentracion');
+    }
+
+    function mostrarMensaje(mensaje) {
+      // Crear un elemento de notificación
+      const notificacion = document.createElement('div');
+      notificacion.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-accent);
+        color: var(--color-dark);
+        padding: 15px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        z-index: 10001;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      `;
+      notificacion.textContent = mensaje;
+      
+      document.body.appendChild(notificacion);
+      
+      // Eliminar después de 3 segundos
+      setTimeout(() => {
+        notificacion.style.opacity = '0';
+        notificacion.style.transition = 'opacity 0.5s';
+        setTimeout(() => {
+          document.body.removeChild(notificacion);
+        }, 500);
+      }, 3000);
+    }
+
+    // Cerrar modal al hacer clic fuera
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal-lectura');
+      if (event.target === modal) {
+        cerrarModalLectura();
+      }
+    }
+
+    // Menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav.menu ul');
+      
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('show');
+        const isExpanded = menu.classList.contains('show');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+      });
+
+      // Animación de entrada para las tarjetas
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observar todas las tarjetas
+      const tarjetas = document.querySelectorAll('.lectura-card, .viva-voz-card');
+      tarjetas.forEach(tarjeta => {
+        tarjeta.style.opacity = '0';
+        tarjeta.style.transform = 'translateY(20px)';
+        tarjeta.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(tarjeta);
+      });
+    });
+  </script>
+</body>
+</html>

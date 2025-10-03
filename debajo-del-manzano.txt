@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primer Capítulo - DEBAJO DEL MANZANO</title>
+  <link rel="stylesheet" href="estilos-novelas.css">
+</head>
+<body>
+
+<a href="libros.html" class="boton-cierre-flotante" title="Volver a Libros">&times;</a>
+
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <div class="portada">
+      <img src="galeria-obras/debajo-del-manzano.webp" alt="Portada del Libro" class="portada-imagen">
+    </div>
+    <div class="info-libro">
+      <h1 class="titulo-libro">DEBAJO DEL MANZANO / PROBERVIOS</h1>
+      <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+    </div>
+  </header>
+
+<!-- Contenido del capítulo -->
+<main class="contenido">
+
+ <div class="texto-capitulo">
+  <section class="estrofa">
+    <h2 class='titulo-poema'>I - CREACIÓN</h2>    
+    <br>
+    <div class="estrofa">
+      <i><p class='estrofa'>La tierra era caos y confusión y</p>
+      <p class='estrofa'>oscuridad por encima del abismo, </p>
+      <p class='estrofa'>y un viento de Dios aleteaba por</p>
+      <p class='estrofa'>encima de las aguas.</p>
+      <p class='estrofa'>Gn 1, 2.</p></i>
+
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Dulce viento que no deja de inspirar</p>
+      <p class='estrofa'>obediente a la Palabra que edifica,</p>
+      <p class='estrofa'>brisa que se expande y plasma,</p>
+      <p class='estrofa'>que entrama la materia y la energía,</p>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+      <p class='estrofa'>suave hálito que genera sustancia,</p>
+      <p class='estrofa'>corriente sutil que sopla vida,</p>
+      <p class='estrofa'>que moldea astros y planetas,</p>
+      <p class='estrofa'>que explota en mares y en montañas,</p>
+      <p class='estrofa'>que hace pulular vegetación,</p>
+      <p class='estrofa'>que inyecta la vida en animales</p>
+      <p class='estrofa'>y en el hombre insufla el alma.</p>
+                            </div>
+
+    <div class="estrofa">
+      <p class='estrofa'>Una onda, un himno,</p>
+      <p class='estrofa'>divino canto,</p>
+      <p class='estrofa'>sinfonía universal,</p>
+      <p class='estrofa'>voluntad creadora,</p>
+      <p class='estrofa'>espíritu Santo,</p>
+      <p class='estrofa'>espíritu de Dios.</p></p>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+      <p class='estrofa'>No eres energía, Tú la ordenas,</p>
+      <p class='estrofa'>no eres sustancia material, Tú haces sus Leyes,</p>
+      <p class='estrofa'>intimidad de Dios Padre,</p>
+      <p class='estrofa'>voluntad de su Hijo,</p>
+      <p class='estrofa'>uno en ellos.</p>
+      <p class='estrofa'></p>
+    </div><br>
+    <div class="estrofa">
+      <p class='estrofa'>La Palabra creó</p>
+      <p class='estrofa'>y el viento de Dios aleteó por encima de las aguas:</p>
+      <p class='estrofa'>separó lo húmedo y lo seco,</p>
+      <p class='estrofa'>instituyó el “arriba” y el “abajo”,</p>
+      <p class='estrofa'>dio el orden a los átomos,</p>
+      <p class='estrofa'>amalgamó astros y extendió su brillo,</p>
+      <p class='estrofa'>difundió la sabiduría,</p>
+      <p class='estrofa'>estableció el método Divino;</p>
+      <p class='estrofa'>balanza que distribuye los dones,</p>
+      <p class='estrofa'>medida de la generosidad celeste.</p>
+      <p class='estrofa'></p>
+
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+    <div class="estrofa">
+      <p class='estrofa'>En tu viaje sobre la Divina Creación</p>
+      <p class='estrofa'>no pases de largo, te ruego.</p>
+      <p class='estrofa'>detente ante mi puerta,</p>
+      <p class='estrofa'>suaviza mi angustia con tu soplo.</p>
+      <p class='estrofa'>ante el umbral de mi estancia</p>
+      <p class='estrofa'>¡Detente y sopla un poco!</p>
+      <p class='estrofa'>No me niegues tus Dones,</p>
+      <p class='estrofa'>socórreme con tu sabiduría</p>
+      <p class='estrofa'>dame tu viento refrescante,</p>
+      <p class='estrofa'>no pases de largo,</p>
+      <p class='estrofa'>no sigas sin mirarme.</p>
+      <p class='estrofa'>¡Paráclito Divino!,</p>
+      <p class='estrofa'>consuélame en este destierro.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Tal tu inmanencia, has sido generoso,</p>
+      <p class='estrofa'>¿Cómo no agradecer tu excelso aroma?</p>
+      <p class='estrofa'>Tú fragancia ha inundado mi vida</p>
+      <p class='estrofa'>dando placidez a mi existencia.</p>
+      <p class='estrofa'>Mi soberbia no me ha dejado verte,</p>
+      <p class='estrofa'>casi nunca te he reconocido.</p>
+      <p class='estrofa'>Por eso camino perdido,</p>
+      <p class='estrofa'>dando tumbos y vueltas,</p>
+      <p class='estrofa'>alejado del bien, obrando errante.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Por no detenerme a sentir el suave viento,</p>
+      <p class='estrofa'>he dado cabida a la tormenta del enemigo,</p>
+      <p class='estrofa'>fétido olor a azufre y ajo…</p>
+      <p class='estrofa'>cadaverina que ha envuelto mi alma.</p>
+      <p class='estrofa'>Me he embelesado en sus enredos</p>
+      <p class='estrofa'>y he desechado el suave efluvio.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Más, yo no le pertenezco a ese,</p>
+      <p class='estrofa'>¡a ese no!</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>¡Mírame, te clamo!:</p>
+      <p class='estrofa'>yo quiero ser tuyo,</p>
+      <p class='estrofa'>pues me debo a mi creador,</p>
+      <p class='estrofa'>al eternamente bueno,</p>
+      <p class='estrofa'>imagen suya soy, no del otro,</p>
+      <p class='estrofa'>acusador que me desvía.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>¡Oh Espíritu de Dios!</p>
+      <p class='estrofa'>Insiste en mí, no me sueltes:</p>
+      <p class='estrofa'></p>
+      <p class='estrofa'>Que en mi suerte me pierdo,</p>
+      <p class='estrofa'>que en mi voluntad me equivoco</p>
+      <p class='estrofa'>que en mis caprichos me muero.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Tu bálsamo sea mi refugio,</p>
+      <p class='estrofa'>en tus Dones encuentre yo el consuelo,</p>
+      <p class='estrofa'>tu viento dé brillo a mi alma</p>
+      <p class='estrofa'>y pueda yo ser el espejo</p>
+      <p class='estrofa'>de ese Cristo que habiendo muerto</p>
+      <p class='estrofa'>resucitó para la salvación del mundo entero.</p>
+      <p class='estrofa'></p>
+      </div>
+      <br>
+
+    </section>
+  </main>
+
+  <!-- Botones de acción -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+</body>
+</html>

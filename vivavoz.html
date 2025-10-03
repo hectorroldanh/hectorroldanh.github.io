@@ -1,0 +1,3230 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia Inmersiva de Lectura - Héctor Emilio Roldán Hoyos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #7b1e1e;
+            --color-secondary: #aa0000;
+            --color-accent: #ffcc00;
+            --color-dark: #222;
+            --color-light: #f9f9f9;
+            --color-text: #333;
+            --color-white: #fff;
+            --shadow: 0 4px 6px rgba(0,0,0,.1);
+            --shadow-hover: 0 8px 15px rgba(0,0,0,.2);
+            --transition: all .3s ease;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        html, body { 
+            height: 100%; 
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            color: var(--color-text);
+            background: var(--color-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        img { 
+            display: block; 
+            max-width: 100%; 
+            height: auto; 
+        }
+        
+        a { 
+            color: inherit; 
+            text-decoration: none; 
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .divider { 
+            border-top: 1px solid var(--divider); 
+            margin: 20px auto; 
+            width: 80%; 
+            max-width: 800px; 
+        }
+
+        /* HEADER Y NAVEGACIÓN */
+        header {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            z-index: 2200;
+            background: var(--color-dark); 
+            box-shadow: var(--shadow);
+        }
+        
+        nav.menu { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 20px; 
+            height: 72px; 
+        }
+        
+        .logo { 
+            font-family: 'Great Vibes', cursive; 
+            color: var(--color-accent); 
+            font-size: 22px; 
+        }
+        
+        nav.menu ul { 
+            display: flex; 
+            gap: 6px; 
+            list-style: none; 
+            align-items: center; 
+        }
+        
+        nav.menu li { 
+            position: relative; 
+            margin-left: 6px; 
+        }
+        
+        nav.menu a {
+            display: block; 
+            padding: 18px 12px; 
+            color: var(--color-white); 
+            font-weight: 700; 
+            transition: var(--transition);
+        }
+        
+        nav.menu a:focus, 
+        nav.menu a:hover { 
+            background: var(--color-secondary); 
+            color: var(--color-white); 
+            border-radius: 4px; 
+        }
+        
+        nav.menu ul ul {
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            display: flex; 
+            flex-direction: column; 
+            min-width: 200px;
+            background: var(--color-dark); 
+            border-top: 3px solid var(--color-secondary);
+            opacity: 0; 
+            visibility: hidden; 
+            transform: translateY(8px); 
+            transition: var(--transition);
+        }
+        
+        nav.menu li:hover > ul { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0); 
+        }
+        
+        nav.menu ul ul a { 
+            padding: 12px 16px; 
+        }
+        
+        .menu-toggle {
+            display: none; 
+            background: none; 
+            border: 0; 
+            color: var(--color-white); 
+            font-size: 20px; 
+            cursor: pointer; 
+            padding: 12px;
+        }
+        
+        .menu-toggle[aria-expanded="true"] { 
+            opacity: 0.9; 
+        }
+
+        /* SECCIONES */
+        section { 
+            padding: 42px 0; 
+        }
+        
+        .section-title { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 1.9rem; 
+            color: var(--color-accent); 
+            text-align: center; 
+            margin-bottom: 12px; 
+        }
+        
+        .section-title::after { 
+            content: ''; 
+            display: block; 
+            width: 72px; 
+            height: 3px; 
+            background: var(--color-accent); 
+            margin: 10px auto; 
+        }
+        
+        .section-title1 { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 1.9rem; 
+            color: var(--color-primary); 
+            text-align: center; 
+            margin-bottom: 12px; 
+        }
+        
+        .section-title1::after { 
+            content: ''; 
+            display: block; 
+            width: 72px; 
+            height: 3px; 
+            background: var(--color-primary); 
+            margin: 10px auto; 
+        }
+        
+        .section-dark { 
+            background: var(--color-dark); 
+            color: var(--color-white); 
+        }
+        
+        .section-light { 
+            background: var(--color-light); 
+        }
+        
+        .section-lectura { 
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8); 
+        }
+        
+        .section-viva-voz { 
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); 
+            color: #fff; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        .section-viva-voz::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        
+        .section-viva-voz .container { 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        /* EXPERIENCIA DE LECTURA INMERSIVA */
+        .lectura-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .lectura-card {
+            background: var(--color-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .lectura-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .lectura-header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .lectura-header h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .lectura-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .lectura-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .lectura-extracto {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .lectura-opciones {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .btn-lectura {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-lectura-texto {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .btn-lectura-texto:hover {
+            background: var(--color-secondary);
+        }
+        
+        .btn-lectura-audio {
+            background: var(--color-accent);
+            color: var(--color-dark);
+        }
+        
+        .btn-lectura-audio:hover {
+            background: #e6b800;
+        }
+        
+        /* MODAL DE LECTURA AMPLIADO */
+        .modal-lectura {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+        
+        .modal-lectura-contenido {
+            background: #fefefe;
+            max-width: 750px;
+            margin: 50px auto;
+            padding: 60px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        /* Estilos específicos para poemas en modal */
+        .modal-lectura-contenido .poema p,
+        .modal-lectura-contenido .verso-poema {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.3 !important;
+            text-align: center !important;
+        }
+
+        .modal-lectura-contenido .estrofa {
+            margin-bottom: 0.8em !important;
+        }
+
+        .modal-lectura-contenido .texto-capitulo p {
+            margin-bottom: 0.3em !important;
+            margin-top: 0 !important;
+        }
+
+        /* Para saltos de línea explícitos */
+        .modal-lectura-contenido .poema br {
+            display: block !important;
+            margin: 0 !important;
+            content: "" !important;
+            line-height: 1.2 !important;
+        }
+        
+        .modal-lectura-cerrar {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #666;
+            cursor: pointer;
+            z-index: 10001;
+            transition: var(--transition);
+        }
+        
+        .modal-lectura-cerrar:hover {
+            color: var(--color-primary);
+            transform: scale(1.1);
+        }
+        
+        .texto-capitulo {
+            font-family: 'Crimson Text', serif;
+            font-size: 19px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            max-width: 70ch;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .texto-capitulo h1 {
+            text-align: center !important;
+        }
+        
+        .texto-capitulo h2 {
+            color: var(--color-primary);
+            margin-bottom: 1.5em;
+            text-align: center !important;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+        }
+        
+        .texto-capitulo .verso {
+            margin-bottom: 1.2em;
+            text-indent: 2em;
+        }
+        
+        .texto-capitulo .dialogo {
+            font-style: italic;
+            margin: 1.5em 0;
+            padding-left: 2em;
+            border-left: 3px solid var(--color-primary);
+        }
+        
+        .texto-capitulo p {
+            margin-bottom: 0.3em !important; /* Forzar reducción en versos sin clase */
+            line-height: 1.4 !important;
+        }
+
+        /* Para poesía */
+        .estrofa {
+            margin-bottom: 1em;
+        }
+        
+        .verso-poema {
+            text-align: center;
+            margin-bottom: 0.3em;
+            line-height: 1.4
+        }
+
+        p {
+          /* Tipografía legible y descansada */
+          font-family: "Merriweather", Georgia, "Times New Roman", serif;
+          /* Tamaño adaptable: entre 14px y 16px según pantalla */
+          font-size: clamp(14px, 1vw + 3px, 1.39px);
+          /* Line-height natural para lectura dentro del párrafo */
+          line-height: 1.3;
+          /* Sangrado de primera línea (sangrado para visualización en pantalla) */
+          text-indent: 1.1em;
+          /* Medida de la línea de texto para evitar renglones muy largos */
+          max-width: 75ch;
+          /* Márgenes: nada arriba, y separación visual al terminar el párrafo */
+          margin: 0 0 1.25rem 0;
+          /* Permite guionado automático en pantallas pequeñas */
+          hyphens: auto;
+          /* Evita que el texto quede pegado al borde en dispositivos móviles */
+          word-break: break-word;
+          text-align: justify !important;
+        }
+
+        /* Si quieres que la separación entre párrafos sea equivalente a interlineado 2.0,
+           aplica margen superior extra entre párrafos consecutivos */
+        p + p {
+          margin-top: 1.0rem; /* equivale a un "interlineado 2.0" entre párrafos */
+        }
+
+        /* Estilos específicos para Sabiduría Haikai */
+        .haiku-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .haiku-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .haiku-item.invertido {
+            flex-direction: row-reverse;
+        }
+
+        .haiku-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .haiku-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .haiku-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .haiku-texto {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .haiku-texto h3 {
+            color: var(--color-primary);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .haiku-content {
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .haiku-content p {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Navegación en modal */
+        .modal-navegacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn-navegacion {
+            padding: 10px 20px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-navegacion:hover {
+            background: var(--color-secondary);
+        }
+        
+        .btn-navegacion:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .pagina-indicador {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .modal-compra {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .btn-compra {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        
+        .btn-compra:hover {
+            background: #e6b800;
+        }
+        
+        /* CONTROLES DE LECTURA */
+        .controles-lectura {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 200px;
+        }
+        
+        .control-tamano {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .btn-tamano {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-modo {
+            background: var(--color-accent);
+            color: var(--color-dark);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Modo concentración */
+        body.modo-concentracion .modal-lectura-contenido {
+            background: #f5f5dc;
+            color: #2c3e50;
+        }
+        
+        body.modo-concentracion .controles-lectura {
+            display: none;
+        }
+        
+        /* SECCIÓN DE VIVA VOZ */
+        .viva-voz-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .viva-voz-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        
+        .viva-voz-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .viva-voz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .viva-voz-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .viva-voz-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        
+        .viva-voz-placeholder {
+            background: linear-gradient(135deg, #ddd, #bbb);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 3rem;
+        }
+        
+        .viva-voz-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .viva-voz-content h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .viva-voz-content p {
+            color: #555;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .viva-voz-footer {
+            margin-top: auto;
+            font-style: italic;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* FOOTER */
+        footer { 
+            background: var(--color-dark); 
+            color: var(--color-white); 
+            padding: 36px 20px; 
+            margin-top: 50px; 
+        }
+        
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: 1fr 220px; 
+            gap: 20px; 
+            align-items: start; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .footer-logo { 
+            font-family: 'Great Vibes', cursive; 
+            color: var(--color-accent); 
+            font-size: 1.2rem; 
+            margin-bottom: 8px; 
+        }
+        
+        .footer-links ul { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 6px; 
+        }
+        
+        .footer-links a { 
+            color: #ddd; 
+            text-decoration: none; 
+        }
+        
+        .footer-links a:hover { 
+            color: var(--color-accent); 
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
+            nav.menu ul.show { display: flex; }
+            
+            .modal-lectura-contenido {
+                margin: 20px;
+                padding: 40px 20px;
+            }
+            
+            .controles-lectura {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+                min-width: 150px;
+            }
+            
+            .texto-capitulo {
+                font-size: 17px;
+            }
+            
+            .modal-navegacion {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .pagina-indicador {
+                order: -1;
+            }
+
+            /* Responsive para haikus */
+            .haiku-item,
+            .haiku-item.invertido {
+                flex-direction: column;
+            }
+            
+            .haiku-image {
+                max-width: 100%;
+            }
+            
+            .haiku-texto {
+                padding: 15px 0;
+            }
+        }
+    
+
+/* Botón de control de música en parte superior derecha del modal */
+.modal-audio-control {
+  position: absolute;
+  top: 12px;
+  right: 60px; /* dejar espacio para el botón de cerrar (X) */
+  z-index: 10002;
+}
+
+.modal-audio-control button {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+
+</style>
+</head>
+<body>
+
+    <!-- HEADER / MENÚ -->
+    <header>
+        <nav class="menu container" role="navigation" aria-label="Menú principal">
+            <div class="logo">Héctor Roldán</div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li>
+                    <a href="autor.html#autor">EL AUTOR</a>
+                    <ul class="submenu" role="menu" aria-label="Submenú autor">
+                        <li><a href="autor.html#biografia">Biografía</a></li>
+                        <li><a href="index.html#entrevistas">Entrevistas</a></li>
+                        <li><a href="index.html#galeria">Galería</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="libros.html#libros">LIBROS</a>
+                    <ul class="submenu" role="menu" aria-label="Submenú libros">
+                        <li><a href="libros.html#novela">Novela</a></li>
+                        <li><a href="libros.html#poesia">Poesía</a></li>
+                        <li><a href="libros.html#ensayo">Ensayo</a></li>
+                        <li><a href="libros.html#otro">Otros</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#viva-voz">DE VIVA VOZ</a>
+                    <ul class="submenu" role="menu" aria-label="Submenú viva voz">
+                        <li><a href="#experiencia-lectura">Experiencia de Lectura</a></li>
+                        <li><a href="#podcast">PodCast</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#testimonios">TESTIMONIOS</a></li>
+                <li><a href="libros.html#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="vivavoz" style="margin-top: 72px;">
+        <!-- SECCIÓN VIVA VOZ -->
+        <section id="experiencia-lectura" class="section-lectura">
+            <div class="container">
+                <h2 class="section-title1">Experiencia de Lectura Inmersiva</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #555;">
+                    Sumérgete en la obra de Héctor Emilio Roldán Hoyos. Descubre la profundidad de su poesía, la intensidad de sus novelas y la claridad de sus ensayos en una experiencia diseñada para la contemplación y el disfrute literario.
+                </p>
+                
+                <div class="lectura-grid">
+                    <!-- TARJETA DE NOVELA -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>Sociópata en Familia</h3>
+                            <p>Novela</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "Hay momentos en la vida en que uno ya no escribe por vocación, sino por necesidad. Es como si las palabras brotaran no de la inspiración, sino de una herida abierta..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('sociopata')">
+                                    <i class="fas fa-book-open"></i> Leer capítulo
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA DE NOVELA -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>El Nuevo Templo</h3>
+                            <p>Novela</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "El Nuevo Templo narra la historia de Teófilo, un hombre marcado por el dolor y la culpa que, al borde del abismo, descubre en una fe inesperada la certeza de ser amado por Dios..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('el-nuevo-templo')">
+                                    <i class="fas fa-book-open"></i> Leer capítulo
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA DE POESÍA -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>Recurso Lírico</h3>
+                            <p>Poesía</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "Pienso hacer de ti el mayor recurso para la lírica de mi existencia. Por ti burlo mi pacto con la soledad y me hago cómplice del corazón..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('recurso-lirico')">
+                                    <i class="fas fa-book-open"></i> Leer poemas
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TARJETA DE POESÍA -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>Debajo del Manzano</h3>
+                            <p>Poesía</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "... una invitación a detenerse bajo la sombra del Creador y descubrir, en la sencillez de sus versos, los frutos de paz, alegría y amor que Dios ha sembrado para tu vida."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('debajo-del-manzano')">
+                                    <i class="fas fa-book-open"></i> Leer poemas
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA DE ENSAYO -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>La Esperanza del Cristiano</h3>
+                            <p>Ensayo</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "Ensayo teológico y antropológico que explora la noción de esperanza en medio del vacío espiritual de la sociedad contemporánea..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('esperanza')">
+                                    <i class="fas fa-book-open"></i> Leer capítulo
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <!-- TARJETA DE ENSAYO -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>El Don del Sufrimiento</h3>
+                            <p>Ensayo</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "En este ensayo (teológico y antropológico) el autor se sumerge en la exploración del sentido del sufrimiento. ¿Por qué sufrimos?, ¿para qué sufrimos?, ¿cuál es el papel de Dios en tu sufrimiento?..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('don-del-sufrimiento')">
+                                    <i class="fas fa-book-open"></i> Leer capítulo
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                         
+                    <!-- TARJETA DE TEATRO -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>Sinfonía Celeste</h3>
+                            <p>Teatro y Poesía</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "Obra teatral de carácter poético y filosófico que representa, como una ópera en verso, el diálogo eterno entre fe, razón, ciencia y nihilismo..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('sinfonia-celeste')">
+                                    <i class="fas fa-book-open"></i> Leer acto
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA DE POESÍA HAIKU -->
+                    <div class="lectura-card">
+                        <div class="lectura-header">
+                            <h3>Sabiduría Haikai</h3>
+                            <p>Poesía</p>
+                        </div>
+                        <div class="lectura-body">
+                            <div class="lectura-extracto">
+                                "Así es el Haiku: burlón y disonante, conciso y sabio. Una colección de haikus que capturan la esencia de la naturaleza y las emociones humanas en tres versos..."
+                            </div>
+                            <div class="lectura-opciones">
+                                <button class="btn-lectura btn-lectura-texto" onclick="abrirModalLectura('sabiduria-haikai')">
+                                    <i class="fas fa-book-open"></i> Leer haikus
+                                </button>
+                                <button class="btn-lectura btn-lectura-audio" onclick="mostrarMensaje('Próximamente')">
+                                    <i class="fas fa-headphones"></i> Escuchar lectura
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE VIVA VOZ -->
+        <section id="viva-voz" class="section-viva-voz">
+            <div class="container">
+                <div class="viva-voz-intro">
+                    <h2 class="section-title1">De Viva Voz</h2>
+                    <p>Un espacio dedicado a la palabra hablada, donde la poesía y la prosa cobran vida a través de la voz del autor. Próximamente encontrarás aquí lecturas grabadas, podcasts y reflexiones literarias en formato audiovisual.</p>
+                </div>
+                
+                <div class="viva-voz-grid">
+                    <!-- TARJETA DE LECTURAS -->
+                    <div class="viva-voz-card">
+                        <div class="viva-voz-placeholder">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="viva-voz-content">
+                            <h3>Lecturas Poéticas</h3>
+                            <p>Selección de poemas leídos por el autor, con análisis y contexto de cada obra.</p>
+                            <div class="viva-voz-footer">
+                                Próximamente: Primera quincena de junio
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA DE PODCAST -->
+                    <div id="podcast" class="viva-voz-card">
+                        <div class="viva-voz-placeholder">
+                            <i class="fas fa-podcast"></i>
+                        </div>
+                        <div class="viva-voz-content">
+                            <h3>PodCast Literario</h3>
+                            <p>Conversaciones sobre literatura, creación literaria y reflexiones sobre el oficio de escribir.</p>
+                            <div class="viva-voz-footer">
+                                Próximamente: Segunda quincena de junio
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TARJETA DE BLOG -->
+                    <div id="blog" class="viva-voz-card">
+                        <div class="viva-voz-placeholder">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <div class="viva-voz-content">
+                            <h3>Blog de Reflexiones</h3>
+                            <p>Artículos y ensayos breves sobre literatura, actualidad literaria y pensamiento crítico.</p>
+                            <div class="viva-voz-footer">
+                                Próximamente: Primera semana de julio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">Héctor Roldán Hoyos</div>
+                <p style="color: #ccc;">Escritor, poeta y ensayista colombiano cuya obra trasciende géneros literarios y conecta con lo esencial del ser humano.</p>
+            </div>
+            <div class="footer-links">
+                <h3 style="color: var(--color-accent);">Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#libros">Libros</a></li>
+                    <li><a href="#experiencia-lectura">Experiencia de Lectura</a></li>
+                    <li><a href="#viva-voz">De Viva Voz</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 18px; color: #aaa;">&copy; 2025 Héctor Emilio Roldán Hoyos. Todos los derechos reservados.</div>
+    </footer>
+
+    <!-- MODAL DE LECTURA AMPLIADO -->
+    <div id="modal-lectura" class="modal-lectura">
+        <div class="modal-lectura-contenido">
+            <span class="modal-lectura-cerrar" onclick="cerrarModalLectura()">&times;</span>
+            <div id="contenido-lectura"></div>
+            
+            <div class="modal-navegacion">
+                <button id="btn-anterior" class="btn-navegacion" onclick="cambiarPagina(-1)">
+                    <i class="fas fa-chevron-left"></i> Anterior
+                </button>
+                <span id="pagina-indicador" class="pagina-indicador">1 / 1</span>
+                <button id="btn-siguiente" class="btn-navegacion" onclick="cambiarPagina(1)">
+                    Siguiente <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+<!-- 🔊 Control de música -->
+            <div class="modal-audio-control">
+              <button id="btn-audio" class="btn-navegacion" onclick="toggleAudio()">
+                🔊 Activar música
+              </button>
+            </div>
+
+            <div class="modal-compra">
+                <a id="enlace-compra" href="#" target="_blank" class="btn-compra">
+                    <i class="fas fa-shopping-cart"></i> Comprar ahora
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+<!-- CONTROLES DE LECTURA -->
+    <div class="controles-lectura" id="controles-lectura" style="display: none;">
+        <div class="control-tamano">
+            <span>Tamaño:</span>
+            <button class="btn-tamano" onclick="cambiarTamano('disminuir')" title="Disminuir tamaño">A-</button>
+            <button class="btn-tamano" onclick="cambiarTamano('aumentar')" title="Aumentar tamaño">A+</button>
+        </div>
+        <button class="btn-modo" onclick="toggleConcentracion()">Modo concentración</button>
+    </div>
+
+    <script>
+        // Variables globales
+        let obraActual = '';
+        let paginaActual = 0;
+        let totalPaginas = 0;
+        let tamanoFuente = 19;
+        let modoConcentracion = false;
+
+        // Contenido de las obras para los modales con paginación
+        const contenidoObras = {
+            'sociopata': {
+                paginas: [
+                    `
+                        <h1>Sociópata en Familia</h1>
+                        <div class="texto-capitulo">
+                            <h2>Prólogo del Autor</h2>
+                            <p>Hay momentos en la vida en que uno ya no escribe por vocación, sino por necesidad. Es como si las palabras brotaran no de la inspiración, sino de una herida abierta.</p>
+                            <p>Este libro nació del silencio forzado, de la impotencia de ver cómo la verdad —esa verdad limpia, desnuda y sin aderezos— se pierde entre papeles fríos, procedimientos tibios y miradas que prefieren no ver. No fue concebido como una novela, sino como una reconstrucción del alma tras el paso de una tormenta.</p>
+                            <p>Lo que aquí presento no es solo una historia. Es el eco de muchas. Una entre miles que nunca llegan a contarse, porque la vergüenza, la soledad o el sistema las acallan antes de que encuentren voz. Es la historia de un hombre, sí, pero también de unos niños que quedaron atrapados entre adultos en el juego inmisericorde de una justicia (no la fundamentada en los hechos y la verdad), que no comprende la gravedad de sus dictados.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>A lo largo de este relato, encontrarás protagonistas que se parecen demasiado a personas reales. No porque sean calcos, sino porque están hechos de la misma materia: miedo, poder, deseo de control, amor mal entendido, y a veces, de odio cuidadosamente disfrazado de equidad.</p>
+                            <p>Yo no escribo esto para convencer a nadie. Tampoco para lavar una imagen. Escribo porque, cuando la palabra es lo único que queda, callar sería morir dos veces.</p>
+                            <p>Si alguna vez has sentido que la verdad no encuentra eco en quienes debieran protegerla, este libro es para ti.</p>
+                            <p>Si has sido acusado injustamente, si has amado a alguien que terminó convirtiéndose en tu sombra, si alguna vez tuviste que reconstruirte desde el escombro, entonces esta historia te pertenece un poco también.</p>
+                            <p>Como Botticelli plasmó en su cuadro La Calumnia de Apeles: la falsedad a menudo se adorna con virtud, mientras que la verdad, con los pies descalzos, implora ser escuchada.</p>
+                            <p>Aquí está, una vez más, descalza. Pero esta vez, tiene voz.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <h2>Prefacio</h2>
+                            <p></p>
+                            <p>A veces, la vida se parte en dos sin aviso.</p>
+                            <p>No hay un sonido de ruptura, ni un temblor previo. Solo un día cualquiera —quizás soleado, incluso feliz— que de pronto se convierte en el inicio de un derrumbe. Y uno no lo nota de inmediato. El colapso comienza en lo invisible: en una mirada esquiva, en un silencio nuevo, en una palabra, que no encaja. Después, como una grieta que se propaga bajo el concreto, llega lo demás.</p>
+                            <p>Eso le pasó a Andrés Parra Navarro.</p>
+                            <p>Un hombre como tantos: disciplinado, creyente, firme, quizás demasiado rígido, pero íntegro. Nunca imaginó que su mayor error sería confiar. No en cualquiera, sino en alguien a quien había entregado afecto, tiempo y cuidados. Fue así como una acusación sin pruebas —dicha a media voz, pero repetida con fuerza— comenzó a crecer como una sombra en su vida. Una sombra que lo arrasó todo.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Él no era perfecto, pero tampoco era culpable. Sin embargo, el sistema no siempre necesita certezas para condenar. A veces basta con una palabra, una lágrima, un gesto que despierte simpatía en el lugar indicado. Y entonces, la justicia —que debiera ser ciega— abre un ojo, y juzga no por los hechos, sino por las apariencias.</p>
+                            <p>Este libro no pretende dictar sentencia.</p>
+                            <p>Tampoco es un grito de venganza.</p>
+                            <p>Es, simplemente, un intento por dejar constancia.</p>
+                            <p>Por reconstruir lo vivido y lo sentido.</p>
+                            <p>Por rescatar lo que muchos hombres han callado: que también hay víctimas que nadie ve.</p>
+                            <p>Porque cuando una mentira se instala en el corazón de una familia, no solo destruye al señalado. También envenena vínculos, contamina la memoria y convierte el amor en sospecha.</p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                            
+                            <p>Aquí no hay héroes inmaculados ni villanos evidentes. Solo personas. Algunas quebradas por dentro. Otras, confundidas. Algunas más, frías. Todas atrapadas en una telaraña tejida con miedo, poder y silencio.</p>
+                            <p>Y en el centro de esa red, un hombre que no eligió esta historia, pero que tuvo que vivirla.</p>
+                            <p>Este relato es para él, y para todos los que, como él, aún creen que, aunque la verdad tarde, a veces regresa. Y cuando lo hace, aunque llegue herida y sin aplausos, sigue siendo lo único capaz de liberar.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <h1>Capítulo 1. El umbral de la tormenta</h1>
+
+                            <h2>Cuando la verdad se convierte en víctima</h2>
+                            <p>Andrés, hombre de fe serena y devoción silenciosa, caminaba por la vida como quien carga un templo invisible. En su interior —donde las palabras no llegaban y los gestos se extinguían antes de nacer— albergaba una reverencia honda, casi sagrada, por la fortaleza silenciosa de las mujeres y la pureza luminosa de los niños. Nunca lo manifestó con caricias ni pronunció elogios; su amor era una llama muda, sostenida con férrea disciplina. Pero en ese fervor callado se cifraba toda su verdad, la médula que le daba aliento, la raíz secreta de cuanto era.</p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                            
+                            <p>Andrés no lo sabía, pero su vida estaba a punto de estallar en mil pedazos. </p>
+                            <p>Hay lágrimas que despiertan instintos nobles: proteger, socorrer, amparar al débil. Para él, estos no eran simples ideales, sino pilares que sostenían su identidad, una brújula moral que lo guiaba en cada decisión. ¿Pero qué sucede cuando ese llanto se convierte en un arma, cuando la aparente fragilidad se usa para manipular, y la supuesta víctima, en realidad, lleva las riendas de la mentira?</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>¿Cómo había llegado hasta allí? La pregunta resonaba en su mente. Quizás todo había comenzado en su infancia, mientras aprendía a ver el mundo como un lugar donde las reglas eran claras, los límites estaban bien definidos y las emociones debían permanecer contenidas. </p>
+                            <p>El mundo ordenado que conocía se desmoronaba ante sus ojos. Ahora, las rayas se difuminaban, los límites trazados estaban borrosos, y Andrés se sentía perdido.</p>
+                            <p>Entre estas fronteras, Andrés había forjado una coraza protectora. Las certezas eran su refugio contra la incertidumbre. Pero esa misma dureza, aunque lo salvaguardaba, también lo volvía vulnerable a los golpes inesperados.</p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                            
+                            <p>De repente, se encontró acusado de algo que, en su mente, era el crimen más vil, completamente ajeno a su manera de ser. Fue como si una avalancha lo engullera, arrasando con todo lo que conocía y dejándolo desnudo ante una realidad que no podía entender. Las barreras que definían quién era se desintegraron frente a una injusticia que lo superaba por completo, una carga demasiado pesada para sus hombros. </p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Le costaba comprender cómo alguien —cualquiera— podía creer, siquiera por un instante, que él era capaz de mancillar aquello que más veneraba. </p>
+                            <p>El dolor de la traición —de ser presentado como algo que no era, por quien él había amparado—, se instaló en su pecho como un fardo invisible, que le dificultaba respirar. El latido irregular de su corazón le golpeaba los oídos, marcando el ritmo de cada pensamiento. Como una sombra, se extendía del cerebro hacia sus ojos, envolviéndolo en la oscuridad y atrapándolo sin salida.</p>
+                            <p>Andrés se quedó mirando el borde de la taza de café. Un rastro oscuro de líquido comenzaba a secarse. No sabía cuánto tiempo llevaba allí, sentado frente al ventanal empañado de la cocina. Afuera, el cielo estaba gris, como si también él presintiera lo que se avecinaba. La radio permanecía en silencio absoluto, acompañándolo en su necesidad de quietud introspectiva, pero su mente estaba en otra parte. Se llevó la taza a los labios y sintió el sabor amargo del café frío.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Entonces recordó aquella vez en que Clara, con apenas cinco años, se escondió bajo la cama. La niña creía que lo había hecho enojar al romper una figura del pesebre. En su memoria, se vio arrodillado junto a la cama, llamándola con tono calmado y sereno, con el corazón oprimido por el temor de que su hija le tuviera miedo. Con dedos vacilantes, le acarició el cabello y le dijo: «Nada que hagas podrá quitarme el amor que te tengo».</p>
+                            <p>Pensó en eso ahora, mientras retumbaba en sus oídos la llamada que acababa de recibir. Lo señalaban como un agresor. Sintió que se le atragantaban las palabras que nunca dijo, las caricias que nunca ofreció, las veces que creyó que el respeto bastaba sin ternura.</p>
+                            <p class="dialogo">—¿Cómo llegamos aquí? —murmuró, más para sí que para Dios.</p>
+                            <p>Recordó una frase que solía repetir su padre: El bien no grita, hijo. Camina descalzo. Y entonces entendió. No basta ser bueno. También hay que saber defenderse del espectáculo de la mentira.</p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                            
+                            <p>La justicia debe proteger a los inocentes. Eso creía. Pero, ¿qué sucede cuando la piedad se vuelve ciega? ¿Cuándo se premia la lágrima más sonora y no la verdad más discreta? No lo pensaba con ironía. Lo rumiaba desde el lugar más dolido de su alma: ese donde aún la verdad era su brújula. Ahora la brújula parecía girar sin sentido, como un planeta que escapa de su órbita.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Abrió el cajón lleno de fotos viejas. Conmocionado por el hielo del impacto, sacó una de Clara y Néstor en el parque, subidos en el resbaladero, con las mejillas coloradas y los ojos brillantes de sol. Apretó la foto contra el pecho. No por nostalgia, sino por necesidad.</p>
+                            <p>La voz de la radio volvió a escucharse. Después, una melodía breve; luego, nuevamente el silencio.</p>
+                            <p>Se levantó despacio. El suelo frío, que antes parecía ausente, le recordó que seguía allí, y que aún había algo por lo que pelear: no por orgullo, sino por verdad. No solo por su nombre, sino por aquellos recuerdos que ahora peligraban con ser borrados por una mentira disfrazada de justicia.</p>
+                            <p>Recordó esa imagen que encontró alguna vez entre los libros de su padre, en la vieja biblioteca de su infancia. Se trataba de «La calumnia de Apeles». La verdad, desnuda y suplicante, es ignorada mientras la mentira triunfa con ropajes de virtud. Tal vez él era ahora ese rostro despojado, intentando hablar en medio del ruido. Como entonces, hoy la apariencia se impone, y la justicia puede ceder ante el teatro del victimismo.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <h2>Cuando la Verdad se Oscurece</h2>
+                            <p>Andrés caminaba por la casa en silencio. Estaba ansioso esperando la llegada de Lucila, su esposa, y de Néstor, su hijo, para saber un poco más. Néstor llevaba más de un mes sin poder ver a sus hijos y Abigaíl sacaba evasivas cada vez que la llamaba.</p>
+                            <p>La corta conversación telefónica de hacía algunos minutos —esa voz angustiosa de Lucila, el desconocimiento de la suerte de sus nietos, la misma tardanza—, le dejó una inquietud flotando.</p>
+                            <p>Se sentó en la sala. Sobre la mesa estaba la Biblia, aún abierta en el Salmo 94: </p>
+                            <p><i>«¿Podrá aliarse contigo el tribunal inicuo que maquina injusticias en nombre de la ley?»</i>. </p>
+                            <p>La había leído esa mañana como quien busca algo. Ahora, la frase no dejaba de latirle en las sienes.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>La casa estaba en completo silencio, salvo por el zumbido del refrigerador y el tic-tac insistente del reloj de pared. Miró por la ventana: el cielo comenzaba a nublarse, pero no llovía. Blanca Libia había quedado muda cuando Él le contó la noticia.</p>
+                            <p>Andrés pensó en sus hijos, Clara y Néstor, y en los domingos de oración que alguna vez compartieron. ¿Cuándo se había roto esa paz? Intentó reconstruirlo en su memoria. Recordó el día en que Clara, con apenas siete años, llegó corriendo a mostrarle su primer dictado sin errores. Él, poco dado a abrazar, sintió un nudo en la garganta. Sin decir palabra, le compró un helado. Era su manera de amar: en gestos callados, en actos pequeños pero cargados de significado. Nunca en palabras vacías ni en promesas que no podía cumplir.</p>
+                            <p>De pronto, el timbre sonó. Era Lucila. Entró sin mirarlo. Detrás venía su hijo, con los hombros caídos.</p>
+                            <p class="dialogo">—¿Qué pasó? —preguntó Andrés, sin alzar la voz.</p>
+                            <p>Lucila dejó la cartera en la silla, suspiró, y lo miró por fin.</p>
+                        </div>
+                        <div class="texto-capitulo">
+                            
+                            <p class="dialogo">—Fui con Néstor a buscar los niños en casa de Abigaíl.</p>
+                            <p>La frase cayó como un cuchillo al suelo. Néstor evitó su mirada.</p>
+                            <p class="dialogo">—¿Por qué allá? ¿No iban para Bienestar Familiar?</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                          <p>Lucila tardó en responder.</p>
+                            <p class="dialogo">—Sí, y nos dijeron que no podíamos hacer nada, porque había una demanda. </p>
+                            <p>Y ahí, en ese instante suspendido, supo que su vida había cambiado. No por un juicio, ni por un documento oficial, ni por pruebas materiales. No. Todo comenzaba con una palabra. Una sola. Pronunciada, quizás, en el oído ávido de intrigas.</p>
+                            <p>«La verdad —pensó—, puede no tener testigos, pero la mentira sí tiene público».</p>
+                            <p>Se sentó sin decir nada. El aire se volvió denso.</p>
+                            <p>No necesitaba ver papeles. Ya lo sabía: la acusación era real. No porque fuera cierta, sino porque alguien había decidido que lo fuera.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <h2>Palabra Contra Palabra</h2>
+                            <p>Un ejemplo claro de la injusticia que se comete al juzgar basándose en calumnias es el caso que quiero compartir. Cuando existen pruebas contundentes o indicios irrefutables, no hay margen para la duda ni discusión. Sin embargo, el problema surge cuando todo depende de «palabra contra palabra», donde no hay evidencia objetiva que respalde la verdad. </p>
+                            <p>Cuando las palabras de odio comenzaron a propagarse como un veneno letal por las venas de una relación ya frágil, el mundo de Andrés se desmoronó. ¿Cómo pudo alguien que siempre valoró tanto la verdad convertirse en víctima de una mentira tan destructiva?</p>
+                            <p>Casos como el de Andrés no piden clemencia, sino rigor. No una condena rápida, sino una mirada paciente. Porque cuando todo depende de «palabra contra palabra», el volumen reemplaza a la verdad. Varios aforismos nos muestran esta fragilidad:</p>
+                            <p><i>«La verdad es hija del tiempo y la calma; la mentira, de la precipitación y el miedo»</i> —adaptación sobre Bacon.</p>
+                            <p><i>«La falsedad tiene alas y vuela, y la verdad la sigue arrastrándose» —Miguel de Cervantes.</i></p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                    `,
+                    `                            
+                            <p><i>«Una verdad sin interés puede ser eclipsada por una falsedad emocionante» —Aldous Huxley.</i></p>
+                            <p><i>«La verdad se robustece con la investigación y la dilación; la falsedad, con el apresuramiento y la incertidumbre»</i> —Tásito.</p>
+                        </div>
+
+                        <div class="texto-capitulo">
+                            
+                            <p>Andrés fue testigo de la efímera alegría de una infancia truncada; el rostro diminuto de su nieta extraviado entre la confusión y el miedo, mientras el eco de vocablos destructivos pulverizaba el pedestal de todo lo que tenía que ver con la imagen paterna. Aquellas voces, más que simples heridas, tejieron una cicatriz imborrable en la esencia misma de su ser.</p>
+                            <p>Este caso que hoy quiero presentarles queda abierto para su juicio, pidiendo, eso sí, prudencia para discernir sobre los acontecimientos que me propongo narrar. Desde cualquier punto de vista, ha habido un daño. Mi interés es mostrar en qué forma las malas y mediocres decisiones de funcionarios negligentes pueden terminar arruinando la vida de niños inocentes y complicando en modo extremo a la familia involucrada.</p>
+                        </div>
+                        <div class="texto-capitulo">                           
+                        <i><p>«Haz justicia con alguien y acabarás por amarlo. Pero si eres injusto con él, acabarás por odiarlo»</i> —John Ruskin.</p>
+                            <p><i>«La mente humana está formada de tal manera que es mucho más susceptible a la falsedad que a la verdad»</i> —Erasmo de Rotterdam.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Aplicando este razonamiento, una calumnia puede llevar a odiar a quien ha sido difamado y a confiar en el mentiroso. Esta dinámica cobra aún más fuerza cuando el calumniador es un sociópata que actúa con una mentalidad controladora para obtener beneficios personales. Este tipo de persona no duda en pisotear la dignidad de quienes se interponen en su camino, siempre dispuesto a manipular y mentir con tal de imponer sus intereses egoístas.</p>
+                            <p>Aunque los personajes de esta novela son ficticios, están inspirados en situaciones reales que reflejan las complejidades de la justicia y las relaciones humanas. Al estilo de Galileo («… Y, sin embargo, se mueve»), quiero destacar que las condiciones de tiempo y lugar relevantes para la historia son verídicas, y los hechos narrados sucedieron tal como se describen, con fidelidad y rigor. Mi objetivo es poner un grano de arena en defensa de todas aquellas personas que, bajo el dominio de individuos con trastornos de personalidad antisocial, se convierten en víctimas de calumnias que terminan arruinando vidas inocentes.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                        <p>Quizás el sociópata (personaje antagónico) no es el único culpable. Su infancia, marcada por un hogar fracturado, le negó afecto y reconocimiento. La indiferencia de los otros por su existencia fue, muy seguramente, la norma que moldeó su comportamiento desde temprana edad. Tuvo que labrarse su valía con la única arma que encontró: pasar sobre el valor de los demás. </p>
+                            <p>Su experiencia le impuso reconocer el mundo como un lugar hostil, en el cual las palabras cálidas eran reemplazadas por silencios incómodos y donde el afecto se medía en función de lo que podía ofrecer a los demás. Sus figuras de autoridad, absortas en sus propias batallas, nunca le enseñaron a conectar con las emociones ajenas; en su lugar, le mostraron un mundo en el que la supervivencia dependía de la frialdad y el cálculo. Nadie le mostró cómo amar, cómo conectar o cómo sentir algo más allá del propio beneficio. Lo que llamamos sociopatía pudo haber sido simplemente la consecuencia lógica de un terreno emocional yermo, sembrado con violencia y abandono. </p>
+                            <p>En ese contexto, su comportamiento no fue una elección deliberada, sino una respuesta forjada desde la niñez, el reflejo inevitable de un sistema que lo moldeó para adaptarse al caos en lugar de cuestionarlo.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <p>Sin embargo, no solo quienes actúan movidos por su carácter narcisista o sociópata son responsables del dolor y el sufrimiento causados. Para que el sociópata tenga poder, necesita unos oídos acríticos. Por tanto, también son responsables de las consecuencias aquellos funcionarios que, ignorando sus conocimientos sobre desórdenes de la personalidad, desestiman evidencias claras que revelan cómo tales acciones y acusaciones corresponden a comportamientos manipuladores o psicóticos. Muchas veces, obsesionados por el brillo de la fama ante un caso llamativo, dejan de lado la objetividad e imparcialidad que les debe revestir. </p>
+                            <p>Muchos juristas no castigan al difamador después de que la persona difamada es declarada inocente. Para que la justicia funcione bien, no solo hay que vigilar al difamador, sino también asegurarse de que reciba ayuda médica para sus problemas psicológicos. Esto no solo protege a la sociedad de más daños, sino que también ayuda al difamador a recuperarse y a no reincidir.</p>
+                            <p>Y así, mientras los papeles se archivan y el expediente se enfría, lo que queda no es una sentencia, sino un padre sin hijos y una verdad sin voz.</p>
+                            <p>El caso de Andrés Parra Navarro, que les presentaré sin más dilación, es un claro ejemplo de cómo la negligencia agrava el dolor y los daños colaterales, ignorando, muchas veces, evidencias que señalan la condición mental del acusador. 
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <h2>Sembrando el Odio</h2>
+                            <p>Andrés estaba solo aquella tarde. Lucila había ido con Néstor a reunirse con sus nietos, y Clara, su hija, estaba fuera. La casa, silenciosa, no ofrecía consuelo. Abrió la puerta con la llave desgastada, dejó los zapatos junto al mueble y encendió apenas una luz cálida en la sala.</p>
+                            <p>Sobre la repisa del comedor seguía el portarretrato con la foto de Rafael cuando apenas gateaba. Una imagen congelada en el tiempo. Tenía los ojos vivaces de Abigaíl, pero la frente tranquila de Néstor. Carolina, en otra foto, sostenía una flor de papel hecha en preescolar. Ninguno de los dos lo mencionaba. Quizás se lo habían prohibido.</p>
+                            <p>Se acercó a las imágenes y las limpió con un paño suave. Como quien cuida un altar.</p>
+                            <p>Llevaba algunos años cargando con el peso de la mentira. No era la angustia por la injusticia prolongada. Tampoco era el vacío que le dejó la pérdida de sus nietos: eso, en sí, era tolerable. Era el daño que persistía como un eco. Los niños crecían sin su voz, sin su abrazo, con una imagen adulterada de quien era su abuelo. No por decisión propia, sino por las palabras que otros pusieron en sus bocas.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p class="dialogo">—Han sembrado en ellos el miedo a mi nombre —susurró, de forma apenas audible—. Y yo, nada puedo hacer.</p>
+                            <p>Se imaginaba a Rafael evadiéndolo, escondido detrás de las piernas de su madre. Presentía a Carolina, en una audiencia, evitando su mirada con un gesto ensayado. No lo odiaban por sí mismos: alguien les había enseñado a hacerlo.</p>
+                            <p>El odio, pensó, no siempre grita. A veces se murmura al oído, noche tras noche, hasta que se convierte en verdad.</p>
+                            <p>La justicia, tan rápida para separar, nunca indagará si la madre es apta para criar. Nadie considerará el derecho de esos niños a conocer otra versión. A reconstruir una historia sin fantasmas. Y el Estado, sordo a las pruebas, los dejará en manos de una mujer cuya herida había mutado en estrategia.</p>
+                            <p>Andrés se sentó y rezó en silencio. No por él. Por ellos.</p>
+                            <p>Porque sabía que el odio heredado se vuelve cadena. Y su mayor miedo ya no era morir señalado, sino que sus nietos creciesen repitiendo esa sombra.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            
+                            <p>Como narrador omnisciente, deseo conducirte paso a paso en este viaje. Descubrirás quién es el heraldo, quién encarna la sombra, el mentor, el camaleón, el compinche y el guardián del umbral. No te lo diré de golpe: lo irás viendo en sus actos, sus contradicciones y sus silencios. Mi propósito es claro: mostrar que, aunque la justicia parezca a veces una luciérnaga solitaria en medio de la oscuridad, aún brilla para quien sabe mirar. Y que, cuando quienes deben protegerla se vuelven negligentes, el daño puede ser irreparable.</p>
+                            <p>Como un iceberg a la deriva entre las sombras de un mar oscuro, una mentira puede deslizarse sigilosamente entre oídos ociosos y arrastrar consigo familias enteras al desastre. Esta es la historia de Andrés: un hombre devastado por la injusticia, pero sostenido por la única fuerza capaz de resistir el odio —la Verdad.</p>
+
+                        </div>
+                    `
+                ],
+
+
+                enlaceCompra: "https://ejemplo.com/comprar-el-nuevo-templo"
+            },
+            'recurso-lirico': {
+                paginas: [
+                    `
+                         <h2>Recurso Lírico</h2>
+                        
+                          <h3>Selección</h3>
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">Pienso hacer de ti el mayor recurso para la lírica
+                              de mi existencia. Por ti burlo mi pacto con la soledad y me hago
+                              cómplice del corazón. Por ti renuncio al hermoso silencio vital y torno
+                              en pos de mi escándalo interior. Y lo hago porque espero mucho de ti:
+                              en ti quedará plasmado cuán triste y feliz soy.
+                              </p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>
+ 
+                    `,
+                    `                           
+                          <h3>PROSA I</h3>
+                          <h3 class="subtitulo">(Fragmento)</h3>
+                          <div class="texto-capitulo">
+                             <div class="estrofa">
+                            <p class="verso">Sobre el amor se ha escrito mucho, pero pocas cosas son ciertas. Todo es tan lógico al querer, pero nada concuerda. La música de los enamorados suena hermosa, pero es un martirio; como la vibración de la cuerda en hermosa simetría, pero en dolorosa elongación. El ermitaño teme al amor carnal y huye de él para encontrar la verdad, pues esta no se encuentra en aquel. Este amor es la trampa con la cual el corazón engaña a la razón y le demuestra su impotencia, es ese recurso maléfico que intenta darle una razón a la vida, pero pronto deja ver que esta razón no es suficiente para animar a perdurar en la existencia…</p>
+
+                            <p>Y la última caída consiste en amar a la muerte, la
+                              más sensual de todas las mujeres.</p>
+
+                         </div>
+                       </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                     `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                          <h3 style="text-align: center;"> DANZA </h3><br>
+                          <div class="estrofa">
+                              <p class="estrofa">Danza,</p>
+                              <p class="estrofa">danza espíritu mío,</p>
+                              <p class="estrofa">danza.</p>
+                              <p class="estrofa">Ahora que te arrulla la música de tu soledad,</p>
+                          </div>
+                              
+                          <div class="estrofa">
+                              <p class="estrofa">danza, danza.</p>
+                              <p class="estrofa">Muévete solo, a tu ritmo;</p>
+                              <p class="estrofa">muévete, pues aún vives…</p>
+                              <p class="estrofa">Danza con la dulce vibración de tu tristeza;</p>
+                              <p class="estrofa">danza y juega a ser feliz.</p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+    </div>
+  </div>
+
+  `,
+  `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                            <h3 style="text-align: center;">FRUTA MADURA</h3><br>
+                            <div class="estrofa">
+                                <p class="estrofa">Te me escapaste mujer,</p>
+                                <p class="estrofa">te me fuiste como un destello,</p>
+                                <p class="estrofa">como un cardo llevado por el viento,</p>
+                                <p class="estrofa">como el gozo sutil del pensamiento,</p>
+                                <p class="estrofa">como el ir y venir de esto y aquello.</p>
+                            </div>
+
+                            <div class="estrofa">
+                              <p class="estrofa">Te me fuiste en una noche,</p>
+                              <p class="estrofa">te marchaste en mi día,</p>
+                              <p class="estrofa">te perdiste en un instante.</p>
+                              <p class="estrofa">Mi idealismo se fugó con tu figura:</p>
+                              <p class="estrofa">ahora sólo me inquieta, madura,</p>
+                              <p class="estrofa">la fruta de tu cuerpo.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">No pienso en los románticos paseos,</p>
+                              <p class="estrofa">ni en los tiernos momentos a la luna.</p>
+                              <p class="estrofa">Únicamente me interesa tu materia:</p>
+                              <p class="estrofa">el grueso de tus piernas,</p>
+                              <p class="estrofa">el danzar de tu cintura,</p>
+                              <p class="estrofa">la fantasía de tu vientre.</p>
+                          </div>
+
+                          <div class="estrofa">
+
+                              <p class="estrofa">Te imagino sin tules ni cortinas,</p>
+                              <p class="estrofa">sin disfraces de espíritu y ternura,</p>
+                              <p class="estrofa">solo cuerpo, cuerpo limpio de armadura,</p>
+                              <p class="estrofa">solo mujer, sin más valor que tu secreto,</p>
+                              <p class="estrofa">sin más color que tus rincones.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+
+                              <p class="estrofa">Así eres hoy.</p>
+                          </div>
+                            
+                          <div class="estrofa">
+
+                              <p class="estrofa">No existe complemento,</p>
+                              <p class="estrofa">de ti solo queda ese momento</p>
+                              <p class="estrofa">de placer tal vez fugaz.</p>
+                           </div>
+                            
+                          <div class="estrofa"> 
+                              <p class="estrofa">Tu esencia ahora es ser noche…</p>
+                              <p class="estrofa">y pasión… y desvelo.</p>
+                          </div>
+                        </div>
+                        <br>
+                        <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="estrofa">
+                            <h3 style="text-align: center;">POEMARIO</h3><br>
+                            <div class="estrofa">
+
+                              <p class="estrofa">Hay un poema en cada cosa </p>
+                              <p class="estrofa">y una canción en cada corazón, </p>
+                              <p class="estrofa">alguna melodía mana de la tierra </p>
+                              <p class="estrofa">y algunas notas evocan el amor. </p>
+                            </div>
+
+                            <div class="estrofa">
+
+                              <p class="estrofa">Me suena al ritmo de la vida: </p>
+                              <p class="estrofa">un joven, una vieja, </p>
+                              <p class="estrofa">un perro, un tambor, </p>
+                              <p class="estrofa">el soldado que asesina </p>
+                              <p class="estrofa">y el pobre que busca redención. </p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">Camina un hombre por las calles, </p>
+                              <p class="estrofa">sus pasos suenan a oración; </p>
+                              <p class="estrofa">lleva al trabajo sus pesares </p>
+                              <p class="estrofa">y a la casa el hambre y la ilusión. </p>
+                            </div>
+                            
+                            <div class="estrofa">
+
+                              <p class="estrofa">Hay un niño peleando en la esquina </p>
+                              <p class="estrofa">y un anciano retirado en su mansión </p>
+                              <p class="estrofa">y un político engañando a su vecina </p>
+                              <p class="estrofa">y una dama engañando a su señor. </p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">El canto de la vida se eleva y vuela… </p>
+                          </div>                           
+                          <div class="estrofa">
+                              <p class="estrofa">Un pájaro aletea en el espacio </p>
+                              <p class="estrofa">y vuela con el ritmo de la tierra.</p>
+                              <p class="estrofa">Como él va de prisa o va despacio, </p>
+                              <p class="estrofa">como él lleva paz o trae guerra. </p>
+                            </div>
+                            
+                            <div class="estrofa">
+
+                              <p class="estrofa">Muere un hombre sin razón, </p>
+                              <p class="estrofa">se levantan las sospechas: </p>
+                              <p class="estrofa">fue su madre, </p>
+                              <p class="estrofa">pues fue ella quien lo crio: </p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">Marchan inocentes al cadalso </p>
+                              <p class="estrofa">llevando en su pecho una canción; </p>
+                              <p class="estrofa">huyen delincuentes, paso manso, </p>
+                              <p class="estrofa">fueron buenos según una versión. </p>
+                            </div>
+                            <div class="estrofa">
+                              <p class="estrofa">Hay una canción para las penas, </p>
+                              <p class="estrofa">hay un recital para el dolor, </p>
+                              <p class="estrofa">se construye un himno a las cadenas </p>
+                              <p class="estrofa">y se pide un funeral para el amor.</p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                            <h3 style="text-align: center;">PREMONICIÓN</h3><br>
+
+                            <div class="estrofa">
+
+                              <p class="estrofa">Antes de saber de ti</p>
+                              <p class="estrofa">mi mente se creó tu figura</p>
+                              <p class="estrofa">y los vacíos de mi soledad</p>
+                              <p class="estrofa">se llenaron con tu presencia…</p>
+                              <p class="estrofa">presencia lejana,</p>
+                              <p class="estrofa">presencia de sueños.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">Aprendí a vivir</p>
+                              <p class="estrofa">pensando en el futuro de encontrarte,</p>
+                              <p class="estrofa">y entre tinieblas,</p>
+                              <p class="estrofa">un poco triste, un poco solo,</p>
+                              <p class="estrofa">necesité de mi sueño para continuar.</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                                
+                              <p class="estrofa">Ahora, ahora es otro tiempo</p>
+                              <p class="estrofa">y me hace falta decirte que te quiero.</p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                            <h3 style="text-align: center;">EXILIO</h3><br>
+                            <div class="estrofa">
+                                
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+                          </div>                           
+                          <div class="estrofa">
+                              <p class="estrofa">Ella era el aire limpio</p>
+                              <p class="estrofa">y era el suave olor de las flores;</p>
+                              <p class="estrofa">era la luz de alborada</p>
+                              <p class="estrofa">y la tiniebla de la noche;</p>
+                              <p class="estrofa">el calor del sol dorado,</p>
+                              <p class="estrofa">la humedad de las nubes,</p>
+                              <p class="estrofa">la libertad del camino</p>
+                              <p class="estrofa">y el motivo de mis versos.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+                            </div>
+                            
+                            <div class="estrofa">
+
+                              <p class="estrofa">en ella pensaba yo no colocar paredes,</p>
+                              <p class="estrofa">no demarcar fronteras ni limitar mi entrada;</p>
+                              <p class="estrofa">dejar que las gotas de agua me regaran en las noches,</p>
+                              <p class="estrofa">que la luz de las estrellas en las noches me
+                                inspirara.</p>
+                            </div>
+
+
+                            <div class="estrofa">
+
+                              <p class="estrofa">En ella pensaba yo no colocar mi cama,</p>
+                              <p class="estrofa">dejar que mi cuerpo, al viento, descansara sobre el
+                                prado,</p>
+                              <p class="estrofa">no disfrazar lo rudo con lo blando de una almohada</p>
+                              <p class="estrofa">y mitigar el frío con el cobijo de un árbol.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+                            </div>
+
+                            <div class="estrofa">
+                              <p class="estrofa">ella era el viento feroz</p>
+                              <p class="estrofa">con susurros y secretos,</p>
+                              <p class="estrofa">era el sabor de un beso</p>
+                              <p class="estrofa">y la pasión del abrazo;</p>
+                              <p class="estrofa">la medida del tiempo,</p>
+                              <p class="estrofa">el ritmo de mi canto;</p>
+                              <p class="estrofa">las estrellas del cielo</p>
+                              <p class="estrofa">y las lágrimas del llanto.</p>
+                          </div>                           
+                          <div class="estrofa">
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+                              <p class="estrofa">en ella pensaba yo no colocar un techo,</p>
+                              <p class="estrofa">abrir puertas y ventanas desde todos los rincones,</p>
+                              <p class="estrofa">dejar que las hojas secas me sirvieran de lecho</p>
+                              <p class="estrofa">y entonar sin instrumentos mis más sentidas
+                                canciones.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido…</p>
+                            </div>
+
+                            <div class="estrofa">
+                              <p class="estrofa">Ahora me arrepiento.</p>
+                              <p class="estrofa">Se quedó… fue sólo un sueño.</p>
+                          </div>                           
+                          <div class="estrofa">
+                              <p class="estrofa">Y hoy me encuentro encerrado</p>
+                              <p class="estrofa">entre estas cuatro paredes.</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                              <p class="estrofa">Ya pasó… fue luz fugaz,</p>
+                              <p class="estrofa">presentimiento frustrado.</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                              <p class="estrofa">La casa de mis sueños se perdió en el olvido.</p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                            <h3 style="text-align: center;">FIN DE AÑO</h3><br>
+
+                              <h3 class="subtitulo">Para una copa </h3>
+                              <br><p class="estrofa">El año es viejo,</p>
+                              <p class="estrofa">decae,</p>
+                              <p class="estrofa">se esfuma</p>
+                              <p class="estrofa">como espuma…</p>
+                          </div>
+
+                          <div class="estrofa">
+                              <p class="estrofa">Ya son muchos los días,</p>
+                              <p class="estrofa">ya no caben los meses…</p>
+                              <p class="estrofa">los números llegan a su orilla.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">Han pasado mil cosas,</p>
+                              <p class="estrofa">todas las cosas…</p>
+                              <p class="estrofa">no cabe un suceso más,</p>
+                              <p class="estrofa">no hay espacio…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Ya han muerto los que habrían de morir,</p>
+                              <p class="estrofa">ya han nacido los que habrían de nacer,</p>
+                              <p class="estrofa">continúan su gestación</p>
+                              <p class="estrofa">quienes no tuvieron cupo,</p>
+                              <p class="estrofa">continúan su agonía</p>
+                              <p class="estrofa">quienes no alcanzaron boleto.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">No hay un día más,</p>
+                              <p class="estrofa">no hay una hora más,</p>
+                              <p class="estrofa">ni un minuto,</p>
+                              <p class="estrofa">ni un segundo.</p>
+                            </div>
+
+                          <div class="estrofa">
+                              <p class="estrofa">Las campanas suenan:</p>
+                              <p class="estrofa">es el último dong…</p>
+                              <p class="estrofa">las sirenas estallan,</p>
+                              <p class="estrofa">las personas se agitan,</p>
+                              <p class="estrofa">saltan,</p>
+                              <p class="estrofa">besan,</p>
+                              <p class="estrofa">lloran,</p>
+                              <p class="estrofa">corren,</p>
+                              <p class="estrofa">abrazan…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">¿Qué ha pasado?</p>
+                              <p class="estrofa">¿Se rompió el hilo impertérrito del destino?</p>
+                              <p class="estrofa">¿Ha cesado en su manar el tiempo?</p>
+                              <p class="estrofa">¿Han surgido nuevas fuerzas?</p>
+                              <p class="estrofa">¿Se han extinguido viejas formas?</p>
+                          </div>
+                            <br>
+                          <div class="estrofa">
+                              <p class="estrofa">¡Nada ocurre!,</p>
+                              <p class="estrofa">todo es lo mismo,</p>
+                              <p class="estrofa">excepto por la algarabía</p>
+                              <p class="estrofa">la noche es igual:</p>
+                              <p class="estrofa">las estrellas no se inmutan,</p>
+                              <p class="estrofa">la brisa no deja de correr,</p>
+                              <p class="estrofa">el aire sigue deslizándose en tenues capas,</p>
+                              <p class="estrofa">imperceptible,</p>
+                              <p class="estrofa">invisible,</p>
+                              <p class="estrofa">inodoro,</p>
+                              <p class="estrofa">incoloro…</p>
+                              <p class="estrofa">los grillos cantan y saltan;</p>
+                              <p class="estrofa">las luces brillan.</p>
+                              <p class="estrofa">Todo es lo mismo…</p>
+                              <p class="estrofa">y sin embargo…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">Hay un gran alboroto:</p>
+                              <p class="estrofa">¡Muere un año!</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Dicen que se va</p>
+                              <p class="estrofa">arrugado y canoso,</p>
+                              <p class="estrofa">enjuto y cansado,</p>
+                              <p class="estrofa">por las veredas del viento,</p>
+                              <p class="estrofa">furtivo entre las cuevas del recuerdo,</p>
+                              <p class="estrofa">oculto en los rincones del pasado…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">¿Quién lo ha visto huir?</p>
+                              <p class="estrofa">dicen que lleva el saco de la esperanza vacío</p>
+                              <p class="estrofa">y que no puede con el peso del tiempo.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">¿Quién ha sentido sus pasos lerdos?</p>
+                              <p class="estrofa">El eco de sus pies pesados</p>
+                              <p class="estrofa">reverbera en el recuerdo.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">¿Quién lo recordará con todas sus alegrías,</p>
+                              <p class="estrofa">con todas sus tristezas,</p>
+                              <p class="estrofa">con todos sus pelos y señales?</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">En su veloz carrera</p>
+                              <p class="estrofa">sólo deja</p>
+                              <p class="estrofa">pedazos de momentos…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Todo es lo mismo esta noche…</p>
+                              <p class="estrofa">bebamos una copa.</p>
+                              <p class="estrofa">¿Por qué motivo?</p>
+                              <p class="estrofa">Bebamos, total,</p>
+                              <p class="estrofa">eso no importa.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">Bebamos porque queremos,</p>
+                              <p class="estrofa">porque amamos, porque soñamos,</p>
+                              <p class="estrofa">porque ansiamos otros vientos;</p>
+                              <p class="estrofa">bebamos por los recuerdos,</p>
+                              <p class="estrofa">por las cosas absurdas en que creemos,</p>
+                              <p class="estrofa">por los que estamos,</p>
+                              <p class="estrofa">por los que se fueron,</p>
+                              <p class="estrofa">por los que vendrán…</p>
+                              <p class="estrofa">por el futuro</p>
+                              <p class="estrofa">y por el pasado.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Una copa más, solo una más</p>
+                              <p class="estrofa">con esta última campanada</p>
+                              <p class="estrofa">que resuena y ya se apaga</p>
+                              <p class="estrofa">como final suspiro</p>
+                              <p class="estrofa">de aquel año</p>
+                              <p class="estrofa">que ya</p>
+                              <p class="estrofa">está</p>
+                              <p class="estrofa">muerto.</p>
+                          </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                       <div class="texto-capitulo">
+
+                         <h3 style="text-align: center;">HAS LLEGADO</h3><br>
+                          <div class="estrofa">
+                             <p class="estrofa">¡Esta noche es diferente!</p>
+                             <p class="estrofa">¿Por qué?</p>
+                           </div>
+                              
+                           <div class="estrofa">
+                              <p class="estrofa">Las mismas estrellas suspendidas en el cielo:</p>
+                              <p class="estrofa">Aldebarán brillante,</p>
+                              <p class="estrofa">Betelgeuse gigantesca,</p>
+                              <p class="estrofa">Orión sobresaliente…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">El mismo viento que baja de la Sierra:</p>
+                              <p class="estrofa">frío en la noche cálida,</p>
+                              <p class="estrofa">rápido sobre el suelo muerto,</p>
+                              <p class="estrofa">ágil entre las palmas…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">El mismo mar que brilla con la luna:</p>
+                              <p class="estrofa">olas cíclicas que avanzan,</p>
+                              <p class="estrofa">reflujos que saltan en gotas,</p>
+                              <p class="estrofa">brillo de algas y batalla de peces…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">¡Esta noche es diferente!</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Los mismos nácares en la arena,</p>
+                              <p class="estrofa">a la distancia los mismos barcos,</p>
+                              <p class="estrofa">algún pelícano perdido,</p>
+                              <p class="estrofa">algún pescador furtivo…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Los mismos pasos marcados en la playa,</p>
+                              <p class="estrofa">huellas de mi esencia vigilante.</p>
+                              <p class="estrofa">Allá, distantes,</p>
+                              <p class="estrofa">las mismas chozas que navegan en la oscuridad.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">¡Esta noche es diferente!</p>
+                          </div>
+                          <div class="estrofa">
+
+                              <p class="estrofa">Sobre el ruido del mar</p>
+                              <p class="estrofa">se imponen las notas de un acordeón</p>
+                              <p class="estrofa">y una caja marca</p>
+                              <p class="estrofa">y una guacharaca bulle…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Una voz solitaria repite la misma canción.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">Impasible, el mismo perro solitario deambula</p>
+                              <p class="estrofa">y el mismo aullido se esconde en la penumbra…</p>
+                              <p class="estrofa">se repiten los ruidos de otras noches</p>
+                              <p class="estrofa">y las luces y las sombras no son otras.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Pero… ¡Esta noche es diferente!...</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Mi espíritu está alegre,</p>
+                              <p class="estrofa">y mi mirada, extasiada en tu figura,</p>
+                              <p class="estrofa">refleja mi estado interior:</p>
+                              <p class="estrofa">una esperanza, un anhelo…</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">Ahora el verde del mar no es solo verde,</p>
+                              <p class="estrofa">ni una conjunción hermosa de matices,</p>
+                              <p class="estrofa">es el verde de tus ojos.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">El viento de la Sierra no es solo el aire en
+                                  movimiento,</p>
+                              <p class="estrofa">es blandir de tus cabellos en bello desorden.</p>
+                          </div>
+
+                          <div class="estrofa">
+
+                              <p class="estrofa">De nácar es tu piel sembrada en mi recuerdo</p>
+                              <p class="estrofa">y de estrellas se corona en mi memoria tu figura;</p>
+                              <p class="estrofa">el susurro de tu voz está grabado en mis oídos,</p>
+                              <p class="estrofa">es música que alegra mis momentos.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                          <div class="estrofa">
+                              <p class="estrofa">¡Esta noche es diferente!</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">En mi memoria estás tú</p>
+                              <p class="estrofa">y cada paso que doy quiere avanzar hacia ti.</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">¡Esta noche es diferente!...</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">Por tu presencia;</p>
+                              <p class="estrofa">presencia que seguirá en mí,</p>
+                              <p class="estrofa">presencia que me alegra,</p>
+                              <p class="estrofa">presencia que quiere hacerse eterna…</p>
+                          </div>
+                          <div class="estrofa">
+                              <p class="estrofa">¡Esta noche es diferente!</p>
+                          </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                             <h3 style="text-align: center;">¡A QUÉ ESCRIBIR!</h3><br>
+                              
+                             <div class="estrofa">
+                          
+                              <h3 class="subtitulo">(Segunda Versión)</h3>
+                              <br><p class="estrofa">¿A qué le echo pluma?</p>
+                            </div>
+
+                            <div class="estrofa">
+                              <p class="estrofa">¿Al sol de una mañana que no existe,</p>
+                              <p class="estrofa">que se fugó veloz y ya es un sueño,</p>
+                              <p class="estrofa">al lecho de una hoguera ya sin leño…</p>
+                              <p class="estrofa">sin perfume ni humo,</p>
+                              <p class="estrofa">al chiste que furtivo se ha contado</p>
+                              <p class="estrofa">y que sin prisa</p>
+                              <p class="estrofa">voló de boca en boca hasta la risa</p>
+                              <p class="estrofa">de aquel que se ha marchado sin regreso?</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">¿A qué le echo pluma?</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                              <p class="estrofa">¿A la razón ausente de tus manos,</p>
+                              <p class="estrofa">al roce lujurioso de tus dedos,</p>
+                              <p class="estrofa">a la rara coincidencia con que amamos</p>
+                              <p class="estrofa">pecados y deseos?</p>
+                              <p class="estrofa">¿Acaso al húmedo riego de tus besos,</p>
+                              <p class="estrofa">al rocío salado de tu cuerpo,</p>
+                              <p class="estrofa">al temblor de tu piel cuando la rozo,</p>
+                              <p class="estrofa">a tu cabello claro?</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">¿A qué le echo pluma?</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                              <p class="estrofa">¿Al aire que ha inundado nuestros cielos,</p>
+                              <p class="estrofa">y nos envuelve con su aroma, dos en uno,</p>
+                              <p class="estrofa">a ese brillo universal que nos conjuga?,</p>
+                              <p class="estrofa">¿a eso he de echar pluma?</p>
+                              <p class="estrofa">¿He de echar pluma a este vacío,</p>
+                              <p class="estrofa">a la nimiedad que me inunda y me fastidia,</p>
+                              <p class="estrofa">a la sinrazón del hastío que me aísla,</p>
+                              <p class="estrofa">calor y frío?</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+
+                              <p class="estrofa">¿A qué le echo pluma?</p>
+                            </div>
+                            
+                            <div class="estrofa">
+                              <p class="estrofa">¿A qué, si estoy tan triste,</p>
+                              <p class="estrofa">si vago solitario por el mundo</p>
+                              <p class="estrofa">gritando mis canciones de poeta,</p>
+                              <p class="estrofa">profeta a quien no escucha su rebaño?</p>
+                              <p class="estrofa">¿A qué, si nada importa,</p>
+                              <p class="estrofa">si igual sigue el mundo tras la absorta</p>
+                              <p class="estrofa">realidad, sin un camino y sin buscar</p>
+                              <p class="estrofa">un sino que ilumine su destino?</p>
+                            </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                    `,
+                    `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <br>
+                              <h3 style="text-align: center;">EPÍLOGO</h3>
+
+
+                            <div class="estrofa">
+
+                              <p class="estrofa">Mi corazón está repleto de versos</p>
+                              <p class="estrofa">y las sombras de la noche los inspiran.</p>
+                              <p class="estrofa">Una mano un tanto flácida,</p>
+                              <p class="estrofa">una pluma un tanto lenta…</p>
+                              <p class="estrofa">se extiende azul la tinta.</p>
+                            </div>
+                          </div>
+
+
+                          `,
+                          `
+                          <div class="texto-capitulo">
+                            <div class="estrofa">
+                              <p class="estrofa">En su reguero meditado</p>
+                              <p class="estrofa">brotan designios del hado,</p>
+                              <p class="estrofa">laberintos de la historia;</p>
+                              <p class="estrofa">rueda como una noria</p>
+                              <p class="estrofa">mi pensamiento agitado.</p>
+                            </div>
+
+                            <div class="estrofa">
+                              <p class="estrofa">En definitiva, ¡Nada concuerda!</p>
+                              <p class="estrofa">estaba rota la cuerda</p>
+                              <p class="estrofa">y doy esto por terminado.</p>
+                            </div>
+
+                            </div>
+                          </div>
+                          </div>
+                          <br>
+                          <h3 style="text-align: center;">*******</h3>  
+                          <br>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-recurso-lirico"
+            },
+
+
+            'debajo-del-manzano': {
+                paginas: [
+                    `
+                        <h2>DEBAJO DEL MANZANO - SELECCIÓN</h2>
+                        <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+                        <div class="texto-capitulo"><br>
+                          <div class="estrofa">
+                            <h2 class='titulo-poema'>I - Creación</h2>    
+
+                            <div class="estrofa">
+                                <i><p class='estrofa'>La tierra era caos y confusión y</p>
+                                <p class='estrofa'>oscuridad por encima del abismo, </p>
+                                <p class='estrofa'>y un viento de Dios aleteaba por</p>
+                                <p class='estrofa'>encima de las aguas.</p>
+                                <p class='estrofa'>Gn 1, 2.</p></i>
+                            </div>
+                            <div class="estrofa">
+                                <p class='estrofa'>Dulce viento que no deja de inspirar</p>
+                                <p class='estrofa'>obediente a la Palabra que edifica,</p>
+                                <p class='estrofa'>brisa que se expande y plasma,</p>
+                                <p class='estrofa'>que entrama la materia y la energía,</p>
+                            </div>
+                          </div>
+
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="estrofa">
+                                <p class='estrofa'>suave hálito que genera sustancia,</p>
+                                <p class='estrofa'>corriente sutil que sopla vida,</p>
+                                <p class='estrofa'>que moldea astros y planetas,</p>
+                                <p class='estrofa'>que explota en mares y en montañas,</p>
+                                <p class='estrofa'>que hace pulular vegetación,</p>
+                                <p class='estrofa'>que inyecta la vida en animales</p>
+                                <p class='estrofa'>y en el hombre insufla el alma.</p>
+                            </div>
+
+                            <div class="estrofa">
+                                <p class='estrofa'>Una onda, un himno,</p>
+                                <p class='estrofa'>divino canto,</p>
+                                <p class='estrofa'>sinfonía universal,</p>
+                                <p class='estrofa'>voluntad creadora,</p>
+                                <p class='estrofa'>espíritu Santo,</p>
+                                <p class='estrofa'>espíritu de Dios.</p>
+                            </div>
+                          </div>
+
+  `,
+  `
+  <div class="texto-capitulo">
+    <div class="estrofa">                     
+      <p class='estrofa'>No eres energía, Tú la ordenas,</p>
+      <p class='estrofa'>no eres sustancia material, Tú haces sus Leyes,</p>
+      <p class='estrofa'>intimidad de Dios Padre,</p>
+      <p class='estrofa'>voluntad de su Hijo,</p>
+      <p class='estrofa'>uno en ellos.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>La Palabra creó</p>
+      <p class='estrofa'>y el viento de Dios aleteó por encima de las aguas:</p>
+      <p class='estrofa'>separó lo húmedo y lo seco,</p>
+      <p class='estrofa'>instituyó el “arriba” y el “abajo”,</p>
+      <p class='estrofa'>dio el orden a los átomos,</p>
+      <p class='estrofa'>amalgamó astros y extendió su brillo,</p>
+      <p class='estrofa'>difundió la sabiduría,</p>
+      <p class='estrofa'>estableció el método Divino;</p>
+      <p class='estrofa'>balanza que distribuye los dones,</p>
+      <p class='estrofa'>medida de la generosidad celeste.</p>
+    </div>
+  </div>
+
+  `,
+  `
+  <div class="texto-capitulo">
+    <div class="estrofa">                     
+      <p class='estrofa'>En tu viaje sobre la Divina Creación</p>
+      <p class='estrofa'>no pases de largo, te ruego.</p>
+      <p class='estrofa'>detente ante mi puerta,</p>
+      <p class='estrofa'>suaviza mi angustia con tu soplo.</p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Ante el umbral de mi estancia</p>
+      <p class='estrofa'>¡Detente y sopla un poco!</p>
+      <p class='estrofa'>No me niegues tus Dones,</p>
+      <p class='estrofa'>socórreme con tu sabiduría</p>
+      <p class='estrofa'>dame tu viento refrescante,</p>
+      <p class='estrofa'>no pases de largo,</p>
+      <p class='estrofa'>no sigas sin mirarme.</p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>¡Paráclito Divino!,</p>
+      <p class='estrofa'>consuélame en este destierro.</p>
+      <p class='estrofa'></p>
+    </div>
+  </div>
+
+  `,
+  `
+  <div class="texto-capitulo">
+    <div class="estrofa"> 
+      <p class='estrofa'>Tal tu inmanencia, has sido generoso,</p>
+      <p class='estrofa'>¿Cómo no agradecer tu excelso aroma?</p>
+      <p class='estrofa'>Tú fragancia ha inundado mi vida</p>
+      <p class='estrofa'>dando placidez a mi existencia.</p>
+      <p class='estrofa'>Mi soberbia no me ha dejado verte,</p>
+      <p class='estrofa'>casi nunca te he reconocido.</p>
+      <p class='estrofa'>Por eso camino perdido,</p>
+      <p class='estrofa'>dando tumbos y vueltas,</p>
+      <p class='estrofa'>alejado del bien, obrando errante.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Por no detenerme a sentir el suave viento,</p>
+      <p class='estrofa'>he dado cabida a la tormenta del enemigo,</p>
+      <p class='estrofa'>fétido olor a azufre y ajo…</p>
+      <p class='estrofa'>cadaverina que ha envuelto mi alma.</p>
+      <p class='estrofa'>Me he embelesado en sus enredos</p>
+      <p class='estrofa'>y he desechado el suave efluvio.</p>
+      <p class='estrofa'></p>
+    </div>
+  </div>
+
+  `,
+  `
+  <div class="texto-capitulo">
+    <div class="estrofa"> 
+      <p class='estrofa'>Más, yo no le pertenezco a ese,</p>
+      <p class='estrofa'>¡a ese no!</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>¡Mírame, te clamo!:</p>
+      <p class='estrofa'>yo quiero ser tuyo,</p>
+      <p class='estrofa'>pues me debo a mi creador,</p>
+      <p class='estrofa'>al eternamente bueno,</p>
+      <p class='estrofa'>imagen suya soy, no del otro,</p>
+      <p class='estrofa'>acusador que me desvía.</p>
+      <p class='estrofa'></p>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>¡Oh Espíritu de Dios!</p>
+      <p class='estrofa'>Insiste en mí, no me sueltes:</p>
+    </div>
+  </div>
+
+  `,
+  `
+  <div class="texto-capitulo">
+    <div class="estrofa"> 
+      <p class='estrofa'></p>
+      <p class='estrofa'>Que en mi suerte me pierdo,</p>
+      <p class='estrofa'>que en mi voluntad me equivoco</p>
+      <p class='estrofa'>que en mis caprichos me muero.</p>
+      <p class='estrofa'></p><br>
+    </div>
+    <div class="estrofa">
+      <p class='estrofa'>Tu bálsamo sea mi refugio,</p>
+      <p class='estrofa'>en tus Dones encuentre yo el consuelo,</p>
+      <p class='estrofa'>tu viento dé brillo a mi alma</p>
+      <p class='estrofa'>y pueda yo ser el espejo</p>
+      <p class='estrofa'>de ese Cristo que habiendo muerto</p>
+      <p class='estrofa'>resucitó para la salvación del mundo entero.</p>
+      <p class='estrofa'></p><br>
+      </div>
+    </div>
+  </div>
+
+
+
+                        
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-debajo-del-manzano"
+            },
+            'esperanza': {
+                paginas: [
+                    `
+                        <h1>La Esperanza del Cristiano - Capítulo 1</h1>
+                        <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+                        <div class="texto-capitulo">
+                            <h2>Introdución</h2>    
+<p class='parrafo'>En medio de las insatisfacciones normales de la vida, del sufrimiento causado por la enfermedad, por la carencia, por los efectos devastadores de la naturaleza o por la injusticia propia del ser humano, concentramos nuestro empeño en la lucha diaria por sobrevivir. Nos movemos inmersos en la maraña por los intereses de tener y poder; nos las hemos arreglado para sentir un poco de sosiego y para creer que todo va muy bien, como a pedir de boca. ¡Como si esa insatisfacción, ese sufrimiento, ese dolor no fueran nuestros! Si por casualidad el infortunio nos toca apenas cercanamente, nos conformamos con dar unas palmaditas en el hombro del paciente y con sugerirle fortaleza y paciencia, virtudes de las que muy posiblemente carecemos. Y si estamos en el grupo de los que llevan sobre sus espaldas su peso apabullante, solemos alienarnos en quiméricas soluciones. Nos consolamos pensando que la póliza que estamos pagando cómodamente, que el seguro de salud que hemos adquirido, que la lotería que hemos comprado, que el familiar rico que tenemos o, en el mejor de los casos, que el esfuerzo de nuestro trabajo, serán las fuentes de nuestra salvación. </p>
+ </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+<p class='parrafo'>Y seguimos de este modo recorriendo el sendero de nuestras existencias, con el pensamiento puesto en satisfacer los deseos del día a día, creyendo que en eso está cifrado el objetivo de nuestro ser. No nos damos cuenta de que somos profundamente infelices: los negocios no salen como lo planeamos, nuestra pareja o nuestros allegados no son como quisiéramos y no hacen lo que deseamos o sospechamos que deberían hacer. En el trabajo, nuestros empleados no entienden lo que para nosotros es tan obvio o nuestros patrones solo piensan en dar órdenes y aumentar sus riquezas. Y hasta pensamos que nuestra religión está equivocada porque no acepta las mismas cosas que nosotros queremos creer. Navegamos en medio de una recóndita infelicidad, presente tanto en el más rico como en el más pobre: siempre queremos más, siempre deseamos más; sentimos que no es suficiente. </p>
+<p class='parrafo'>Tapamos la angustia de nuestra existencia, anhelando, aspirando. «Si no deseas, eres conformista», te grita la sociedad. Mira tu cuerpo; quizás tus dientes no corresponden al modelo mental que te han metido, quizás no estás conforme con tu vientre o con tus piernas o, qué sé yo, con tu nariz y tus ojos, o con tu sexo, o con tus preferencias; quizás sientes que no son deseables para los demás y esto te tiene inconforme contigo mismo. Quizás tu aliento no es tan fresco o hasta repugna y tus axilas acumulan bacterias y sudor que te hacen indeseable. La solución está en tus manos: ¡compra!, ¡contrata!, ¡alquila!, ¡modifica!, ¡cambia! Hasta te has comprado un libro queriendo hallar la solución: todo tiene un precio.</p>
+ </div>
+                    `,
+                    `
+                        <div class="texto-capitulo"><p class='parrafo'>Desde las entrañas de este enredo, de esta ficción asfixiante, algún ser menos alienado se detiene y piensa un poco. Se plantea el interrogante fundamental: «¿Quién soy yo?». ¡Ay!, ¡qué profundo abismo se abre!, ¡qué sinsentido y sinsabor se descubre! Se detiene ante el despeñadero, o como quien está parado sobre una torre, solitario, aislado, atisbando un panorama que no comprende, experimentando una visión terrible que no sabe cómo abordar. Es así como con esta pregunta se comienza a poner límites hasta ahora ignorados. ¿Dónde empiezo y termino? ¿Tuve un comienzo? ¿Tendré un fin? ¿De dónde vengo? ¿Cuál es el propósito de mi existencia? ¿Por qué existo y con quiénes? ¿Por qué ahora? ¿Qué es esto? ¿Es real o ficción? ¿Qué más hay?</p>
+<p class='parrafo'>Podría llenar este escrito con miles y miles de cuestiones, con las fundamentales y con las que se derivan de ellas, con las que se mezclan, se cruzan, se interfieren, se explican entre sí o se oscurecen. Es una cosa para volver loco a quien no encuentra ayuda. Algunos realizan este hallazgo cuando han llegado al sin salida, cuando el laberinto de los sucesos les ha estrellado de frente con la realidad. La mayoría no lo soporta, porque están debilitados; porque no encuentran una razón para el dolor que les oprime y no creen que existe una luz al otro lado del túnel. O porque, simplemente, no tienen las fuerzas para iniciar el recorrido de retorno. De otro lado, quienes afrontan los retos planteados por este descubrimiento comienzan un recorrido bastante duro, extenuante, no exento de bifurcaciones y desvíos, presenciando un sinnúmero de señales, unas pocas, las verdaderas, que quieren ayudar en el avance, otras, falsas, que quieren que el ser retorne al molde del que intenta escapar.</p>
+
+                    `,
+                    `
+<p class='parrafo'>Este desespero de los «espíritus inquietos» los ha llevado a reflexionar: </p>
+<p class='dialogo'>Nosotros los que conocemos somos desconocidos para nosotros, nosotros mismos somos desconocidos para nosotros mismos: esto tiene un buen fundamento. No nos hemos buscado nunca, - ¿cómo iba a suceder que un día nos encontrásemos? (Friedrich Nietzsche, La Genealogía de la Moral —Prólogo. Biblioteca Nietzsche, Alianza Editorial, pg. 21. 2005). </p>
+<p class='parrafo'>Seres que no logran salir de la oscuridad, de quienes el pesimismo ha hecho presa y les ha robado toda su vitalidad, toda su capacidad, toda su existencia. Son estos quienes han llegado a proclamar la muerte misma de la esperanza para el hombre. </p>
+<p class='parrafo'>Aquel que se suicida ante esta circunstancia al menos ha dejado en libertad al resto para que pueda encontrar la salida. Sin embargo, quien ha gritado a los cuatro vientos la caída de Dios, ha arrastrado tras de sí a muchos que, sin fuerzas, se han dejado llevar por esta corriente que les retuerce hacia el fondo del abismo. Les ha robado la esperanza. El hombre sin esperanza no es nada; está perdido. Este hombre está abocado a enfrentarse con el dolor por el simple placer de vencerlo, como si esa fuera razón suficiente. Ante esta perspectiva, la moral, la convivencia, y en sí todo lo que rodea al hombre, pierde su sentido. ¿Qué sentido tiene existir para la nada, llevando una vida que no compensa los esfuerzos? ¿Qué sentido tiene la tolerancia hacia los demás, cuando las oportunidades no consideran mi identidad? ¿Qué sentido tiene el respeto por la propiedad de los otros o por sus vidas, si yo no puedo poseer o vivir como ellos viven, y no hay sentido trascendente en la existencia? </p>
+
+                    `,
+                    `
+<p class='parrafo'>La consecuencia lógica de este proceder es la anarquía, el desorden y la imposición del más fuerte. Es por eso que las naciones que no tienen identidad religiosa pasan pronto, mientras sobreviven aquellas que tienen puestas sus raíces en la trascendencia. Es por eso que los gobiernos oportunistas, aunque agnósticos en sí, sustentan el poder de la religiosidad para mantener con esperanza a sus gobernados, y con ello, falsamente acallados sus espíritus. Este es el gran peligro de la religiosidad, que en principio cumple la buena misión de querer mostrarnos trascendentes y nos deja con esperanza, pero que, por no tener un rumbo correcto, termina utilizada, para mantener intereses mezquinos, para validar el poder o para subyugar mediante la imposición de la humildad y la obediencia.</p>
+<p class='parrafo'>En la desesperanza, el mismo nacionalismo pierde cualquier valor. ¿Para qué pertenecer a una nación, si una vez muerto no haré parte de ella, no quedaré más que en la memoria de algunos que, tarde que temprano, también desaparecerán y, finalmente, pasaré al olvido? Lo mismo Hitler que Gandi, igual Nerón que la Madre Teresa, idéntico destino para el terrorista que para el santo. ¡Sin esperanza es igual!</p>
+<p class='parrafo'>Llegará a la misma conclusión quien cifra la felicidad en el éxito o en la fama, efímeros calificadores de una realidad incompleta, porque ambos, aunque brotan de la renuncia, de la disciplina y del tesón, son temporales y no colman. ¿Renunciar a vivir para poseer dinero, para obtener los bienes materiales que se acaban con el tiempo y que en la hora de la muerte son más una dura carga que un equipaje que nos pueda acompañar a quién sabe qué lugar? ¿Reducir nuestra vida a una simple carrera tras afectos comprados, tras un reconocimiento pasajero y lisonjero que siempre espera algo, tras la adulación, falsa estima, que solamente busca dádivas y retribuciones? ¿Qué esperanza puede haber después de experimentar el descontento en medio de la abundancia, la sinrazón en medio de la opulencia y la soledad en medio de las multitudes?</p>
+
+                    `,
+                    `
+<p class='parrafo'>Algo dentro del hombre pensador se resiste a aceptar que esto sea así: le agitan unas como cosquillas en el estómago, le recorre como un vértigo que le impulsa a rechazar este pensamiento; ¡no puede ser así!, la existencia no puede estar abocada a un vacío tan inmenso, a una total impotencia, a tan gran ausencia de una razón trascendente. No tiene ningún sentido existir en esta lucha detrás de la felicidad para encontrarla tan fugaz, tan precaria y transitoria, tan enclenque. Ante este panorama, se aliena en la conformidad, creyendo que simplemente así son las cosas y que no se pueden cambiar. Se esconde el pensador en un caparazón de autosuficiencia y falsa grandeza para «aceptar» y «comprender» lo que el hombre religioso ve como inaceptable. Pero este conformismo por sí mismo no es grandeza. Entonces, ¿cuál es la situación?</p>
+<p class='parrafo'>Para tratar de entender qué nos sucede, puede resultar de interés reconocer las diferentes miradas que el hombre da a este problema.</p>
+<p class='parrafo'></p>
+</div>
+</div>
+</div>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-la-esperanza"
+            },
+            'don-del-sufrimiento': {
+                paginas: [
+                    `
+                        <h2>El Don del Sufrimiento - Capítulo 1</h2>
+                        <div class="texto-capitulo">
+                            <div class="verso">
+                                <p>En este ensayo (teológico y antropológico) el autor se sumerge en la exploración del sentido del sufrimiento. ¿Por qué sufrimos?, ¿para qué sufrimos?, ¿cuál es el papel de Dios en tu sufrimiento?... Para encontrar que sí, el sufrimiento tiene sentido.</p>
+                            </div>
+                            
+                            <div class="verso">
+                                <p>El sufrimiento humano es una realidad universal que ha acompañado a la humanidad desde sus orígenes. A lo largo de la historia, filósofos, teólogos y pensadores de todas las tradiciones han intentado comprender su significado y propósito. Desde la perspectiva cristiana, el sufrimiento adquiere una dimensión redentora cuando se une al de Cristo.</p>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="verso">
+                                <p>Este ensayo no busca justificar el sufrimiento, sino iluminar su posible significado en el plan divino. A través de un diálogo entre la fe, la razón y la experiencia humana, el autor nos invita a descubrir cómo incluso en el dolor más profundo puede haber una semilla de transformación y esperanza.</p>
+                            </div>
+                            
+                            <div class="verso">
+                                <p>El sufrimiento, cuando es aceptado y ofrecido con amor, puede convertirse en un medio de purificación y crecimiento espiritual. No es un fin en sí mismo, sino un camino hacia una mayor plenitud y una más profunda comunión con Dios y con los demás.</p>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="verso">
+                                <p>En la tradición cristiana, el sufrimiento de Cristo en la cruz se convierte en el modelo supremo de cómo el dolor puede ser transformado en fuente de vida y redención. Al unir nuestro sufrimiento al suyo, participamos en la obra de salvación y encontramos sentido incluso en medio del dolor.</p>
+                            </div>
+                            
+                            <div class="verso">
+                                <p>Este libro es una invitación a mirar el sufrimiento no como un castigo o un error, sino como una oportunidad de encuentro con Dios, de crecimiento personal y de solidaridad con todos los que sufren en el mundo.</p>
+                            </div>
+                        </div>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-el-don-del-sufrimiento"
+            },
+            'sinfonia-celeste': {
+                paginas: [
+                    `
+                        <h1>Sinfonía Celeste - Primer Acto</h1><br>
+                        <div class="texto-capitulo">
+                          <div class="estrofa">
+                            <p class='estrofa'><i>Un grupo de hombres, conformado por un pensador, un nihilista, un científico y un creyente, reunido en torno a una esfera terrestre, expresa ordenadamente sus ideas sobre la existencia. Al fondo, una pantalla proyecta imágenes que acompañan los diálogos.</i></p><br>
+                            <h2 class='titulo-estrofa'>Existencia</h2>
+                            <p class='estrofa'><i>El pensador (dirigiéndose primero al grupo y luego al público)</i></p><br>
+                            <p class='estrofa'>Pensar me apremia sobre la razón</p>
+                            <p class='estrofa'>de existir cercado entre muerte y vida:</p>
+                            <p class='estrofa'>ser un inciso, una acotación,</p>
+                            <p class='estrofa'>fútil instante que en la nada anida.</p>
+                          </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="estrofa">
+                                <p class='estrofa'>Sin dar permiso para su creación</p>
+                                <p class='estrofa'>trae el ser consigo la cierta partida,</p>
+                                <p class='estrofa'>¿Es sentencia cierta su aniquilación?</p>
+                                <p class='estrofa'>¿Tal vez ser penado con Eterna vida?</p>
+                            </div>
+                            <div class="estrofa">
+                                <p class='estrofa'>Pondero en la ciencia y en cada ecuación,</p>
+                                <p class='estrofa'>busco en el cosmos la ruta perdida,</p>
+                                <p class='estrofa'>algo que revele tras esta obsesión,</p>
+                            </div>
+                            <div class="estrofa">
+                              <p class='estrofa'>una luz, un hito, alguna salida:</p>
+                              <p class='estrofa'>el ser o el no ser, esa es la cuestión,</p>
+                              <p class='estrofa'>la voraz duda que asedia escondida.</p>
+                            </div>
+                          </div>
+    `,
+    `
+    <div class="texto-capitulo">
+      <div class="estrofa">
+      <h2 class='titulo-poema'>I – El Canto de Dios</h2>
+        <p class='estrofa'><i>El hombre de ciencia</i></p><br>
+        <p class='estrofa'>Una gota cae sobre el quedo charco.</p>
+        <p class='estrofa'>Su turbación se extiende armoniosa</p>
+        <p class='estrofa'>en flotantes círculos que se hacen vastos</p>
+        <p class='estrofa'>para perderse en lontananza, hasta el olvido…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Un botón, punto génico, será una rosa,</p>
+        <p class='estrofa'>desbordará de pétalos el nido; </p>
+        <p class='estrofa'>dimensión que se proyecta cadenciosa, </p>
+        <p class='estrofa'>a su vez, conteniendo y contenido…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El tiempo es el maestro que, en su avance, </p>
+        <p class='estrofa'>guía tal contraste sin sentido; </p>
+        <p class='estrofa'>es el ir y el devenir, él es el trance, </p>
+        <p class='estrofa'>es el tejido del silencio y el sonido…</p>
+      </div>
+    </div>
+    `,
+    `
+    <div class="texto-capitulo">
+      <div class="estrofa">
+        <p class='estrofa'><i> (El científico deja caer una canica sobre el cristal del escritorio)</i></p><br>
+        <p class='estrofa'>Se excita el aire, se propaga el ruido. </p>
+        <p class='estrofa'>Muchos ruidos concertados son sonido, </p>
+        <p class='estrofa'>son la música y el himno, </p>
+        <p class='estrofa'>la Palabra y el misterio trascendido. </p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Un hilillo de agua es una fuente, </p>
+        <p class='estrofa'>y una fuente y otra fuente son un río, </p>
+        <p class='estrofa'>y un río y otro río, son creciente, </p>
+        <p class='estrofa'>alternar de conteniendo y contenido.</p>
+      </div>
+    </div>
+    `,
+    `
+    <div class="texto-capitulo">
+      <div class="estrofa">
+        <p class='estrofa'>Una pendiente tras otra son un monte,</p>
+        <p class='estrofa'>y dos montes y otro monte son cadena,</p>
+        <p class='estrofa'>y cadenas, valles y corrientes</p>
+        <p class='estrofa'>son los recodos del camino.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El punto su razón halla en el plano,</p>
+        <p class='estrofa'>desde plano es el espacio su propuesta…</p>
+        <p class='estrofa'>Se multiplica hasta formar denso vilano;</p>
+        <p class='estrofa'>en él se desdobla y se proyecta.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>El átomo, imitación del firmamento</p>
+        <p class='estrofa'>se expresa en tránsitos y giros,</p>
+        <p class='estrofa'>¿Quién sabrá si rota el universo?,</p>
+        <p class='estrofa'>dimensiones conteniendo y contenido.</p>
+      </div>
+    </div>
+    `,
+    `
+    <div class="texto-capitulo">
+      <div class="estrofa">
+        <p class='estrofa'>El tiempo es el mentor,</p>
+        <p class='estrofa'>es la guía del contraste,</p>
+        <p class='estrofa'>la ligazón de los extremos,</p>
+        <p class='estrofa'>es el ir y el devenir, silencio e himno…</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>Pasado, presente y futuro;</p>
+        <p class='estrofa'>inmensos límites, anodino lapso,</p>
+        <p class='estrofa'>historia – suceso – consecuencia,</p>
+        <p class='estrofa'>disgregados y fundidos,</p>
+        <p class='estrofa'>uno mismo y tres distintos,</p>
+        <p class='estrofa'>(misterio trinitario),</p>
+        <p class='estrofa'>lo que fue, lo que ahora es</p>
+        <p class='estrofa'>y aquello que no ha sido,</p>
+        <p class='estrofa'>el proyecto, el acto y lo esperado,</p>
+        <p class='estrofa'>secreta relación: origen, ser y resultado,</p>
+        <p class='estrofa'>ley, teorema y corolario.</p>
+       </div>
+     </div>
+     `,
+     `
+      <div class="texto-capitulo">
+      <div class="estrofa">
+        <p class='estrofa'><i>Interrumpe el creyente</i></p><br>
+        <p class='estrofa'>Un sonido y otro más,</p>
+        <p class='estrofa'>y otro sonido son un ruido.</p>
+        <p class='estrofa'>¡Oh maravilla!,</p>
+        <p class='estrofa'>si hay un Plan, se entona un salmo:</p>
+        <p class='estrofa'>el canto del Creador.</p>
+      </div>
+      <div class="estrofa">
+        <p class='estrofa'>¡La existencia es el Canto de Dios!</p>
+        <p class='estrofa'></p>
+      </div>
+    </div>
+  </div>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-sinfonia-celeste"
+            },
+
+
+            // Agregar este objeto al contenidoObras existente
+            'sabiduria-haikai': {
+                paginas: [
+                    `
+                        <h2>Sabiduría Haikai - Selección</h2>
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku1/400/300.jpg" alt="Ilustración para '¡Avance!'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>¡Avance!</h3>
+                                        <div class="haiku-content">
+                                            <p>Tras dar un paso...</p>
+                                            <p>es más fácil seguir</p>
+                                            <p>que desandar.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>¡Nimio!</h3>
+                                        <div class="haiku-content">
+                                            <p>Sueños de fama:</p>
+                                            <p>son báquicas quimeras,</p>
+                                            <p>diluidas nubes.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku2/400/300.jpg" alt="Ilustración para '¡Nimio!'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku3/400/300.jpg" alt="Ilustración para 'Elución'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Elución</h3>
+                                        <div class="haiku-content">
+                                            <p>Huyen de ti;</p>
+                                            <p>has hecho de tu juicio</p>
+                                            <p>ley de la vida.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Fantasía</h3>
+                                        <div class="haiku-content">
+                                            <p>Soñó la luna;</p>
+                                            <p>cabalgó sobre yegua</p>
+                                            <p>sin herraduras.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku4/400/300.jpg" alt="Ilustración para 'Fantasía'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku5/400/300.jpg" alt="Ilustración para 'Planitud'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Planitud</h3>
+                                        <div class="haiku-content">
+                                            <p>Busca la fama;</p>
+                                            <p>explanada infinita,</p>
+                                            <p>muere al ocaso.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Nimbos</h3>
+                                        <div class="haiku-content">
+                                            <p>Los sentimientos:</p>
+                                            <p>son lánguidos matices,</p>
+                                            <p>nubes y vientos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku6/400/300.jpg" alt="Ilustración para 'Nimbos'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku7/400/300.jpg" alt="Ilustración para 'Paz'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Paz</h3>
+                                        <div class="haiku-content">
+                                            <p>Tus ojos verdes;</p>
+                                            <p>diáfano manantial</p>
+                                            <p>que me sosiega.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Calor</h3>
+                                        <div class="haiku-content">
+                                            <p>Tu esbelto cuerpo</p>
+                                            <p>es el refugio cálido</p>
+                                            <p>de mi pasión.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku8/400/300.jpg" alt="Ilustración para 'Calor'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku9/400/300.jpg" alt="Ilustración para 'Encarnado'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Encarnado</h3>
+                                        <div class="haiku-content">
+                                            <p>Rojas cerezas;</p>
+                                            <p>Tus purpúreos labios</p>
+                                            <p>tibios y vivos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Aleteo</h3>
+                                        <div class="haiku-content">
+                                            <p>Tu roce suave,</p>
+                                            <p>mariposa que agita</p>
+                                            <p>mis ramas secas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku10/400/300.jpg" alt="Ilustración para 'Aleteo'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku11/400/300.jpg" alt="Ilustración para 'Transparente'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Transparente</h3>
+                                        <div class="haiku-content">
+                                            <p>Mirada clara.</p>
+                                            <p>Tras el sol de tus ojos</p>
+                                            <p>no existe ocaso.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Deseo</h3>
+                                        <div class="haiku-content">
+                                            <p>Sobre la cama</p>
+                                            <p>brillas con esplendor</p>
+                                            <p>indescriptible.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku12/400/300.jpg" alt="Ilustración para 'Deseo'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku13/400/300.jpg" alt="Ilustración para 'Volcán'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Volcán</h3>
+                                        <div class="haiku-content">
+                                            <p>Gravito en ti.</p>
+                                            <p>Lava ambarina y gris</p>
+                                            <p>enciende mi alma.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Sol en ramas</h3>
+                                        <div class="haiku-content">
+                                            <p>Volátil cardo.</p>
+                                            <p>Tu llegada y partida:</p>
+                                            <p>cerezo en flor.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku14/400/300.jpg" alt="Ilustración para 'Sol en ramas'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                            <div class="haiku-container">
+                                <div class="haiku-item">
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku15/400/300.jpg" alt="Ilustración para 'Haiku'">
+                                    </div>
+                                    <div class="haiku-texto">
+                                        <h3>Haiku</h3>
+                                        <div class="haiku-content">
+                                            <p>Así es el Haiku:</p>
+                                            <p>burlón y disonante,</p>
+                                            <p>conciso y sabio.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="haiku-item invertido">
+                                    <div class="haiku-texto">
+                                        <h3>Vanidad</h3>
+                                        <div class="haiku-content">
+                                            <p>Es vanagloria.</p>
+                                            <p>Un monte solitario</p>
+                                            <p>entre tinieblas.</p>
+                                        </div>
+                                    </div>
+                                    <div class="haiku-image">
+                                        <img src="https://picsum.photos/seed/haiku16/400/300.jpg" alt="Ilustración para 'Vanidad'">
+                                    </div>
+                                </div>
+                            </div>            
+                        </div>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-sabiduria-haikai"
+            },
+
+
+            'el-nuevo-templo': {
+                paginas: [
+                    `
+                        <h1>El Nuevo Templo</h1>
+                        <div class="texto-capitulo">                      
+                        <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+                            <h3>Río Ἁλυς - año 67.</h3>
+                             <h3>(Uçhisar, región de Capadocia, cerca de Cesarea Mazaca)</h3>
+                             <p>El anciano yacía sobre un lecho de mantas ásperas, en el interior de una caverna sombría. El eco de su fragilidad lo rodeaba como un silencio espeso. De aquel vigor que lo había caracterizado años atrás, no quedaba más que un leve temblor en las manos. Frente a él estaba Teófilo, un joven alto, de tez oscura y musculatura firme. El contraste entre ambos era abismal: uno, rebosante de juventud; el otro, como una rama otoñal doblegada por el peso de las estaciones.</h3>
+                             <p class="dialogo">—Mi apreciado Teófilo, una sed inmensa me devora.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>La voz entrecortada del anciano fue apenas un murmullo. Tenía la garganta reseca como el lecho de un río agrietado por el sol.</p>
+                             <p>El joven destapó un odre y vertió agua en un recipiente de barro. Lo acercó al anciano, quien lo tomó con manos temblorosas. Bebió a pequeños sorbos, con dificultad. En su rostro se reflejó una mezcla de alivio y agotamiento. Apenas pasó el fugaz aliento, continuó hablando con el hilo de su voz fatigada:</p>
+                             <p class="dialogo">—Pero no es esta sed del cuerpo la que me consume. Es otra... una que nace desde lo hondo y arde sin tregua, y que ninguna fuente terrenal puede calmar. Yo, que en otro tiempo bebí de las aguas puras del Jordán, aquellas que nacen bajo el rocío perfumado del חרמון, ¡cómo añoro aquellos días! Vivir entre los hermanos, compartir el pan y las palabras... todo era maravilloso entonces.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>Atrás habían quedado los días en que el anciano luchaba dominado por sus impulsos y su orgullo. Ahora, al borde del viaje definitivo, comprendía la futilidad de aquellas batallas. La sed que lo consumía no era del cuerpo, sino del alma: una sed de redención, de misericordia, de un mortal a quien no logró encontrar. Llevaba cinco años buscando a Pablo, y el reencuentro nunca llegó. Sin embargo, en su rostro marchito había una paz difícil de explicar: la serenidad de quien, tras haberse extraviado, vislumbra el camino de regreso.</p>
+                             <p>Teófilo recordaba al hombre que había conocido tres años antes: enérgico, decidido, jovial y generoso. Pero ahora lo veía consumido por la enfermedad, frágil como un soplo, en los umbrales de su último día.</p>
+                             <p class="dialogo">—¡No hables más, tus fuerzas son pocas! —exclamó el joven, preocupado.</p>
+
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>El anciano levantó débilmente su brazo derecho y agitó la mano con suavidad, restándole importancia.</p>
+                             <p class="dialogo">—Déjame hablar, Teófilo. Es lo único que aún puedo hacer. Quiero confesarte algo que he guardado demasiado tiempo... Renuncié a la fe. Sí. Después de haber recibido el conocimiento, acepté la oferta del enemigo. Me atraparon sus redes, y abandoné las aguas del Jordán. He buscado a Pablo durante cinco años, pero el Señor no permitió que lo encontrara. En su lugar, me invadió esta enfermedad, y la bendigo, porque con ella he recibido el castigo que merecía por mi desprecio.</p>
+                             <p>Bernabé era consciente de que el lapso de su existencia llegaba a su extremo final. En otro momento de lucidez, Bernabé continuó con su confidencia.</p>
+                             <p>—Fui un soberbio. Con mis ínfulas de sabio rompí la unidad, herí la caridad, y destruí lo que otros sembraban con amor.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>Teófilo escuchaba con paciencia, pero sin darle importancia a los recuerdos del anciano.</p>
+                             <p class="dialogo">—Este cuerpo desgastado, este hedor, esta debilidad, no son castigos, sino regalos: medios que Dios usa para purificarme y darme otra oportunidad. Porque solo en la resurrección de Cristo puedo ver la resurrección desde mi propia ruina. Solo con su Espíritu tengo la posibilidad de que mis huesos secos sean cubiertos de carne nueva. Solo reconociéndole puedo recibir un corazón de carne que tome el lugar de este corazón de piedra, donde estaban grabados mis juicios y valoraciones, y mi vana creencia de que podía hacer las cosas mejor que Dios.</p>
+                             <p>El anciano se detuvo, tratando de acomodarse para tomar aire. Cada respiración era una lucha, un jadeo ahogado que parecía escapársele del pecho. Después de unos instantes, continuó con voz entrecortada:</p>
+                             <p class="dialogo">—Creía que Dios se había equivocado con mi historia... que la había tejido mal. No entendía que mi vida, tal como había transcurrido, obedecía a un plan perfecto. No podía ver que, desde antes de crearme, Dios ya me amaba y tenía una historia para mí, para arrancarme de las garras del malo. Ahora sé que nunca tuve fe sólida. Solo esta pena y este rechazo, después de haberlo perdido todo, me han entregado un don maravilloso: la disposición a aceptar la voluntad de Aquel que me amó hasta dar su vida por mí.</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>La falta de aire lo obligó a detenerse nuevamente. Intentó cambiar de posición, buscando desesperadamente un soplo de aire que calmara su ahogo.</p>
+                             <p class="dialogo">—Traicioné el Espíritu que me fue dado —murmuró al tiempo que tenía los ojos cerrados—. Y no sé si ese pecado puede ser perdonado. La muerte está a mi puerta. El tentador vendrá una vez más... ¡Pero tengo esperanza! Como David, confieso: he pecado. ¿Quién podrá asegurar que no moriré por ello?</p>
+                             <p>Teófilo aprovechó la pausa para expresar su impresión con firmeza, pero visiblemente desconcertado:</p>
+                        </div>
+                        <div class="texto-capitulo">
+                             <p class="dialogo">—No entiendo lo que dices. Desde que me rescataste, hemos estado juntos. Me salvaste cuando nadie más lo habría hecho. Yo solo entiendo la lucha por sobrevivir. Sin ese instinto, sin esa crudeza, ya estaría muerto. No creo en perdones ni en resurrecciones. Solo en la fuerza y en la ira.</p>
+                             <p>(...)</p>
+                    `,
+                    `
+                             <p class="dialogo">—¿Por qué estás conmigo?</p>
+                             <p>El viejo quiso asegurarse de encontrar algún motivo, con la esperanza de encontrar una expresión de humanidad que le diera la ocasión de presentar su consejo. Teófilo reflexionó por un instante. Ni él mismo lo sabía. Sin embargo, no quiso ser descortés.</p>
+                        </div>
+                        <div class="texto-capitulo">
+                             <p class="dialogo">—Tú me cuidaste cuando más lo necesitaba. Ahora quiero devolverte el favor. Pero no me hables de cruz ni de condenas. Yo no puedo perdonar a quienes me destruyeron, ni quiero ser perdonado. Solo deseo ver caer lo que me empujó al precipicio.</p>
+                             <p>Tomó aire, mientras arrojaba la ración conseguida a un rincón de la cueva.</p>
+                             <p class="dialogo">—A los dioses no les importa eso que tú llamas pecado; gozan del vino y del placer. ¿Qué me impide hacer lo mismo?</p>
+                        </div>
+                    `,
+                    `
+                        <div class="texto-capitulo">
+                             <p>Durante tres años habían deambulado por toda la región. Conocían hasta el último detalle del suelo cubierto por un manto de roca frágil, que oscilaba entre el ocre pálido y el pardo oscuro, como olas en un mar hosco de tonos grises y negros entremezclados. El horizonte permanecía sembrado de montañas verrugosas, manchadas de verde solo en contadas ocasiones. Ahora habitaban una caverna abierta sobre la toba, un refugio monolítico amplio y sombrío, al noreste del Καστίλιος Όρος, cuya cima resistía impertérrita el paso del tiempo, cubierta por un blanco inmaculado que resplandecía a lo lejos como una promesa eterna. Habían enfrentado el rigor de la nieve y la sequedad abrasadora del verano, el hastío del terreno volcánico, la amabilidad de las planicies y la frescura de las fuentes que surcaban la tierra.</p>
+                             <p>El viejo declaró con voz que era apenas un susurro:</p>
+                             <p class="dialogo">—Eres el consuelo que Dios ha puesto en mi enfermedad. Pero soy yo quien debe pagarte, Teófilo. Lo que hice por ti ya fue saldado hace tiempo por Otro. Y ahora, como única moneda, solo tengo un consejo: el de un anciano al borde de la muerte, que no puede ofrecer más que lo mejor de sí.</p>
+                             <p>Tomó aire, con la dificultad de sus pulmones agotados, incapaces de contener el volumen que le respaldara el esfuerzo. Pero necesitaba un hálito que le alcanzara para decir lo que deseaba.</p>
+                    `,
+                    `
+                             <p class="dialogo">—Busca a Pablo. Síguelo, porque él puede conducirte a Aquel que es la fuente del agua viva. Encuentra a Pablo de Tarso, destinado a traer el kerygma a los gentiles. Para hallarlo, pregunta a los Profetas del Nuevo Camino.</p>
+                             <p>El viejo tosió, cubriendo su boca con la manga derecha de su túnica. Era una tos contenida, lacónica, porque dolía. El joven intentaba cuidarlo, aunque sin saber exactamente qué hacer. Finalmente, decidió insistir:</p>
+                             <p class="dialogo">—Descansa. No te agites de este modo. Tu respiración es débil, casi no te alcanza para seguir con vida. Estás agotando tus fuerzas.</p>
+                             <p class="dialogo">—Mi fuerza y mi poder son el Señor; Él es mi salvación.</p>
+                    `,
+                    `
+                             <p>Respondió el anciano con el hilo de su voz. Al tiempo, levantó ligeramente su mano, como si quisiera acallar al joven. Continuó.</p>
+                             <p class="dialogo">—Déjame hablar, porque es lo que debo hacer antes de encontrarme con Aquel a quien desprecié; con el varón de dolores ante quien volví el rostro. No pude soportar su cara desfigurada ni su cuerpo flagelado por mi pecado. En lugar de buscar mi conversión, hice todo lo contrario. Me arrojé en brazos del que divide, cometiendo toda clase de abominaciones. Participé en bacanales en el puerto de Corinto, bebiendo hasta ahogarme en mi propio vómito. Forniqué y caí en adulterio, habiendo conocido ya la Ley del amor. Robé y maté cuando destruí comunidades nacientes con mi lengua.</p>
+                             <p>Bernabé se movió un poco en su lecho, con las escasas energías que apenas le permitían arrastrarse.</p>
+                             <p class="dialogo">—Porque me dejé engañar, cegado por mi soberbia, fruto del pecado con el que nací. Solo la indulgencia de Dios, que siempre me ha amado, me permite mirar ahora de reojo, adolorido, al Salvador que sufrió por mí.</p>
+                    `,
+                    `
+                             <p>Nuevamente la tos interrumpió las palabras del anciano, que tuvo que buscar otro momento para continuar con su confesión. Al día siguiente fue solo un sufrimiento que habló de otro sufrimiento.</p>
+                             <p class="dialogo">—Reconozco ser causa de esa doliente compasión por la que murió Jesús. Su cuerpo cubierto de sangre, llagado por innumerables azotes, la corona de espinas clavada en su cabeza, el madero cargado sin fuerzas, sus rodillas laceradas por las caídas, ya exánime Él; sus manos y pies traspasados, la cruz despiadada en la cual exhaló su último aliento, su costado abierto por la lanza del centurión... Todo eso fue por mí. Y yo lo desprecié.</p>
+                             <p>Teófilo escuchaba con desconcierto. Más que desear el descanso de su amigo, no soportaba aquel lenguaje extraño, lleno de frases ininteligibles y enunciados oscuros que el hablar cansino del viejo hacía más impenetrables. A pesar de los años compartidos, no lograba comprender lo que ahora brotaba en este desahogo agónico.</p>
+                             <p>Mientras recogía algunas cosas, Teófilo quiso expresar su incomprensión, casi como si tomara las confidencias del anciano como propias de un estado delirante:</p>
+                    `,
+                    `
+                             <p class="dialogo">—Me has hablado del Cristo, pero no le conozco. Me has hablado de una cruz y de un hombre crucificado que luego resucitó. Sin embargo, sé que solo los hombres despreciables son sentenciados a morir en la cruz, y no creo en nada más que en el hoy. Por eso, no renuncio a eso que llamas pecado. Es parte de mi vida. No puedo renunciar al odio hacia quienes me dejaron al borde de la muerte, ni al rencor que llevo dentro por quienes me arrojaron a esta existencia para servirles y enriquecerles mientras ellos lo tenían todo. No puedo perdonar a quienes me separaron de mi familia siendo un niño. Solo quiero la destrucción de lo que me ha destruido. He aprendido que, si adulo a los dioses, vendrán buenos tiempos y soplarán buenos vientos. Pero también sé que cada uno de los dioses tiene enemigos entre ellos, así que el bien que obtengo halagando a uno puede ofender a otro y traerme graves dificultades. Por eso hay un contrasentido en invocar sus favores.
+                              A mis dioses nunca les ha importado eso que tú llamas pecado; ellos disfrutan del buen vino, de las diosas y de los placeres. ¿Qué, entonces, me impide hacer lo mismo mientras pueda?</p>
+                             <p>Teófilo se detuvo ante un nuevo ataque de tos del anciano. Se acercó a su lecho y trató de ayudarle a incorporarse. Una vez calmado, el anciano aún tuvo fuerzas para insistir:</p>
+                    `,
+                    `
+                             <p class="dialogo">—Mira, Teófilo, ya no me queda tiempo para hablarte de ese Dios que te ama; que conoce tus debilidades y que te sigue amando, porque mi vida se apaga para este mundo. He sanado las heridas de tu cuerpo, pero las heridas de tu alma siguen abiertas y son demasiado profundas para que yo pueda cerrarlas. Ni aun con tiempo podría hacerlo.</p>
+                             <p>Al anciano le era difícil mantener el ritmo de su consejo. Se detenía, tosía un poco, avanzaba, trataba de acomodarse... Pero sabía que su oportunidad se acababa:</p>
+                             <p class="dialogo">—No te engaño cuando te ofrezco iniciar esta búsqueda. Ve tras estos profetas que sabrán anunciarte la buena noticia; un mensaje que puede cambiar tu vida.</p>
+                             <p>Aunque el viento gélido danzaba entre las rocas de la cueva, Bernabé solo sentía el ahogo de su propio jadeo. Las sensaciones externas palidecían ante la intensidad de sus dolencias.</p>
+                    `,
+                    `
+                             <p class="dialogo">—¿Desde cuándo me conoces? Cuando mi enfermedad apenas comenzaba. Desde entonces, desesperado por la nada de mi vida, volví los ojos hacia el Cristo a quien otrora había rechazado. Fue cuando apareciste arrojado al lado del camino. Desde esa ocasión hemos estado codo a codo. Mientras te ayudaba a sanar, compartí mi pan contigo y me viste desprenderme de mis últimos bienes. Luego, viéndome ya pobre, no seguiste tu camino, sino que permaneciste conmigo. Y después, cuando mi enfermedad avanzó, no me abandonaste, ni me despreciaste en mi hedor. De alguna manera, sin entender nada, no has querido tomar otro rumbo. Conoces muy bien mi padecimiento.</p>
+                             <p>El anciano se detuvo. Entonces, lo miró directo a los ojos y preguntó:</p>
+                             <p class="dialogo">—¿Qué has visto de mí en estos años?</p>
+                             <p>Teófilo dudó. Luego respondió:</p>
+                             <p class="dialogo">—Siempre he visto en ti una alegría inexplicable. Aún ahora.</p>
+                             <p class="dialogo">—¿Sabes por qué? —insistió el anciano.</p>
+                    `,
+                    `
+                             <p>El joven, sentado ahora a su lado, dudó un momento. Levantándose, trató de responder:</p>
+                             <p class="dialogo">—No lo entiendo. Pero te he visto. Eso de que el sufrimiento redime y que con el dolor se alcanza la purificación... eso no lo comprendo. Haré lo que me pides; buscaré a esos profetas... aunque no por fe, sino por respeto a ti. Eso es todo.</p>
+                             <p>Después de esta conversación hubo otras, breves y fragmentadas, interrumpidas por la agonía del anciano. El frágil hilo de su existencia estaba a punto de romperse; la llama de su vida se extinguía lentamente. Finalmente, el velo de la muerte cubrió su cuerpo.</p>
+
+                                    </div>
+                                </div>
+                            </div>            
+                        </div>
+                    `
+                ],
+                enlaceCompra: "https://ejemplo.com/comprar-sabiduria-haikai"
+            }
+
+        };
+
+        // Función para abrir el modal de lectura
+        function abrirModalLectura(obra) {
+            obraActual = obra;
+            paginaActual = 0;
+            
+            if (contenidoObras[obra]) {
+                totalPaginas = contenidoObras[obra].paginas.length;
+                document.getElementById('contenido-lectura').innerHTML = contenidoObras[obra].paginas[paginaActual];
+                document.getElementById('enlace-compra').href = contenidoObras[obra].enlaceCompra;
+                
+                actualizarPaginacion();
+                document.getElementById('modal-lectura').style.display = 'block';
+                document.getElementById('controles-lectura').style.display = 'flex';
+                
+                // Restablecer tamaño de fuente y modo concentración
+                tamanoFuente = 19;
+                modoConcentracion = false;
+                document.body.classList.remove('modo-concentracion');
+                actualizarTamanoFuente();
+            }
+        }
+
+        // Función para cerrar el modal de lectura
+        function cerrarModalLectura() {
+            document.getElementById('modal-lectura').style.display = 'none';
+            document.getElementById('controles-lectura').style.display = 'none';
+        }
+
+        // Función para cambiar de página
+        function cambiarPagina(direccion) {
+            paginaActual += direccion;
+            
+            if (paginaActual < 0) {
+                paginaActual = 0;
+            } else if (paginaActual >= totalPaginas) {
+                paginaActual = totalPaginas - 1;
+            }
+            
+            document.getElementById('contenido-lectura').innerHTML = contenidoObras[obraActual].paginas[paginaActual];
+            actualizarPaginacion();
+
+    // 🔹 Forzar scroll al inicio del modal
+    document.querySelector('.modal-lectura').scrollTop = 0;
+
+    actualizarIndicador();
+}
+
+        // Función para actualizar la paginación
+        function actualizarPaginacion() {
+            document.getElementById('pagina-indicador').textContent = `${paginaActual + 1} / ${totalPaginas}`;
+            
+            // Habilitar/deshabilitar botones de navegación
+            document.getElementById('btn-anterior').disabled = paginaActual === 0;
+            document.getElementById('btn-siguiente').disabled = paginaActual === totalPaginas - 1;
+        }
+
+        // Función para cambiar el tamaño de la fuente
+        function cambiarTamano(accion) {
+            if (accion === 'aumentar' && tamanoFuente < 24) {
+                tamanoFuente += 2;
+            } else if (accion === 'disminuir' && tamanoFuente > 14) {
+                tamanoFuente -= 2;
+            }
+            
+            actualizarTamanoFuente();
+        }
+
+        // Función para actualizar el tamaño de la fuente
+        function actualizarTamanoFuente() {
+            const textoCapitulo = document.querySelector('.texto-capitulo');
+            if (textoCapitulo) {
+                textoCapitulo.style.fontSize = `${tamanoFuente}px`;
+            }
+        }
+
+        // Función para toggle del modo concentración
+        function toggleConcentracion() {
+            modoConcentracion = !modoConcentracion;
+            
+            if (modoConcentracion) {
+                document.body.classList.add('modo-concentracion');
+                document.querySelector('.btn-modo').textContent = 'Salir de concentración';
+            } else {
+                document.body.classList.remove('modo-concentracion');
+                document.querySelector('.btn-modo').textContent = 'Modo concentración';
+            }
+        }
+
+        // Función para mostrar mensajes
+        function mostrarMensaje(mensaje) {
+            // Crear un elemento para el mensaje
+            const mensajeElemento = document.createElement('div');
+            mensajeElemento.style.position = 'fixed';
+            mensajeElemento.style.top = '50%';
+            mensajeElemento.style.left = '50%';
+            mensajeElemento.style.transform = 'translate(-50%, -50%)';
+            mensajeElemento.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            mensajeElemento.style.color = 'white';
+            mensajeElemento.style.padding = '20px 40px';
+            mensajeElemento.style.borderRadius = '10px';
+            mensajeElemento.style.zIndex = '20000';
+            mensajeElemento.style.fontSize = '18px';
+            mensajeElemento.textContent = mensaje;
+            
+            document.body.appendChild(mensajeElemento);
+            
+            // Eliminar el mensaje después de 3 segundos
+            setTimeout(() => {
+                document.body.removeChild(mensajeElemento);
+            }, 3000);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle del menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuUl = document.querySelector('nav.menu ul');
+            
+            menuToggle.addEventListener('click', function() {
+                menuUl.classList.toggle('show');
+                const isExpanded = menuUl.classList.contains('show');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Cerrar modal al hacer clic fuera del contenido
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('modal-lectura');
+                if (event.target === modal) {
+                    cerrarModalLectura();
+                }
+            });
+            
+            // Navegación con teclado en el modal
+            document.addEventListener('keydown', function(event) {
+                const modal = document.getElementById('modal-lectura');
+                
+                if (modal.style.display === 'block') {
+                    if (event.key === 'Escape') {
+                        cerrarModalLectura();
+                    } else if (event.key === 'ArrowLeft') {
+                        cambiarPagina(-1);
+                    } else if (event.key === 'ArrowRight') {
+                        cambiarPagina(1);
+                    }
+                }
+            });
+        });
+
+
+
+// --- Control de audio (robusto: busca elementos al usarlos y maneja promesas) ---
+function toggleAudio() {
+  const fondoMusical = document.getElementById('fondo-musical');
+  const btnAudio = document.getElementById('btn-audio');
+  if (!fondoMusical || !btnAudio) {
+    console.warn('Control de audio: elemento(s) no encontrado(s).', fondoMusical, btnAudio);
+    mostrarMensaje('Control de audio no disponible (elemento no encontrado).');
+    return;
+  }
+
+  if (fondoMusical.paused) {
+    const p = fondoMusical.play();
+    if (p !== undefined) {
+      p.then(() => {
+        btnAudio.textContent = '🔇 Silenciar música';
+      }).catch(err => {
+        console.warn('Reproducción bloqueada o error:', err);
+        mostrarMensaje('La reproducción fue bloqueada por el navegador. Haga clic nuevamente para intentarlo.');
+      });
+    } else {
+      btnAudio.textContent = '🔇 Silenciar música';
+    }
+  } else {
+    fondoMusical.pause();
+    btnAudio.textContent = '🔊 Activar música';
+  }
+}
+
+function cerrarModalLectura() {
+  document.getElementById('modal-lectura').style.display = 'none';
+  const fondoMusical = document.getElementById('fondo-musical');
+  const btnAudio = document.getElementById('btn-audio');
+  if (fondoMusical && !fondoMusical.paused) {
+    try { fondoMusical.pause(); } catch(e) { console.warn(e); }
+  }
+  if (btnAudio) btnAudio.textContent = '🔊 Activar música';
+}
+
+// Coloca el elemento <audio> justo después del script (o donde estaba antes), con preload para mayor fiabilidad.
+</script>
+<audio id="fondo-musical" loop preload="auto">
+  <source src="musica/just-relax-11157.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+</body>
+</html>
+
+</html>

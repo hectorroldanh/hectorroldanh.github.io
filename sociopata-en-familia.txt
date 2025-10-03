@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primer Capítulo - Sociópata en Familia</title>
+  <link rel="stylesheet" href="estilos-novelas.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <div class="portada">
+      <img src="galeria-obras/sociopata-en-familia.webp" alt="Portada del Libro" class="portada-imagen">
+    </div>
+    <div class="info-libro">
+      <h1 class="titulo-libro">SOCIÓPATA EN FAMILIA</h1>
+      <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+    </div>
+  </header>
+
+  <!-- CONTENIDO DEL CAPÍTULO -->
+  <main class="contenido">
+    <section class="capitulo">
+
+      <h1>PRÓLOGO DEL AUTOR</h1>
+<p>Hay momentos en la vida en que uno ya no escribe por vocación, sino por necesidad. Es como si las palabras brotaran no de la inspiración, sino de una herida abierta.</p>
+<p>Este libro nació del silencio forzado, de la impotencia de ver cómo la verdad —esa verdad limpia, desnuda y sin aderezos— se pierde entre papeles fríos, procedimientos tibios y miradas que prefieren no ver. No fue concebido como una novela, sino como una reconstrucción del alma tras el paso de una tormenta.</p>
+<p>Lo que aquí presento no es solo una historia. Es el eco de muchas. Una entre miles que nunca llegan a contarse, porque la vergüenza, la soledad o el sistema las acallan antes de que encuentren voz. Es la historia de un hombre, sí, pero también de unos niños que quedaron atrapados entre adultos en el juego inmisericorde de una justicia (no la fundamentada en los hechos y la verdad), que no comprende la gravedad de sus dictados.</p>
+<p>A lo largo de este relato, encontrarás protagonistas que se parecen demasiado a personas reales. No porque sean calcos, sino porque están hechos de la misma materia: miedo, poder, deseo de control, amor mal entendido, y a veces, de odio cuidadosamente disfrazado de equidad.</p>
+<p>Yo no escribo esto para convencer a nadie. Tampoco para lavar una imagen. Escribo porque, cuando la palabra es lo único que queda, callar sería morir dos veces.</p>
+<p>Si alguna vez has sentido que la verdad no encuentra eco en quienes debieran protegerla, este libro es para ti.</p>
+<p>Si has sido acusado injustamente, si has amado a alguien que terminó convirtiéndose en tu sombra, si alguna vez tuviste que reconstruirte desde el escombro, entonces esta historia te pertenece un poco también.</p>
+<p>Como Botticelli plasmó en su cuadro La Calumnia de Apeles: la falsedad a menudo se adorna con virtud, mientras que la verdad, con los pies descalzos, implora ser escuchada.</p>
+<p>Aquí está, una vez más, descalza. Pero esta vez, tiene voz.</p>
+
+<p></p>
+      <p><strong>EL AUTOR</strong></p>
+
+      <h1>PREFACIO</h1>
+<p></p>
+<p>A veces, la vida se parte en dos sin aviso.</p>
+<p>No hay un sonido de ruptura, ni un temblor previo. Solo un día cualquiera —quizás soleado, incluso feliz— que de pronto se convierte en el inicio de un derrumbe. Y uno no lo nota de inmediato. El colapso comienza en lo invisible: en una mirada esquiva, en un silencio nuevo, en una palabra, que no encaja. Después, como una grieta que se propaga bajo el concreto, llega lo demás.</p>
+<p>Eso le pasó a Andrés Parra Navarro.</p>
+<p>Un hombre como tantos: disciplinado, creyente, firme, quizás demasiado rígido, pero íntegro. Nunca imaginó que su mayor error sería confiar. No en cualquiera, sino en alguien a quien había entregado afecto, tiempo y cuidados. Fue así como una acusación sin pruebas —dicha a media voz, pero repetida con fuerza— comenzó a crecer como una sombra en su vida. Una sombra que lo arrasó todo.</p>
+<p>Él no era perfecto, pero tampoco era culpable. Sin embargo, el sistema no siempre necesita certezas para condenar. A veces basta con una palabra, una lágrima, un gesto que despierte simpatía en el lugar indicado. Y entonces, la justicia —que debiera ser ciega— abre un ojo, y juzga no por los hechos, sino por las apariencias.</p>
+<p>Este libro no pretende dictar sentencia.</p>
+<p>Tampoco es un grito de venganza.</p>
+<p>Es, simplemente, un intento por dejar constancia.</p>
+<p>Por reconstruir lo vivido y lo sentido.</p>
+<p>Por rescatar lo que muchos hombres han callado: que también hay víctimas que nadie ve.</p>
+<p>Porque cuando una mentira se instala en el corazón de una familia, no solo destruye al señalado. También envenena vínculos, contamina la memoria y convierte el amor en sospecha.</p>
+<p>Aquí no hay héroes inmaculados ni villanos evidentes. Solo personas. Algunas quebradas por dentro. Otras, confundidas. Algunas más, frías. Todas atrapadas en una telaraña tejida con miedo, poder y silencio.</p>
+<p>Y en el centro de esa red, un hombre que no eligió esta historia, pero que tuvo que vivirla.</p>
+<p>Este relato es para él, y para todos los que, como él, aún creen que, aunque la verdad tarde, a veces regresa. Y cuando lo hace, aunque llegue herida y sin aplausos, sigue siendo lo único capaz de liberar.</p>
+
+      <h1>Capítulo 1. El umbral de la Tormenta</h1>
+
+<h2>Cuando la Verdad se Convierte en Víctima</h2>
+<p>Andrés, hombre de fe serena y devoción silenciosa, caminaba por la vida como quien carga un templo invisible. En su interior —donde las palabras no llegaban y los gestos se extinguían antes de nacer— albergaba una reverencia honda, casi sagrada, por la fortaleza silenciosa de las mujeres y la pureza luminosa de los niños. Nunca lo manifestó con caricias ni pronunció elogios; su amor era una llama muda, sostenida con férrea disciplina. Pero en ese fervor callado se cifraba toda su verdad, la médula que le daba aliento, la raíz secreta de cuanto era.</p>
+<p>Andrés no lo sabía, pero su vida estaba a punto de estallar en mil pedazos. </p>
+<p>Hay lágrimas que despiertan instintos nobles: proteger, socorrer, amparar al débil. Para él, estos no eran simples ideales, sino pilares que sostenían su identidad, una brújula moral que lo guiaba en cada decisión. ¿Pero qué sucede cuando ese llanto se convierte en un arma, cuando la aparente fragilidad se usa para manipular, y la supuesta víctima, en realidad, lleva las riendas de la mentira?</p>
+<p>¿Cómo había llegado hasta allí? La pregunta resonaba en su mente. Quizás todo había comenzado en su infancia, mientras aprendía a ver el mundo como un lugar donde las reglas eran claras, los límites estaban bien definidos y las emociones debían permanecer contenidas. </p>
+<p>El mundo ordenado que conocía se desmoronaba ante sus ojos. Ahora, las rayas se difuminaban, los límites trazados estaban borrosos, y Andrés se sentía perdido.</p>
+<p>Entre estas fronteras, Andrés había forjado una coraza protectora. Las certezas eran su refugio contra la incertidumbre. Pero esa misma dureza, aunque lo salvaguardaba, también lo volvía vulnerable a los golpes inesperados.</p>
+<p>De repente, se encontró acusado de algo que, en su mente, era el crimen más vil, completamente ajeno a su manera de ser. Fue como si una avalancha lo engullera, arrasando con todo lo que conocía y dejándolo desnudo ante una realidad que no podía entender. Las barreras que definían quién era se desintegraron frente a una injusticia que lo superaba por completo, una carga demasiado pesada para sus hombros. </p>
+<p>Le costaba comprender cómo alguien —cualquiera— podía creer, siquiera por un instante, que él era capaz de mancillar aquello que más veneraba. </p>
+<p>El dolor de la traición —de ser presentado como algo que no era, por quien él había amparado—, se instaló en su pecho como un fardo invisible, que le dificultaba respirar. El latido irregular de su corazón le golpeaba los oídos, marcando el ritmo de cada pensamiento. Como una sombra, se extendía del cerebro hacia sus ojos, envolviéndolo en la oscuridad y atrapándolo sin salida.</p>
+<p>Andrés se quedó mirando el borde de la taza de café. Un rastro oscuro de líquido comenzaba a secarse. No sabía cuánto tiempo llevaba allí, sentado frente al ventanal empañado de la cocina. Afuera, el cielo estaba gris, como si también él presintiera lo que se avecinaba. La radio permanecía en silencio absoluto, acompañándolo en su necesidad de quietud introspectiva, pero su mente estaba en otra parte. Se llevó la taza a los labios y sintió el sabor amargo del café frío.</p>
+<p>Entonces recordó aquella vez en que Clara, con apenas cinco años, se escondió bajo la cama. La niña creía que lo había hecho enojar al romper una figura del pesebre. En su memoria, se vio arrodillado junto a la cama, llamándola con tono calmado y sereno, con el corazón oprimido por el temor de que su hija le tuviera miedo. Con dedos vacilantes, le acarició el cabello y le dijo: «Nada que hagas podrá quitarme el amor que te tengo».</p>
+<p>Pensó en eso ahora, mientras retumbaba en sus oídos la llamada que acababa de recibir. Lo señalaban como un agresor. Sintió que se le atragantaban las palabras que nunca dijo, las caricias que nunca ofreció, las veces que creyó que el respeto bastaba sin ternura.</p>
+<p class="dialogo">—¿Cómo llegamos aquí? —murmuró, más para sí que para Dios.</p>
+<p>Recordó una frase que solía repetir su padre: El bien no grita, hijo. Camina descalzo. Y entonces entendió. No basta ser bueno. También hay que saber defenderse del espectáculo de la mentira.</p>
+<p>La justicia debe proteger a los inocentes. Eso creía. Pero, ¿qué sucede cuando la piedad se vuelve ciega? ¿Cuándo se premia la lágrima más sonora y no la verdad más discreta? No lo pensaba con ironía. Lo rumiaba desde el lugar más dolido de su alma: ese donde aún la verdad era su brújula. Ahora la brújula parecía girar sin sentido, como un planeta que escapa de su órbita.</p>
+<p>Abrió el cajón lleno de fotos viejas. Conmocionado por el hielo del impacto, sacó una de Clara y Néstor en el parque, subidos en el resbaladero, con las mejillas coloradas y los ojos brillantes de sol. Apretó la foto contra el pecho. No por nostalgia, sino por necesidad.</p>
+<p>La voz de la radio volvió a escucharse. Después, una melodía breve; luego, nuevamente el silencio.</p>
+<p>Se levantó despacio. El suelo frío, que antes parecía ausente, le recordó que seguía allí, y que aún había algo por lo que pelear: no por orgullo, sino por verdad. No solo por su nombre, sino por aquellos recuerdos que ahora peligraban con ser borrados por una mentira disfrazada de justicia.</p>
+<p>Recordó esa imagen que encontró alguna vez entre los libros de su padre, en la vieja biblioteca de su infancia. Se trataba de «La calumnia de Apeles». La verdad, desnuda y suplicante, es ignorada mientras la mentira triunfa con ropajes de virtud. Tal vez él era ahora ese rostro despojado, intentando hablar en medio del ruido. Como entonces, hoy la apariencia se impone, y la justicia puede ceder ante el teatro del victimismo.</p>
+<p></p>
+<h2>Cuando la Verdad se Oscurece</h2>
+<p>Andrés caminaba por la casa en silencio. Estaba ansioso esperando la llegada de Lucila, su esposa, y de Néstor, su hijo, para saber un poco más. Néstor llevaba más de un mes sin poder ver a sus hijos y Abigaíl sacaba evasivas cada vez que la llamaba.</p>
+<p>La corta conversación telefónica de hacía algunos minutos —esa voz angustiosa de Lucila, el desconocimiento de la suerte de sus nietos, la misma tardanza—, le dejó una inquietud flotando.</p>
+<p>Se sentó en la sala. Sobre la mesa estaba la Biblia, aún abierta en el Salmo 94: </p>
+<p><i>«¿Podrá aliarse contigo el tribunal inicuo que maquina injusticias en nombre de la ley?»</i>. </p>
+<p>La había leído esa mañana como quien busca algo. Ahora, la frase no dejaba de latirle en las sienes.</p>
+<p>La casa estaba en completo silencio, salvo por el zumbido del refrigerador y el tic-tac insistente del reloj de pared. Miró por la ventana: el cielo comenzaba a nublarse, pero no llovía. Blanca Libia había quedado muda cuando Él le contó la noticia.</p>
+<p>Andrés pensó en sus hijos, Clara y Néstor, y en los domingos de oración que alguna vez compartieron. ¿Cuándo se había roto esa paz? Intentó reconstruirlo en su memoria. Recordó el día en que Clara, con apenas siete años, llegó corriendo a mostrarle su primer dictado sin errores. Él, poco dado a abrazar, sintió un nudo en la garganta. Sin decir palabra, le compró un helado. Era su manera de amar: en gestos callados, en actos pequeños pero cargados de significado. Nunca en palabras vacías ni en promesas que no podía cumplir.</p>
+<p>De pronto, el timbre sonó. Era Lucila. Entró sin mirarlo. Detrás venía su hijo, con los hombros caídos.</p>
+<p class="dialogo">—¿Qué pasó? —preguntó Andrés, sin alzar la voz.</p>
+<p>Lucila dejó la cartera en la silla, suspiró, y lo miró por fin.</p>
+<p class="dialogo">—Fui con Néstor a buscar los niños en casa de Abigaíl.</p>
+<p>La frase cayó como un cuchillo al suelo. Néstor evitó su mirada.</p>
+<p class="dialogo">—¿Por qué allá? ¿No iban para Bienestar Familiar?</p>
+<p>Lucila tardó en responder.</p>
+<p class="dialogo">—Sí, y nos dijeron que no podíamos hacer nada, porque había una demanda. </p>
+<p>Y ahí, en ese instante suspendido, supo que su vida había cambiado. No por un juicio, ni por un documento oficial, ni por pruebas materiales. No. Todo comenzaba con una palabra. Una sola. Pronunciada, quizás, en el oído ávido de intrigas.</p>
+<p>«La verdad —pensó—, puede no tener testigos, pero la mentira sí tiene público».</p>
+<p>Se sentó sin decir nada. El aire se volvió denso.</p>
+<p>No necesitaba ver papeles. Ya lo sabía: la acusación era real. No porque fuera cierta, sino porque alguien había decidido que lo fuera.</p>
+<p></p>
+<h2>Palabra Contra Palabra</h2>
+<p>Un ejemplo claro de la injusticia que se comete al juzgar basándose en calumnias es el caso que quiero compartir. Cuando existen pruebas contundentes o indicios irrefutables, no hay margen para la duda ni discusión. Sin embargo, el problema surge cuando todo depende de «palabra contra palabra», donde no hay evidencia objetiva que respalde la verdad. </p>
+<p>Cuando las palabras de odio comenzaron a propagarse como un veneno letal por las venas de una relación ya frágil, el mundo de Andrés se desmoronó. ¿Cómo pudo alguien que siempre valoró tanto la verdad convertirse en víctima de una mentira tan destructiva?</p>
+<p>Casos como el de Andrés no piden clemencia, sino rigor. No una condena rápida, sino una mirada paciente. Porque cuando todo depende de «palabra contra palabra», el volumen reemplaza a la verdad. Varios aforismos nos muestran esta fragilidad:</p>
+<p><i>«La verdad es hija del tiempo y la calma; la mentira, de la precipitación y el miedo»</i> —adaptación sobre Bacon.</p>
+<p><i>«La falsedad tiene alas y vuela, y la verdad la sigue arrastrándose» —Miguel de Cervantes.</i></p>
+<p><i>«Una verdad sin interés puede ser eclipsada por una falsedad emocionante» —Aldous Huxley.</i></p>
+<p><i>«La verdad se robustece con la investigación y la dilación; la falsedad, con el apresuramiento y la incertidumbre»</i> —Tásito.</p>
+<p>Andrés fue testigo de la efímera alegría de una infancia truncada; el rostro diminuto de su nieta extraviado entre la confusión y el miedo, mientras el eco de vocablos destructivos pulverizaba el pedestal de todo lo que tenía que ver con la imagen paterna. Aquellas voces, más que simples heridas, tejieron una cicatriz imborrable en la esencia misma de su ser.</p>
+<p>Este caso que hoy quiero presentarles queda abierto para su juicio, pidiendo, eso sí, prudencia para discernir sobre los acontecimientos que me propongo narrar. Desde cualquier punto de vista, ha habido un daño. Mi interés es mostrar en qué forma las malas y mediocres decisiones de funcionarios negligentes pueden terminar arruinando la vida de niños inocentes y complicando en modo extremo a la familia involucrada.</p>
+<i><p>«Haz justicia con alguien y acabarás por amarlo. Pero si eres injusto con él, acabarás por odiarlo»</i> —John Ruskin.</p>
+<p><i>«La mente humana está formada de tal manera que es mucho más susceptible a la falsedad que a la verdad»</i> —Erasmo de Rotterdam.</p>
+<p>Aplicando este razonamiento, una calumnia puede llevar a odiar a quien ha sido difamado y a confiar en el mentiroso. Esta dinámica cobra aún más fuerza cuando el calumniador es un sociópata que actúa con una mentalidad controladora para obtener beneficios personales. Este tipo de persona no duda en pisotear la dignidad de quienes se interponen en su camino, siempre dispuesto a manipular y mentir con tal de imponer sus intereses egoístas.</p>
+<p>Aunque los personajes de esta novela son ficticios, están inspirados en situaciones reales que reflejan las complejidades de la justicia y las relaciones humanas. Al estilo de Galileo («… Y, sin embargo, se mueve»), quiero destacar que las condiciones de tiempo y lugar relevantes para la historia son verídicas, y los hechos narrados sucedieron tal como se describen, con fidelidad y rigor. Mi objetivo es poner un grano de arena en defensa de todas aquellas personas que, bajo el dominio de individuos con trastornos de personalidad antisocial, se convierten en víctimas de calumnias que terminan arruinando vidas inocentes.</p>
+<p></p>
+<p>Quizás el sociópata (personaje antagónico) no es el único culpable. Su infancia, marcada por un hogar fracturado, le negó afecto y reconocimiento. La indiferencia de los otros por su existencia fue, muy seguramente, la norma que moldeó su comportamiento desde temprana edad. Tuvo que labrarse su valía con la única arma que encontró: pasar sobre el valor de los demás. </p>
+<p>Su experiencia le impuso reconocer el mundo como un lugar hostil, en el cual las palabras cálidas eran reemplazadas por silencios incómodos y donde el afecto se medía en función de lo que podía ofrecer a los demás. Sus figuras de autoridad, absortas en sus propias batallas, nunca le enseñaron a conectar con las emociones ajenas; en su lugar, le mostraron un mundo en el que la supervivencia dependía de la frialdad y el cálculo. Nadie le mostró cómo amar, cómo conectar o cómo sentir algo más allá del propio beneficio. Lo que llamamos sociopatía pudo haber sido simplemente la consecuencia lógica de un terreno emocional yermo, sembrado con violencia y abandono. </p>
+<p>En ese contexto, su comportamiento no fue una elección deliberada, sino una respuesta forjada desde la niñez, el reflejo inevitable de un sistema que lo moldeó para adaptarse al caos en lugar de cuestionarlo.</p>
+<p></p>
+<p>Sin embargo, no solo quienes actúan movidos por su carácter narcisista o sociópata son responsables del dolor y el sufrimiento causados. Para que el sociópata tenga poder, necesita unos oídos acríticos. Por tanto, también son responsables de las consecuencias aquellos funcionarios que, ignorando sus conocimientos sobre desórdenes de la personalidad, desestiman evidencias claras que revelan cómo tales acciones y acusaciones corresponden a comportamientos manipuladores o psicóticos. Muchas veces, obsesionados por el brillo de la fama ante un caso llamativo, dejan de lado la objetividad e imparcialidad que les debe revestir. </p>
+<p>Muchos juristas no castigan al difamador después de que la persona difamada es declarada inocente. Para que la justicia funcione bien, no solo hay que vigilar al difamador, sino también asegurarse de que reciba ayuda médica para sus problemas psicológicos. Esto no solo protege a la sociedad de más daños, sino que también ayuda al difamador a recuperarse y a no reincidir.</p>
+<p>Y así, mientras los papeles se archivan y el expediente se enfría, lo que queda no es una sentencia, sino un padre sin hijos y una verdad sin voz.</p>
+<p>El caso de Andrés Parra Navarro, que les presentaré sin más dilación, es un claro ejemplo de cómo la negligencia agrava el dolor y los daños colaterales, ignorando, muchas veces, evidencias que señalan la condición mental del acusador. </p>
+<p></p>
+<h2>Sembrando el Odio</h2>
+<p>Andrés estaba solo aquella tarde. Lucila había ido con Néstor a reunirse con sus nietos, y Clara, su hija, estaba fuera. La casa, silenciosa, no ofrecía consuelo. Abrió la puerta con la llave desgastada, dejó los zapatos junto al mueble y encendió apenas una luz cálida en la sala.</p>
+<p>Sobre la repisa del comedor seguía el portarretrato con la foto de Rafael cuando apenas gateaba. Una imagen congelada en el tiempo. Tenía los ojos vivaces de Abigaíl, pero la frente tranquila de Néstor. Carolina, en otra foto, sostenía una flor de papel hecha en preescolar. Ninguno de los dos lo mencionaba. Quizás se lo habían prohibido.</p>
+<p>Se acercó a las imágenes y las limpió con un paño suave. Como quien cuida un altar.</p>
+<p>Llevaba algunos años cargando con el peso de la mentira. No era la angustia por la injusticia prolongada. Tampoco era el vacío que le dejó la pérdida de sus nietos: eso, en sí, era tolerable. Era el daño que persistía como un eco. Los niños crecían sin su voz, sin su abrazo, con una imagen adulterada de quien era su abuelo. No por decisión propia, sino por las palabras que otros pusieron en sus bocas.</p>
+<p class="dialogo">—Han sembrado en ellos el miedo a mi nombre —susurró, de forma apenas audible—. Y yo, nada puedo hacer.</p>
+<p>Se imaginaba a Rafael evadiéndolo, escondido detrás de las piernas de su madre. Presentía a Carolina, en una audiencia, evitando su mirada con un gesto ensayado. No lo odiaban por sí mismos: alguien les había enseñado a hacerlo.</p>
+<p>El odio, pensó, no siempre grita. A veces se murmura al oído, noche tras noche, hasta que se convierte en verdad.</p>
+<p>La justicia, tan rápida para separar, nunca indagará si la madre es apta para criar. Nadie considerará el derecho de esos niños a conocer otra versión. A reconstruir una historia sin fantasmas. Y el Estado, sordo a las pruebas, los dejará en manos de una mujer cuya herida había mutado en estrategia.</p>
+<p>Andrés se sentó y rezó en silencio. No por él. Por ellos.</p>
+<p>Porque sabía que el odio heredado se vuelve cadena. Y su mayor miedo ya no era morir señalado, sino que sus nietos creciesen repitiendo esa sombra.</p>
+<p>Como narrador omnisciente, deseo conducirte paso a paso en este viaje. Descubrirás quién es el heraldo, quién encarna la sombra, el mentor, el camaleón, el compinche y el guardián del umbral. No te lo diré de golpe: lo irás viendo en sus actos, sus contradicciones y sus silencios. Mi propósito es claro: mostrar que, aunque la justicia parezca a veces una luciérnaga solitaria en medio de la oscuridad, aún brilla para quien sabe mirar. Y que, cuando quienes deben protegerla se vuelven negligentes, el daño puede ser irreparable.</p>
+<p>Como un iceberg a la deriva entre las sombras de un mar oscuro, una mentira puede deslizarse sigilosamente entre oídos ociosos y arrastrar consigo familias enteras al desastre. Esta es la historia de Andrés: un hombre devastado por la injusticia, pero sostenido por la única fuerza capaz de resistir el odio —la Verdad.</p>
+
+    </section>
+  </main>
+
+
+<!-- BOTONES DE ACCIÓN -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+
+</body>
+</html>
+
+  <!-- BOTONES DE ACCIÓN -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+
+</body>
+</html>

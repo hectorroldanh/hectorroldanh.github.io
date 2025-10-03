@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primer Capítulo - El Nuevo Templo</title>
+  <link rel="stylesheet" href="estilos-unificados.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <div class="portada">
+      <img src="galeria-obras/el-nuevo-templo.webp" alt="Portada de El Nuevo Templo" class="portada-imagen">
+    </div>
+    <div class="info-libro">
+      <h1 class="titulo-libro">EL NUEVO TEMPLO</h1>
+      <h2 class="autor-libro">Por Héctor Emilio Roldán Hoyos</h2>
+    </div>
+  </header>
+
+  <!-- CONTENIDO DEL CAPÍTULO -->
+  <main class="contenido">
+    <section class="capitulo">
+
+     <h1>CAPÍTULO I</h1>
+      <h2>EN LA ORILLA DEL RÍO</h2>
+      <h3>Río Ἁλυς - año 67.</h3>
+      <p>(Uçhisar, región de Capadocia, cerca de Cesarea Mazaca)</p>
+      <p>
+        El anciano yacía sobre un lecho de mantas ásperas, en el interior de una caverna sombría. El eco de su fragilidad lo rodeaba como un silencio espeso. De aquel vigor que lo había caracterizado años atrás, no quedaba más que un leve temblor en las manos. Frente a él estaba Teófilo, un joven alto, de tez oscura y musculatura firme. El contraste entre ambos era abismal: uno, rebosante de juventud; el otro, como una rama otoñal doblegada por el peso de las estaciones.
+      </p>
+      <p class="dialogo">—Mi apreciado Teófilo, una sed inmensa me devora.</p>
+      <p>
+        La voz entrecortada del anciano fue apenas un murmullo. Tenía la garganta reseca como el lecho de un río agrietado por el sol.
+      </p>
+      <p>
+        El joven destapó un odre y vertió agua en un recipiente de barro. Lo acercó al anciano, quien lo tomó con manos temblorosas. Bebió a pequeños sorbos, con dificultad. En su rostro se reflejó una mezcla de alivio y agotamiento. Apenas pasó el fugaz aliento, continuó hablando con el hilo de su voz fatigada:
+      </p>
+      <p class="dialogo">
+        —Pero no es esta sed del cuerpo la que me consume. Es otra... una que nace desde lo hondo y arde sin tregua, y que ninguna fuente terrenal puede calmar. Yo, que en otro tiempo bebí de las aguas puras del Jordán, aquellas que nacen bajo el rocío perfumado del חרמון, ¡cómo añoro aquellos días! Vivir entre los hermanos, compartir el pan y las palabras... todo era maravilloso entonces.
+      </p>
+      <p>
+        Atrás habían quedado los días en que el anciano luchaba dominado por sus impulsos y su orgullo. Ahora, al borde del viaje definitivo, comprendía la futilidad de aquellas batallas. La sed que lo consumía no era del cuerpo, sino del alma: una sed de redención, de misericordia, de un mortal a quien no logró encontrar. Llevaba cinco años buscando a Pablo, y el reencuentro nunca llegó. Sin embargo, en su rostro marchito había una paz difícil de explicar: la serenidad de quien, tras haberse extraviado, vislumbra el camino de regreso.
+      </p>
+      <p>
+        Teófilo recordaba al hombre que había conocido tres años antes: enérgico, decidido, jovial y generoso. Pero ahora lo veía consumido por la enfermedad, frágil como un soplo, en los umbrales de su último día.
+      </p>
+      <p class="dialogo">—¡No hables más, tus fuerzas son pocas! —exclamó el joven, preocupado.</p>
+      <p>
+        El anciano levantó débilmente su brazo derecho y agitó la mano con suavidad, restándole importancia.
+      </p>
+      <p class="dialogo">
+        —Déjame hablar, Teófilo. Es lo único que aún puedo hacer. Quiero confesarte algo que he guardado demasiado tiempo... Renuncié a la fe. Sí. Después de haber recibido el conocimiento, acepté la oferta del enemigo. Me atraparon sus redes, y abandoné las aguas del Jordán. He buscado a Pablo durante cinco años, pero el Señor no permitió que lo encontrara. En su lugar, me invadió esta enfermedad, y la bendigo, porque con ella he recibido el castigo que merecía por mi desprecio.
+      </p>
+      <p>
+        Bernabé era consciente de que el lapso de su existencia llegaba a su extremo final. En otro momento de lucidez, Bernabé continuó con su confidencia.
+      </p>
+      <p>
+        —Fui un soberbio. Con mis ínfulas de sabio rompí la unidad, herí la caridad, y destruí lo que otros sembraban con amor.
+      </p>
+      <p>
+        Teófilo escuchaba con paciencia, pero sin darle importancia a los recuerdos del anciano.
+      </p>
+      <p class="dialogo">
+        —Este cuerpo desgastado, este hedor, esta debilidad, no son castigos, sino regalos: medios que Dios usa para purificarme y darme otra oportunidad. Porque solo en la resurrección de Cristo puedo ver la resurrección desde mi propia ruina. Solo con su Espíritu tengo la posibilidad de que mis huesos secos sean cubiertos de carne nueva. Solo reconociéndole puedo recibir un corazón de carne que tome el lugar de este corazón de piedra, donde estaban grabados mis juicios y valoraciones, y mi vana creencia de que podía hacer las cosas mejor que Dios.
+      </p>
+      <p>
+        El anciano se detuvo, tratando de acomodarse para tomar aire. Cada respiración era una lucha, un jadeo ahogado que parecía escapársele del pecho. Después de unos instantes, continuó con voz entrecortada:
+      </p>
+      <p class="dialogo">
+        —Creía que Dios se había equivocado con mi historia... que la había tejido mal. No entendía que mi vida, tal como había transcurrido, obedecía a un plan perfecto. No podía ver que, desde antes de crearme, Dios ya me amaba y tenía una historia para mí, para arrancarme de las garras del malo. Ahora sé que nunca tuve fe sólida. Solo esta pena y este rechazo, después de haberlo perdido todo, me han entregado un don maravilloso: la disposición a aceptar la voluntad de Aquel que me amó hasta dar su vida por mí.
+      </p>
+      <p>
+        La falta de aire lo obligó a detenerse nuevamente. Intentó cambiar de posición, buscando desesperadamente un soplo de aire que calmara su ahogo.
+      </p>
+      <p class="dialogo">
+        —Traicioné el Espíritu que me fue dado —murmuró al tiempo que tenía los ojos cerrados—. Y no sé si ese pecado puede ser perdonado. La muerte está a mi puerta. El tentador vendrá una vez más... ¡Pero tengo esperanza! Como David, confieso: he pecado. ¿Quién podrá asegurar que no moriré por ello?
+      </p>
+      <p>
+        Teófilo aprovechó la pausa para expresar su impresión con firmeza, pero visiblemente desconcertado:
+      </p>
+      <p class="dialogo">
+        —No entiendo lo que dices. Desde que me rescataste, hemos estado juntos. Me salvaste cuando nadie más lo habría hecho. Yo solo entiendo la lucha por sobrevivir. Sin ese instinto, sin esa crudeza, ya estaría muerto. No creo en perdones ni en resurrecciones. Solo en la fuerza y en la ira.
+      </p>
+      <p>(...)</p>
+      <p class="dialogo">—¿Por qué estás conmigo?</p>
+      <p>
+        El viejo quiso asegurarse de encontrar algún motivo, con la esperanza de encontrar una expresión de humanidad que le diera la ocasión de presentar su consejo. Teófilo reflexionó por un instante. Ni él mismo lo sabía. Sin embargo, no quiso ser descortés.
+      </p>
+      <p class="dialogo">
+        —Tú me cuidaste cuando más lo necesitaba. Ahora quiero devolverte el favor. Pero no me hables de cruz ni de condenas. Yo no puedo perdonar a quienes me destruyeron, ni quiero ser perdonado. Solo deseo ver caer lo que me empujó al precipicio.
+      </p>
+      <p>
+        Tomó aire, mientras arrojaba la ración conseguida a un rincón de la cueva.
+      </p>
+      <p class="dialogo">
+        —A los dioses no les importa eso que tú llamas pecado; gozan del vino y del placer. ¿Qué me impide hacer lo mismo?
+      </p>
+      <p>
+        Durante tres años habían deambulado por toda la región. Conocían hasta el último detalle del suelo cubierto por un manto de roca frágil, que oscilaba entre el ocre pálido y el pardo oscuro, como olas en un mar hosco de tonos grises y negros entremezclados. El horizonte permanecía sembrado de montañas verrugosas, manchadas de verde solo en contadas ocasiones. Ahora habitaban una caverna abierta sobre la toba, un refugio monolítico amplio y sombrío, al noreste del Καστίλιος Όρος, cuya cima resistía impertérrita el paso del tiempo, cubierta por un blanco inmaculado que resplandecía a lo lejos como una promesa eterna. Habían enfrentado el rigor de la nieve y la sequedad abrasadora del verano, el hastío del terreno volcánico, la amabilidad de las planicies y la frescura de las fuentes que surcaban la tierra.
+      </p>
+      <p>
+        El viejo declaró con voz que era apenas un susurro:
+      </p>
+      <p class="dialogo">
+        —Eres el consuelo que Dios ha puesto en mi enfermedad. Pero soy yo quien debe pagarte, Teófilo. Lo que hice por ti ya fue saldado hace tiempo por Otro. Y ahora, como única moneda, solo tengo un consejo: el de un anciano al borde de la muerte, que no puede ofrecer más que lo mejor de sí.
+      </p>
+      <p>
+        Tomó aire, con la dificultad de sus pulmones agotados, incapaces de contener el volumen que le respaldara el esfuerzo. Pero necesitaba un hálito que le alcanzara para decir lo que deseaba.
+      </p>
+      <p class="dialogo">
+        —Busca a Pablo. Síguelo, porque él puede conducirte a Aquel que es la fuente del agua viva. Encuentra a Pablo de Tarso, destinado a traer el kerygma a los gentiles. Para hallarlo, pregunta a los Profetas del Nuevo Camino.
+      </p>
+      <p>
+        El viejo tosió, cubriendo su boca con la manga derecha de su túnica. Era una tos contenida, lacónica, porque dolía. El joven intentaba cuidarlo, aunque sin saber exactamente qué hacer. Finalmente, decidió insistir:
+      </p>
+      <p class="dialogo">—Descansa. No te agites de este modo. Tu respiración es débil, casi no te alcanza para seguir con vida. Estás agotando tus fuerzas.</p>
+      <p class="dialogo">—Mi fuerza y mi poder son el Señor; Él es mi salvación.</p>
+      <p>
+        Respondió el anciano con el hilo de su voz. Al tiempo, levantó ligeramente su mano, como si quisiera acallar al joven. Continuó.
+      </p>
+      <p class="dialogo">
+        —Déjame hablar, porque es lo que debo hacer antes de encontrarme con Aquel a quien desprecié; con el varón de dolores ante quien volví el rostro. No pude soportar su cara desfigurada ni su cuerpo flagelado por mi pecado. En lugar de buscar mi conversión, hice todo lo contrario. Me arrojé en brazos del que divide, cometiendo toda clase de abominaciones. Participé en bacanales en el puerto de Corinto, bebiendo hasta ahogarme en mi propio vómito. Forniqué y caí en adulterio, habiendo conocido ya la Ley del amor. Robé y maté cuando destruí comunidades nacientes con mi lengua.
+      </p>
+      <p>
+        Bernabé se movió un poco en su lecho, con las escasas energías que apenas le permitían arrastrarse.
+      </p>
+      <p class="dialogo">
+        —Porque me dejé engañar, cegado por mi soberbia, fruto del pecado con el que nací. Solo la indulgencia de Dios, que siempre me ha amado, me permite mirar ahora de reojo, adolorido, al Salvador que sufrió por mí.
+      </p>
+      <p>
+        Nuevamente la tos interrumpió las palabras del anciano, que tuvo que buscar otro momento para continuar con su confesión. Al día siguiente fue solo un sufrimiento que habló de otro sufrimiento.
+      </p>
+      <p class="dialogo">
+        —Reconozco ser causa de esa doliente compasión por la que murió Jesús. Su cuerpo cubierto de sangre, llagado por innumerables azotes, la corona de espinas clavada en su cabeza, el madero cargado sin fuerzas, sus rodillas laceradas por las caídas, ya exánime Él; sus manos y pies traspasados, la cruz despiadada en la cual exhaló su último aliento, su costado abierto por la lanza del centurión... Todo eso fue por mí. Y yo lo desprecié.
+      </p>
+      <p>
+        Teófilo escuchaba con desconcierto. Más que desear el descanso de su amigo, no soportaba aquel lenguaje extraño, lleno de frases ininteligibles y enunciados oscuros que el hablar cansino del viejo hacía más impenetrables. A pesar de los años compartidos, no lograba comprender lo que ahora brotaba en este desahogo agónico.
+      </p>
+      <p>
+        Mientras recogía algunas cosas, Teófilo quiso expresar su incomprensión, casi como si tomara las confidencias del anciano como propias de un estado delirante:
+      </p>
+      <p class="dialogo">
+        —Me has hablado del Cristo, pero no le conozco. Me has hablado de una cruz y de un hombre crucificado que luego resucitó. Sin embargo, sé que solo los hombres despreciables son sentenciados a morir en la cruz, y no creo en nada más que en el hoy. Por eso, no renuncio a eso que llamas pecado. Es parte de mi vida. No puedo renunciar al odio hacia quienes me dejaron al borde de la muerte, ni al rencor que llevo dentro por quienes me arrojaron a esta existencia para servirles y enriquecerles mientras ellos lo tenían todo. No puedo perdonar a quienes me separaron de mi familia siendo un niño. Solo quiero la destrucción de lo que me ha destruido. He aprendido que, si adulo a los dioses, vendrán buenos tiempos y soplarán buenos vientos. Pero también sé que cada uno de los dioses tiene enemigos entre ellos, así que el bien que obtengo halagando a uno puede ofender a otro y traerme graves dificultades. Por eso hay un contrasentido en invocar sus favores. A mis dioses nunca les ha importado eso que tú llamas pecado; ellos disfrutan del buen vino, de las diosas y de los placeres. ¿Qué, entonces, me impide hacer lo mismo mientras pueda?
+      </p>
+      <p>
+        Teófilo se detuvo ante un nuevo ataque de tos del anciano. Se acercó a su lecho y trató de ayudarle a incorporarse. Una vez calmado, el anciano aún tuvo fuerzas para insistir:
+      </p>
+      <p class="dialogo">
+        —Mira, Teófilo, ya no me queda tiempo para hablarte de ese Dios que te ama; que conoce tus debilidades y que te sigue amando, porque mi vida se apaga para este mundo. He sanado las heridas de tu cuerpo, pero las heridas de tu alma siguen abiertas y son demasiado profundas para que yo pueda cerrarlas. Ni aun con tiempo podría hacerlo.
+      </p>
+      <p>
+        Al anciano le era difícil mantener el ritmo de su consejo. Se detenía, tosía un poco, avanzaba, trataba de acomodarse... Pero sabía que su oportunidad se acababa:
+      </p>
+      <p class="dialogo">
+        —No te engaño cuando te ofrezco iniciar esta búsqueda. Ve tras estos profetas que sabrán anunciarte la buena noticia; un mensaje que puede cambiar tu vida.
+      </p>
+      <p>
+        Aunque el viento gélido danzaba entre las rocas de la cueva, Bernabé solo sentía el ahogo de su propio jadeo. Las sensaciones externas palidecían ante la intensidad de sus dolencias.
+      </p>
+      <p class="dialogo">
+        —¿Desde cuándo me conoces? Cuando mi enfermedad apenas comenzaba. Desde entonces, desesperado por la nada de mi vida, volví los ojos hacia el Cristo a quien otrora había rechazado. Fue cuando apareciste arrojado al lado del camino. Desde esa ocasión hemos estado codo a codo. Mientras te ayudaba a sanar, compartí mi pan contigo y me viste desprenderme de mis últimos bienes. Luego, viéndome ya pobre, no seguiste tu camino, sino que permaneciste conmigo. Y después, cuando mi enfermedad avanzó, no me abandonaste, ni me despreciaste en mi hedor. De alguna manera, sin entender nada, no has querido tomar otro rumbo. Conoces muy bien mi padecimiento.
+      </p>
+      <p>
+        El anciano se detuvo. Entonces, lo miró directo a los ojos y preguntó:
+      </p>
+      <p class="dialogo">—¿Qué has visto de mí en estos años?</p>
+      <p>
+        Teófilo dudó. Luego respondió:
+      </p>
+      <p class="dialogo">
+        —Siempre he visto en ti una alegría inexplicable. Aún ahora.
+      </p>
+      <p class="dialogo">
+        —¿Sabes por qué? —insistió el anciano.
+      </p>
+      <p>
+        El joven, sentado ahora a su lado, dudó un momento. Levantándose, trató de responder:
+      </p>
+      <p class="dialogo">
+        —No lo entiendo. Pero te he visto. Eso de que el sufrimiento redime y que con el dolor se alcanza la purificación... eso no lo comprendo. Haré lo que me pides; buscaré a esos profetas... aunque no por fe, sino por respeto a ti. Eso es todo.
+      </p>
+      <p>
+        Después de esta conversación hubo otras, breves y fragmentadas, interrumpidas por la agonía del anciano. El frágil hilo de su existencia estaba a punto de romperse; la llama de su vida se extinguía lentamente. Finalmente, el velo de la muerte cubrió su cuerpo.
+      </p>
+      <p>
+        Murió con la serenidad de los reconciliados. Teófilo juró percibir rosas, aunque solo fuera el viento llevándose el hedor de la enfermedad. Sobre el rostro de Bernabé quedó grabada una paz que no era de este mundo.
+      </p>      
+
+    </section>
+  </main>
+
+  <!-- BOTONES DE ACCIÓN -->
+  <footer class="acciones">
+    <button class="boton leer-mas">Leer más</button>
+    <button class="boton comprar-ahora">Comprar ahora</button>
+    <a href="libros.html" class="boton boton-retorno">Volver a Libros</a>
+  </footer>
+
+</body>
+</html>
