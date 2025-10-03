@@ -1,2 +1,2 @@
 # hectorroldanh.github.io
-Pagina web de escritor
+Página web de escritor
