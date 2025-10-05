@@ -78,7 +78,7 @@
        HERO
     ========================================================= */
     .hero {
-      height: 100vh; margin-top: 72px; position: relative;
+      height: 60vh; margin-top: 72px; position: relative;
       background: linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)), url('photo-5g1.webp') center/cover no-repeat;
     }
     .carrusel { position: relative; width: 100%; height: 100%; }
@@ -263,7 +263,7 @@
       .bio-content { flex-direction: column; }
       .bio-image-container { max-width: 100%; }
       .menu-toggle { display: block; }
-      nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
+      nav.menu ul { display: none; bottom: 0; position: absolute; top: auto; left: 0; right: 0; flex-direction: column; padding: 10px; transform: translateY(100%); transition: transform 0.3s ease; background: var(--color-dark); gap: 0; }
       nav.menu ul.show { display: flex; }
       .hero-content { max-width: 92%; }
       .libro-inner { height: 280px; }
