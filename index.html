@@ -265,11 +265,38 @@
       .modal-body {overflow-y: auto; max-height: 60vh; }
       .bio-image-container { max-width: 100%; }
       .menu-toggle { display: block; }
-      nav.menu ul { display: none; position: absolute; bottom: 0; top: auto; left: 0; right: 0; flex-direction: column; padding: 10px; transform: translateY(100%); transition: transform 0.3s ease; background: var(--color-dark); gap: 0; }
-      nav.menu ul.show { display: flex; }
+
+        /* MENÚ DESPLEGABLE EN MÓVIL */
+        nav.menu ul {
+          display: none;
+          position: absolute;
+          top: 72px; /* justo debajo del header fijo */
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: var(--color-dark);
+          z-index: 3000;
+          padding: 10px 0;
+        }
+
+        nav.menu ul.show {
+          display: flex;
+        }
+
+        nav.menu ul li {
+          text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav.menu a {
+          padding: 16px;
+          font-size: 1rem;
+       }
+
       .hero-content { max-width: 92%; }
       .libro-inner { height: 280px; }
-    }
+      }
+
     @media (max-width: 480px) {
       .hero-content h1 { font-size: 1.6rem; }
       .hero-content p { font-size: .95rem; }
@@ -278,6 +305,7 @@
 /* Mostrar menú cuando tiene la clase 'show' */
   nav.menu ul.show {
     display: flex;
+    flex-direction: column;
     transform: translateY(0); /* Desliza hacia arriba */
   }
 
@@ -296,7 +324,28 @@
   }
 }
 
-    }
+nav.menu ul {
+  width: 100%;
+}
+
+nav.menu ul li {
+  width: 100%;
+  text-align: center;
+}
+
+/* RESPONSIVE PARA SECCIÓN PROYECTOS */
+@media (max-width: 992px) {
+  .proyectos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
