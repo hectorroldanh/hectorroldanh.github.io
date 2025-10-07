@@ -1,417 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Autor - Héctor Emilio Roldán Hoyos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --color-primary: #7b1e1e;
-      --color-secondary: #aa0000;
-      --color-accent: #ffcc00;
-      --color-dark: #222;
-      --color-testimonio: #fcf0a7;
-      --color-entrevista: #a3f7a6;
-      --color-light: #f9f9f9;
-      --color-text: #333;
-      --color-white: #fff;
-      --shadow: 0 4px 6px rgba(0,0,0,.1);
-      --shadow-hover: 0 8px 15px rgba(0,0,0,.2);
-      --transition: all .3s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héctor Emilio Roldán Hoyos - Escritor, Poeta y Ensayista</title>
+    <meta name="description" content="Página oficial de Héctor Emilio Roldán Hoyos. Descubre sus libros, proyectos, entrevistas y reflexiones literarias.">
+    <meta name="keywords" content="Héctor Emilio Roldán Hoyos, escritor, poeta, ensayista, novelas, poesía, ensayo, literatura colombiana">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="autorstyles.css"
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      font-family: 'Crimson Text', serif;
-      color: var(--color-text);
-      background: var(--color-light);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    img { display: block; max-width: 100%; height: auto; }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .divider { border-top: 1px solid var(--divider); margin: 20px auto; width: 80%; max-width: 800px; }
-
-    header {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 2200;
-      background: var(--color-dark); box-shadow: var(--shadow);
-    }
-    nav.menu { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 72px; }
-    .logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 22px; }
-    nav.menu ul { display: flex; gap: 6px; list-style: none; align-items: center; }
-    nav.menu li { position: relative; margin-left: 6px; }
-    nav.menu a {
-      display: block; padding: 18px 12px; color: var(--color-white); font-weight: 700; transition: var(--transition);
-    }
-    nav.menu a:focus, nav.menu a:hover { background: var(--color-secondary); color: var(--color-white); border-radius: 4px; }
-    nav.menu ul ul {
-      position: absolute; top: 100%; left: 0; display: flex; flex-direction: column; min-width: 200px;
-      background: var(--color-dark); border-top: 3px solid var(--color-secondary);
-      opacity: 0; visibility: hidden; transform: translateY(8px); transition: var(--transition);
-    }
-    nav.menu li:hover > ul { opacity: 1; visibility: visible; transform: translateY(0); }
-    nav.menu ul ul a { padding: 12px 16px; }
-    .menu-toggle {
-      display: none; background: none; border: 0; color: var(--color-white); font-size: 20px; cursor: pointer; padding: 12px;
-    }
-    .menu-toggle[aria-expanded="true"] { opacity: 0.9; }
-
-    .hero {
-      height: 60vh; margin-top: 72px; position: relative;
-      background: url('hector-roldan-ini.webp') center/cover no-repeat;
-    }
-    .hero-content {
-      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-      width: 90%; max-width: 420px; background: rgba(255, 255, 255, .95);
-      padding: 26px; border-radius: 12px; box-shadow: 0 14px 30px rgba(0, 0, 0, .2); text-align: center;
-    }
-    .hero-content h1 { font-family: 'Great Vibes', cursive; color: var(--color-primary); font-size: 2rem; margin-bottom: 6px; }
-    .hero-content h2 { font-family: 'Dancing Script', cursive; color: var(--color-secondary); font-size: 1.3rem; margin-bottom: 12px; font-weight: 400; }
-    .hero-content p { font-size: 1rem; color: var(--color-text); margin-bottom: 16px; }
-
-    section { padding: 42px 0; }
-    .section-title { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-accent); text-align: center; margin-bottom: 12px; }
-    .section-title::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-accent); margin: 10px auto; }
-    .section-title1 { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--color-primary); text-align: center; margin-bottom: 12px; }
-    .section-title1::after { content: ''; display: block; width: 72px; height: 3px; background: var(--color-primary); margin: 10px auto; }
-    .section-dark { background: var(--color-dark); color: var(--color-white); }
-    .section-light { background: var(--color-light); }
-    .section-testimonio { background: var(--color-testimonio); }
-    .section-entrevista { background: var(--color-entrevista); }
-
-    .bio-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .bio-images {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .bio-image {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-    }
-    .bio-text {
-      font-size: 1.0rem;
-      margin-bottom: 1.2em;
-      line-height: 1.6;
-    }
-    .bio-text p {
-      margin-bottom: 1.2em;
-      line-height: 1.6;
-      text-align: justify;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 30px;
-      background: var(--color-primary);
-      color: var(--color-white);
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .btn:hover {
-      background: var(--color-secondary);
-      transform: translateY(-2px);
-    }
-
-    .proyectos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .proyecto-card {
-      background: var(--color-white);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    .proyecto-card:hover { transform: translateY(-6px); }
-    .proyecto-desc {
-      font-size: 1.0rem;
-      color: var(--color-primary);
-      margin-bottom: 10px;
-      padding: 0px 20px 0px 20px;
-    }
-    .proyecto-title {
-      font-size: 1.3rem;
-      color: var(--color-primary);
-      margin-bottom: 10px;
-      padding: 0px 20px 0px 20px;
-    }
-    .proyecto-img {
-      width: 100%;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e6e6e6;
-      color: #777;
-      border-radius: 8px;
-      font-style: italic;
-      transition: var(--transition);
-    }
-    .proyecto-img img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .5s;
-    }
-    .proyecto-card:hover .proyecto-img img{transform:scale(1.05);}
-
-    /* MEJORAS VISUALES PARA LA GALERÍA */
-    #galeria {
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-      background-attachment: fixed;
-      padding: 60px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #galeria::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.4);
-      z-index: 1;
-    }
-
-    #galeria .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    #galeria h2 {
-      color: #fff;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    #galeria h2::after {
-      background: var(--color-accent);
-      width: 100px;
-      height: 4px;
-    }
-
-    .galeria {
-      column-count: 4;
-      column-gap: 20px;
-    }
-    @media (max-width: 1200px) { .galeria { column-count: 3; } }
-    @media (max-width: 768px) { .galeria { column-count: 2; } }
-    @media (max-width: 480px) { .galeria { column-count: 1; } }
-    
-    .galeria a {
-      display: inline-block;
-      margin-bottom: 20px;
-      width: 100%;
-      position: relative;
-    }
-    
-    .galeria img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      border: 3px solid rgba(255,255,255,0.2);
-      transition: all 0.5s ease;
-    }
-    
-    .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
-      border-color: var(--color-accent);
-    }
-
-    /* Efecto de brillo al pasar el mouse */
-    .galeria a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 3;
-      pointer-events: none;
-      border-radius: 12px;
-    }
-
-    .galeria a:hover::before {
-      opacity: 1;
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      padding: 40px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0, 0, 0, 0.95);
-    }
-    .lightbox img {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 90vh;
-      border-radius: 10px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-    }
-    .lightbox:target { display: block; }
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      color: white;
-      font-size: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      z-index: 10000;
-      transition: all 0.3s ease;
-    }
-    .close:hover { 
-      color: var(--color-accent);
-      transform: scale(1.1);
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 560px;
-      margin: auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .video-thumbnail {
-      position: relative;
-      cursor: pointer;
-    }
-    .video-thumbnail img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
-      color: white;
-      background: rgba(0,0,0,0.6);
-      border-radius: 50%;
-      padding: 15px 25px;
-      transition: all 0.3s ease;
-    }
-    .video-thumbnail:hover .play-button {
-      background: rgba(0,0,0,0.8);
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    footer { background: var(--color-dark); color: var(--color-white); padding: 36px 20px; }
-    .footer-content { display: grid; grid-template-columns: 1fr 220px; gap: 20px; align-items: start; max-width: 1200px; margin: 0 auto; }
-    .footer-logo { font-family: 'Great Vibes', cursive; color: var(--color-accent); font-size: 1.2rem; margin-bottom: 8px; }
-    .footer-links ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-    .footer-links a { color: #ddd; text-decoration: none; }
-    .footer-links a:hover { color: var(--color-accent); }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.active { opacity: 1; transform: none; }
-    #back-to-top {
-      position: fixed; right: 18px; bottom: 18px; display: none; background: var(--color-primary); color: #fff; padding: 10px;
-      border-radius: 7px; text-decoration: none; z-index: 4000;
-    }
-    #back-to-top:hover { transform: translateY(-3px); background: var(--color-secondary); }
-    @media (max-width: 992px) {
-      .footer-content { grid-template-columns: 1fr; }
-      .bio-image-container { max-width: 30%; }
-    }
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      nav.menu ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; padding: 10px; background: var(--color-dark); gap: 0; }
-      nav.menu ul.show { display: flex; }
-      .hero-content { max-width: 92%; }
-    }
-    @media (max-width: 480px) {
-      .hero-content h1 { font-size: 1.6rem; }
-      .hero-content p { font-size: .95rem; }
-      #galeria h2 { font-size: 2rem; }
-    }
-  </style>
 </head>
 <body>
-  <!-- HEADER / MENÚ -->
-  <header>
-    <nav class="menu container" role="navigation" aria-label="Menú principal">
-      <div class="logo">Héctor Roldán</div>
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
-      <ul>
-        <li><a href="index.html#inicio">INICIO</a></li>
-        <li>
-          <a href="#autor">EL AUTOR</a>
-          <ul class="submenu" role="menu" aria-label="Submenú autor">
-            <li><a href="#biografia">Biografía</a></li>
-            <li><a href="#entrevistas">Entrevistas</a></li>
-            <li><a href="#galeria">Galería</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="libros.html#libros">LIBROS</a>
-          <ul class="submenu" role="menu" aria-label="Submenú libros">
-            <li><a href="libros.html#novela">Novela</a></li>
-            <li><a href="libros.html#poesia">Poesía</a></li>
-            <li><a href="libros.html#ensayo">Ensayo</a></li>
-            <li><a href="libros.html#otro">Otros</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="vivavoz.html#viva-voz">DE VIVA VOZ</a>
-          <ul class="submenu" role="menu" aria-label="Submenú viva voz">
-            <li><a href="vivavoz.html#lecturas">Lecturas</a></li>
-            <li><a href="vivavoz.html#podcast">PodCast</a></li>
-            <li><a href="vivavoz.html#blog">Blog</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html#testimonios">TESTIMONIOS</a></li>
-        <li><a href="index.html#contacto">CONTACTO</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- MENÚ -->
+    <header>
+        <nav class="menu">
+            <div id="autor" class="logo">Héctor Roldán</div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <ul>
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li>
+                    <a href="autor.html#autor">EL AUTOR</a>
+                    <ul class="submenu">
+                        <li><a href="autor.html#biografia">Biografía</a></li>
+                        <li><a href="autor.html#entrevistas">Entrevistas</a></li>
+                        <li><a href="autor.html#galeria">Galería</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="libros.html#libros">LIBROS</a>
+                    <ul class="submenu">
+                        <li><a href="libros.html#novela">Novela</a></li>
+                        <li><a href="libros.html#poesia">Poesía</a></li>
+                        <li><a href="libros.html#ensayo">Ensayo</a></li>
+                        <li><a href="libros.html#otro">Otros</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="vivavoz.html#viva-voz">DE VIVA VOZ</a>
+                    <ul class="submenu">
+                        <li><a href="vivavoz.html#lecturas">Lecturas</a></li>
+                        <li><a href="podcast.html#podcast">PodCast</a></li>
+                        <li><a href="vivavoz.html#blog">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#testimonios">PODCAST</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="hero-content" role="banner">
+
+  <!-- HERO SECTION-->
+  <section id="autor" class="hero">
+    <div class="hero-content">
       <h1>El Autor</h1>
       <h2>Héctor Emilio Roldán Hoyos</h2>
       <p>Escritor, poeta y ensayista colombiano</p>
+      <a href="#libros" class="btn">Explora mi universo literario</a>
     </div>
   </section>
 
   <!-- BIOGRAFÍA -->
   <section id="biografia" class="section-dark">
     <div class="container">
-      <h2 class="section-title">Biografía</h2>
+      <h2 class="section-title" reveal>Biografía</h2>
+        <div class="divider"></div>
       <div class="bio-content">
         <!-- Contenedor de imágenes en columna -->
         <div class="bio-images">
@@ -440,7 +94,8 @@
   <!-- ENTREVISTAS -->
   <section id="entrevistas" class="section-light">
     <div class="container">
-      <h2 class="section-title1">Entrevistas</h2>
+      <h2 class="section-title">Entrevistas</h2>
+      <div class="divider"></div>
       <div class="proyectos-grid">
         <div class="proyecto-card">
           <div class="video-wrapper">
@@ -487,7 +142,8 @@
   <!-- GALERÍA MEJORADA -->
   <section id="galeria">
     <div class="container">
-      <h2 class="section-title1">Galería</h2>
+      <h2 class="section-title">Galería</h2>
+      <div class="divider"></div>
       <div class="galeria">
         <a href="#img1"><img src="galeria/galfiLCalb908x1200px.webp" alt="Feria del Libro Cali" loading="lazy" width="300" height="400"></a>
         <a href="#img2"><img src="galeria/galfilPerb1200x573px.webp" alt="Feria del Libro Pereira" loading="lazy" width="300" height="143"></a>
@@ -663,5 +319,4 @@
     });
   </script>
 </body>
-
 </html>
