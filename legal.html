@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aviso legal, términos y políticas del sitio web — Héctor Emilio Roldán Hoyos</title>
+  <meta name="description" content="Aviso legal, política de tratamiento de datos personales, política de cookies y derecho de retracto del sitio de Héctor Emilio Roldán Hoyos.">
+  <meta name="keywords" content="Héctor Emilio Roldán Hoyos, términos, privacidad, cookies, derechos, aviso legal">
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{
+      --color-primary:#7b1e1e;       /* vino */
+      --color-secondary:#aa0000;     /* rojo complementario */
+      --accent:#b8860b;             /* dorado suave */
+      --bg:#fbfbfb;
+      --card:#ffffff;
+      --text:#222;
+      --muted:#666;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --glass: rgba(255,255,255,0.6);
+      --radius:12px;
+      --max-width:1100px;
+    }
+
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:'Crimson Text', serif;
+      background:linear-gradient(180deg,var(--bg),#f6f6f6);
+      color:var(--text);-webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.65;font-size:17px;
+      padding-top:80px; /* espacio para header fijo */
+    }
+
+    a{color:var(--color-primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header / Menu */
+    header{
+      position:fixed;inset:0 0 auto 0;height:72px;background:rgba(34,34,34,0.95);
+      display:flex;align-items:center;z-index:2200;backdrop-filter: blur(4px);
+      box-shadow:var(--shadow);
+    }
+    .menu{
+      width:100%;max-width:var(--max-width);margin:0 auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{
+      font-family:'Great Vibes',cursive;color:var(--accent);font-size:26px;
+    }
+
+    nav ul{list-style:none;display:flex;gap:6px;align-items:center;margin:0;padding:0}
+    nav li{position:relative}
+    nav > ul > li > a{
+      display:block;padding:18px 12px;color:#fff;font-weight:600;font-family:Inter, system-ui, -apple-system;
+      letter-spacing:0.02em;border-radius:8px;transition:all .18s ease;
+    }
+    nav > ul > li > a:hover{background:var(--color-secondary);}
+
+    /* Submenu (desktop) */
+    nav li .submenu{
+      position:absolute;left:0;top:100%;min-width:220px;background:#222;border-radius:8px;padding:8px 6px;display:none;
+      box-shadow:0 8px 30px rgba(0,0,0,0.18);
+    }
+    nav li:hover > .submenu{display:block}
+    .submenu a{display:block;padding:10px 12px;color:#fff;font-weight:500}
+    .submenu a:hover{background:var(--color-secondary)}
+
+    /* menu toggle (mobile) */
+    .menu-toggle{
+      display:none;border:0;background:transparent;color:#fff;font-size:22px;padding:10px 8px;cursor:pointer;
+    }
+
+    /* Hero */
+    .hero{
+      width:100%;max-width:var(--max-width);margin:10px auto 6px; padding:36px; border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(250,250,250,0.9));
+      box-shadow:var(--shadow); display:flex;flex-direction:column;gap:8px;
+    }
+    .hero h1{
+      font-family:'Crimson Text', serif;font-size:1.9rem;margin:4px 0;color:var(--color-primary);
+    }
+    .hero p.lead{margin:0;color:var(--muted);font-family:Inter, sans-serif}
+
+    /* Page layout */
+    .container{max-width:var(--max-width);margin:18px auto;padding:18px}
+    .card{
+      background:var(--card);padding:22px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:18px;
+    }
+
+    /* Index / Toc */
+    .toc{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;
+    }
+    .toc a{
+      background:transparent;border:1px solid #eee;padding:10px 12px;border-radius:8px;color:var(--color-primary);
+      font-weight:600;font-family:Inter, sans-serif;
+    }
+    .toc a:hover{background:linear-gradient(90deg, rgba(186,134,11,0.08), rgba(170,0,0,0.03));}
+
+    /* Section titles */
+    h2.section-title{
+      font-family:'Crimson Text', serif;font-size:1.25rem;color:var(--color-primary);margin:6px 0 12px;
+    }
+    .divider{height:3px;background:linear-gradient(90deg,var(--color-secondary),var(--accent));width:56px;border-radius:4px;margin:10px 0 18px}
+
+    /* Legal text formatting */
+    .legal p{margin:0 0 12px;color:var(--text)}
+    .legal ul{margin:0 0 12px 1.1em}
+    .legal li{margin:6px 0}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* Footer */
+    footer{margin-top:22px;padding:18px 0;text-align:center;color:var(--muted);font-size:0.95rem}
+
+    /* Floating back-to-top */
+    .back-top{
+      position:fixed;right:18px;bottom:20px;width:48px;height:48px;border-radius:14px;
+      display:grid;place-items:center;background:var(--color-primary);color:#fff;box-shadow:0 8px 22px rgba(0,0,0,0.22);
+      cursor:pointer;z-index:2400;border:4px solid rgba(255,255,255,0.12);
+      transition:transform .18s ease,opacity .18s ease;opacity:0;transform:translateY(14px);
+    }
+    .back-top.visible{opacity:1;transform:translateY(0)}
+
+    .back-top:focus{outline:3px solid rgba(255,204,0,0.25)}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      nav > ul{gap:4px}
+      .hero h1{font-size:1.6rem}
+    }
+
+    @media (max-width: 820px){
+      .menu-toggle{display:block}
+      nav > ul{position:fixed;left:0;top:72px;right:0;background:rgba(20,20,20,0.98);
+        flex-direction:column;gap:0;padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);
+        transform:translateY(-8px);transition:all .18s ease;max-height:0;overflow:hidden}
+      nav > ul.open{max-height:80vh;padding-bottom:12px}
+      nav > ul > li > a{padding:12px 16px}
+      .submenu{position:relative;background:transparent;padding-left:12px;box-shadow:none}
+    }
+
+    @media (max-width:520px){
+      .hero{padding:18px;margin:8px}
+      .container{padding:12px}
+      body{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / MENU -->
+  <header role="banner">
+    <div class="menu" role="navigation" aria-label="Menú principal">
+      <div class="logo" id="inicio">Héctor Roldán</div>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" id="menuToggle">☰</button>
+      <nav>
+        <ul id="mainNav">
+          <li><a href="index.html#inicio">INICIO</a></li>
+          <li>
+            <a href="autor.html#autor">EL AUTOR</a>
+            <div class="submenu" aria-hidden="true">
+              <a href="autor.html#biografia">Biografía</a>
+              <a href="autor.html#entrevistas">Entrevistas</a>
+              <a href="autor.html#galeria">Galería</a>
+            </div>
+          </li>
+          <li>
+            <a href="libros.html#libros">LIBROS</a>
+            <div class="submenu" aria-hidden="true">
+              <a href="libros.html#novela">Novela</a>
+              <a href="libros.html#poesia">Poesía</a>
+              <a href="libros.html#ensayo">Ensayo</a>
+            </div>
+          </li>
+          <li>
+            <a href="vivavoz.html#viva-voz">DE VIVA VOZ</a>
+            <div class="submenu" aria-hidden="true">
+              <a href="vivavoz.html#lecturas">Lecturas</a>
+              <a href="podcast.html#podcast">PodCast</a>
+              <a href="vivavoz.html#blog">Blog</a>
+            </div>
+          </li>
+          <li><a href="index.html#testimonios">PODCAST</a></li>
+          <li><a href="index.html#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" aria-labelledby="pageTitle">
+      <h1 id="pageTitle">Aviso legal, términos y políticas del sitio web</h1>
+      <p class="lead muted">Información legal, política de tratamiento de datos personales, política de cookies y derecho de retracto del sitio oficial de Héctor Emilio Roldán Hoyos.</p>
+
+      <div class="toc" aria-label="Índice de contenidos">
+        <a href="#datos">Política de tratamiento de datos personales</a>
+        <a href="#terminos">Términos y condiciones</a>
+        <a href="#cookies">Política de cookies</a>
+        <a href="#retracto">Derecho de retracto</a>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+      <article id="datos" class="card legal" aria-labelledby="titulo-datos">
+        <h2 id="titulo-datos" class="section-title">1. Política de tratamiento de datos personales (Ley 1581 de 2012)</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <p><strong>Responsable del tratamiento de datos personales:</strong></p>
+        <p>El responsable del tratamiento de datos personales es <strong>Héctor Emilio Roldán Hoyos</strong>, identificado con CC 18.500.846, con domicilio principal en Conjunto Residencial Torredales, Dosquebradas, Colombia.</p>
+
+        <h3 class="muted">Finalidad del tratamiento</h3>
+        <p>La recolección y tratamiento de datos personales se realiza con la finalidad de enviar información relacionada con mis libros, avisos de presentaciones o lecturas en público, lanzamientos y otros eventos literarios. Además, los datos podrán ser utilizados para responder consultas, gestionar pedidos y mejorar la experiencia del usuario en el sitio web.</p>
+
+        <h3 class="muted">Derechos de los titulares de los datos</h3>
+        <p>De acuerdo con la Ley 1581 de 2012, los titulares de los datos personales tienen derecho a:</p>
+        <ul>
+          <li>Conocer, actualizar y rectificar sus datos personales.</li>
+          <li>Solicitar la eliminación de sus datos cuando consideren que no se están tratando conforme a la ley.</li>
+          <li>Revocar el consentimiento otorgado para el tratamiento de sus datos.</li>
+          <li>Acceder gratuitamente a sus datos personales.</li>
+        </ul>
+        <p>Para ejercer estos derechos, los usuarios pueden contactarnos a través del correo electrónico <a href="mailto:hectorroldan@gmail.com">hectorroldan@gmail.com</a> o telefónicamente al <a href="tel:+573003408399">+57 300 340 8399</a>.</p>
+
+        <h3 class="muted">Consentimiento</h3>
+        <p>Al proporcionar sus datos personales a través de este sitio web, el usuario acepta expresamente que sus datos serán tratados de acuerdo con lo establecido en esta política.</p>
+
+        <h3 class="muted">Medidas de seguridad</h3>
+        <p>Héctor Emilio Roldán Hoyos implementa medidas técnicas, administrativas y físicas para proteger los datos personales de los usuarios contra pérdida, uso indebido, acceso no autorizado, divulgación, alteración o destrucción.</p>
+      </article>
+
+      <article id="terminos" class="card legal" aria-labelledby="titulo-terminos">
+        <h2 id="titulo-terminos" class="section-title">2. Términos y condiciones</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <p>Bienvenido/a a <strong>www.hectorroldanh.github.io</strong> (el "sitio").</p>
+        <p>Al acceder y utilizar este sitio web, usted acepta estar sujeto/a a los siguientes términos y condiciones. Si no está de acuerdo con alguno de estos términos, por favor no utilice este sitio.</p>
+
+        <h3 class="muted">Propiedad intelectual</h3>
+        <p>Todo el contenido de este sitio web, incluyendo textos, imágenes, logos y diseño gráfico, es propiedad exclusiva de <strong>Héctor Emilio Roldán Hoyos</strong> y está protegido por las leyes de propiedad intelectual vigentes en Colombia. Queda prohibida la reproducción, distribución o modificación de cualquier contenido sin autorización expresa.</p>
+
+        <h3 class="muted">Uso del sitio web</h3>
+        <p>El usuario se compromete a utilizar el sitio web de manera lícita y ética, respetando los derechos de terceros y las leyes aplicables. No se permite el uso del sitio para actividades ilegales, difamatorias o que puedan dañar la reputación del sitio o de terceros.</p>
+
+        <h3 class="muted">Limitación de responsabilidad</h3>
+        <p>Héctor Emilio Roldán Hoyos no se hace responsable por daños directos o indirectos derivados del uso o imposibilidad de uso de este sitio web. Asimismo, no garantiza la disponibilidad continua o ininterrumpida del sitio debido a mantenimientos, fallas técnicas o problemas de conexión.</p>
+
+        <h3 class="muted">Modificaciones</h3>
+        <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor tan pronto como se publiquen en el sitio web. Es responsabilidad del usuario revisar periódicamente los términos actualizados.</p>
+      </article>
+
+      <article id="cookies" class="card legal" aria-labelledby="titulo-cookies">
+        <h2 id="titulo-cookies" class="section-title">3. Política de cookies</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <p><strong>¿Qué son las cookies?</strong></p>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio web. Estas nos permiten mejorar su experiencia personalizando el contenido y analizando el comportamiento del usuario.</p>
+
+        <h3 class="muted">Tipos de cookies que utilizamos</h3>
+        <ul>
+          <li><strong>Cookies estrictamente necesarias:</strong> Permiten la navegación básica y el funcionamiento del sitio.</li>
+          <li><strong>Cookies de análisis:</strong> Nos ayudan a entender cómo los usuarios interactúan con el sitio mediante la recopilación de datos anónimos.</li>
+        </ul>
+
+        <h3 class="muted">Control de cookies</h3>
+        <p>Puede configurar su navegador para aceptar, rechazar o eliminar cookies. Sin embargo, tenga en cuenta que algunas funcionalidades del sitio pueden verse afectadas si desactiva las cookies.</p>
+
+        <h3 class="muted">Aviso de cookies</h3>
+        <p>Al ingresar a nuestro sitio web, verá un banner informativo sobre el uso de cookies. Al continuar navegando, usted acepta el uso de estas cookies de acuerdo con esta política.</p>
+      </article>
+
+      <article id="retracto" class="card legal" aria-labelledby="titulo-retracto">
+        <h2 id="titulo-retracto" class="section-title">4. Derecho de retracto</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <p><strong>Derecho de retracto:</strong></p>
+        <p>De acuerdo con la Ley 1480 de 2011, los usuarios que realicen compras directas a través de este sitio web tienen derecho a retractarse de su compra dentro de los cinco (5) días hábiles siguientes a la recepción del producto, siempre y cuando este no haya sido utilizado ni presente signos de deterioro.</p>
+
+        <h3 class="muted">Procedimiento para ejercer el derecho de retracto</h3>
+        <p>Para ejercer este derecho, el usuario debe comunicarse al correo electrónico <a href="mailto:hectorroldan@gmail.com">hectorroldan@gmail.com</a> o al teléfono <a href="tel:+573003408399">+57 300 340 8399</a> e informar su decisión de retractarse. Una vez recibida la solicitud, se coordinará la devolución del producto y la restitución del dinero pagado, deduciendo los costos de envío si corresponde.</p>
+
+        <h3 class="muted">Rol del hosting</h3>
+        <p>Este sitio web está alojado en GitHub Pages, un servicio de hosting proporcionado por GitHub. GitHub actúa únicamente como proveedor de infraestructura y no interviene en el tratamiento de datos personales ni en la gestión de contenidos publicados en este sitio. <strong>Héctor Emilio Roldán Hoyos</strong> es el único responsable del cumplimiento de las normativas legales aplicables en Colombia, incluyendo la Ley de Habeas Data y las políticas de privacidad aquí descritas.</p>
+      </article>
+
+      <footer>
+        <div class="muted">© 2025 Héctor Emilio Roldán Hoyos. Todos los derechos reservados.</div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Volver al inicio" title="Ir arriba">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('menuToggle');
+      const nav = document.getElementById('mainNav');
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+      // close mobile menu when clicking a link
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        });
+      });
+    })();
+
+    // Smooth scrolling for internal anchors (modern browsers)
+    (function(){
+      const internalLinks = document.querySelectorAll('a[href^="#"]');
+      internalLinks.forEach(link=>{
+        link.addEventListener('click', function(e){
+          const targetId = this.getAttribute('href');
+          if (targetId.length > 1) {
+            e.preventDefault();
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              const headerOffset = 84; // account for fixed header
+              const rect = targetEl.getBoundingClientRect();
+              const scrollTop = window.pageYOffset + rect.top - headerOffset;
+              window.scrollTo({top: scrollTop, behavior:'smooth'});
+            }
+          }
+        });
+      });
+    })();
+
+    // Back-to-top visibility & action
+    (function(){
+      const back = document.getElementById('backTop');
+      const showAfter = 220;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > showAfter) back.classList.add('visible'); else back.classList.remove('visible');
+      });
+      back.addEventListener('click', () => {
+        window.scrollTo({top:0,behavior:'smooth'});
+      });
+    })();
+
+    // Keyboard accessibility: close mobile nav with Esc
+    (function(){
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const nav = document.getElementById('mainNav');
+          const btn = document.getElementById('menuToggle');
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+            btn.focus();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

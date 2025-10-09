@@ -705,3 +705,69 @@ libro:hover .libros-grid .libro img{width:100%;height:100%;object-fit:cover;bord
   .boton-compra:nth-child(3):hover {
     background: #218838;
   }
+/* === MENÚ RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    z-index: 3000;
+  }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--color-dark);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 2500;
+  }
+
+  /* Se muestra cuando JS agrega la clase "show" */
+  .menu ul.show {
+    display: flex;
+  }
+
+  /* Enlaces dentro del menú */
+  .menu a {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Submenús */
+  .menu ul ul {
+    display: none;
+    position: static;
+    background: #111;
+    border-top: none;
+    padding-left: 10px;
+  }
+
+  .menu ul ul.show {
+    display: block;
+  }
+}
+/* === FONDO OSCURECIDO AL ABRIR MENÚ MÓVIL === */
+@media (max-width: 768px) {
+  body.menu-abierto::before {
+    content: "";
+    position: fixed;
+    top: 70px; /* altura del header */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+  }
+}

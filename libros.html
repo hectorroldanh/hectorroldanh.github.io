@@ -1,219 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Obras del Autor</title>
-<style>
-  body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
-    background-size: 400% 400%;
-    animation: fondoAnimado 18s ease infinite;
-  }
-  @keyframes fondoAnimado {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-  h1 {
-    text-align: center;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    padding: 30px 20px 10px 20px;
-  }
-  .contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  .tarjeta {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    overflow: hidden;
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .tarjeta:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-  }
-  .tarjeta img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 12px;
-  }
-  .titulo {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 5px 0;
-    color: #333;
-  }
-  .genero {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 12px;
-  }
-  .boton {
-    display: inline-block;
-    text-decoration: none;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.85em;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .boton:hover {
-    background: linear-gradient(135deg, #ff512f, #dd2476);
-  }
-  /* Modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    overflow: auto;
-    padding-top: 30px;
-  }
-  .modal-contenido {
-    background: #fff;
-    margin: auto;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 700px;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    animation: aparecer 0.4s ease;
-  }
-  @keyframes aparecer {
-    from {transform: scale(0.7); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-  }
-  .modal-header {
-    text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-  }
-  .cerrar {
-    position: fixed; /* Posición fija para que sea flotante */
-    right: 25px;
-    top: 25px;
-    color: #fff;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(220, 53, 69, 0.8); /* Fondo rojo semi-transparente */
-    border-radius: 50%; /* Forma circular */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001; /* Por encima de todo */
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
-  .cerrar:hover {
-    background-color: rgba(220, 53, 69, 1); /* Rojo sólido al hover */
-    transform: scale(1.1); /* Efecto de aumento al hover */
-  }
-  .modal-body {
-    overflow-y: auto;
-    padding: 15px 20px;
-    flex: 1;
-    text-align: justify;
-  }
-  .portada-flotante {
-    float: left;
-    max-width: 120px;
-    margin: 0 15px 10px 0;
-    border-radius: 6px;
-  }
-  .modal-footer {
-    border-top: 1px solid #ddd;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .boton-compra {
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.85em;
-    font-weight: bold;
-    color: white;
-    transition: background 0.3s;
-  }
-  .boton-compra:nth-child(1) {
-    background: #2575fc; /* Leer capítulo */
-  }
-  .boton-compra:nth-child(1):hover {
-    background: #1558c0;
-  }
-  .boton-compra:nth-child(2) {
-    background: #ff9900; /* Amazon */
-  }
-  .boton-compra:nth-child(2):hover {
-    background: #e68a00;
-  }
-  .boton-compra:nth-child(3) {
-    background: #28a745; /* Autor */
-  }
-  .boton-compra:nth-child(3):hover {
-    background: #218838;
-  }
-  
-  /* Botón flotante para regresar a index.html */
-  .boton-flotante-inicio {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(40, 167, 69, 0.7); /* Verde semi-transparente */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-    z-index: 999; /* Por debajo de los modales pero por encima del contenido */
-    transition: all 0.3s ease;
-  }
-  
-  .boton-flotante-inicio:hover {
-    background-color: rgba(40, 167, 69, 0.9); /* Verde más sólido al hover */
-    transform: translateY(-5px); /* Efecto de elevación al hover */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  }
-  
-  .boton-flotante-inicio svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras del Autor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="librosstyles.css"
+
 </head>
 <body>
 
-<h1 id="libros">📚 Obras del Autor 📚</h1>
+    <!-- MENÚ -->
+    <header>
+        <nav class="menu">
+            <div id="autor" class="logo">Héctor Roldán</div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <ul>
+                <li><a href="index.html#inicio">INICIO</a></li>
+                <li>
+                    <a href="autor.html#autor">EL AUTOR</a>
+                    <ul class="submenu">
+                        <li><a href="autor.html#biografia">Biografía</a></li>
+                        <li><a href="autor.html#entrevistas">Entrevistas</a></li>
+                        <li><a href="autor.html#galeria">Galería</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="libros.html#libros">LIBROS</a>
+                    <ul class="submenu">
+                        <li><a href="libros.html#novela">Novela</a></li>
+                        <li><a href="libros.html#poesia">Poesía</a></li>
+                        <li><a href="libros.html#ensayo">Ensayo</a></li>
+                        <li><a href="libros.html#otro">Otros</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="vivavoz.html#viva-voz">DE VIVA VOZ</a>
+                    <ul class="submenu">
+                        <li><a href="vivavoz.html#lecturas">Lecturas</a></li>
+                        <li><a href="podcast.html#podcast">PodCast</a></li>
+                        <li><a href="vivavoz.html#blog">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#testimonios">PODCAST</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
 
+  <!-- HERO SECTION-->
+<section id="libros">
+
+<div class="hero"><h1 id="libros">📚 Obras del Autor 📚</h1></div>
 <div class="contenedor">
   <div id="novela" class="tarjeta">
     <img src="MediaPortada_Sociopata_en_Familia.webp" alt="Sociópata en Familia">
@@ -276,9 +115,10 @@
     <a href="#" class="boton" onclick="abrirModal('modal10')">Sinopsis</a>
   </div>
 </div>
+</section>
 
 <!-- Botón flotante para regresar a index.html -->
-<a href="index.html" class="boton-flotante-inicio" title="Volver al inicio">
+<a href="libros.html" class="boton-flotante-inicio" title="Volver al inicio">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
   </svg>

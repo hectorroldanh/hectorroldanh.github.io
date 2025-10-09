@@ -8,7 +8,7 @@
     <meta name="keywords" content="Héctor Emilio Roldán Hoyos, escritor, poeta, ensayista, novelas, poesía, ensayo, literatura colombiana">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="indexstyles2.css">
+    <link rel="stylesheet" href="indexstyles1.css">
 </head>
 <body>
     <!-- MENÚ -->
@@ -360,108 +360,111 @@
     </footer>
 
     <a href="#inicio" id="back-to-top" class="btn">↑ Volver arriba</a>
-    <script>
-        // Carrusel infinito
-        let index = 0;
-        const slides = document.querySelectorAll('.carrusel img');
-        const total = slides.length;
 
-        function showNext() {
-            slides[index].classList.remove('active');
-            slides[index].setAttribute("aria-hidden", "true");
-            index = (index + 1) % total;
-            slides[index].classList.add('active');
-            slides[index].setAttribute("aria-hidden", "false");
-        }
-        setInterval(showNext, 5000);
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Carrusel infinito
+    let index = 0;
+    const slides = document.querySelectorAll('.carrusel img');
+    const total = slides.length;
 
-// Menú responsive
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav.menu ul");
+    function showNext() {
+        slides[index].classList.remove('active');
+        slides[index].setAttribute("aria-hidden", "true");
+        index = (index + 1) % total;
+        slides[index].classList.add('active');
+        slides[index].setAttribute("aria-hidden", "false");
+    }
+    setInterval(showNext, 5000);
 
-toggle.addEventListener("click", () => {
-  const expanded = toggle.getAttribute("aria-expanded") === "true";
-  toggle.setAttribute("aria-expanded", !expanded);
-  menu.classList.toggle("show");
-  document.body.classList.toggle("menu-abierto");
-});
+    // Menú responsive
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav.menu ul");
+    if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            toggle.setAttribute("aria-expanded", !expanded);
+            menu.classList.toggle("show");
+        });
+    }
 
-// Submenús en móvil
-const menuItems = document.querySelectorAll("nav.menu > ul > li");
-menuItems.forEach(item => {
-  const submenu = item.querySelector(".submenu");
-  const link = item.querySelector("a");
-
-  if (submenu) {
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
-        // Si el submenú no está abierto, abrirlo
-        if (!submenu.classList.contains("show")) {
-          e.preventDefault();
-          submenu.classList.add("show");
-        } else {
-          // Si ya está abierto, permitir la navegación
-          submenu.classList.remove("show");
-        }
-      }
-    });
-  }
-});
-
-        // Animación de elementos al hacer scroll
-        function revealElements() {
-            const elements = document.querySelectorAll('.reveal');
-            elements.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
+    // Submenús en móvil
+    const menuItems = document.querySelectorAll("nav.menu li");
+    menuItems.forEach(item => {
+        const submenu = item.querySelector(".submenu");
+        if (submenu) {
+            item.addEventListener("click", function (e) {
+                if (window.innerWidth <= 768) {
+                    e.stopPropagation(); // evita cierre inmediato
+                    e.preventDefault();
+                    submenu.classList.toggle("show");
                 }
             });
         }
+    });
 
-        window.addEventListener('scroll', revealElements);
-        revealElements();
+    // Animación de elementos al hacer scroll
+    function revealElements() {
+        const elements = document.querySelectorAll('.reveal');
+        elements.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
 
-        // Formulario de contacto
-        document.getElementById('form-contacto').addEventListener('submit', function (e) {
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealElements);
+    revealElements();
+
+    // Formulario de contacto
+    const form = document.getElementById('form-contacto');
+    if (form) {
+        form.addEventListener('submit', function (e) {
             alert('¡Gracias por tu mensaje! Te contactaré pronto.');
         });
+    }
 
-        // Navegación suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+    // Navegación suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    if (menu.classList.contains('show')) {
-                        menu.classList.remove('show');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    }
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                    toggle.setAttribute('aria-expanded', 'false');
                 }
-            });
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
         });
+    });
 
-        // Botón "Volver arriba"
-        window.addEventListener('scroll', () => {
-            const backToTop = document.getElementById('back-to-top');
+    // Botón "Volver arriba"
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (backToTop) {
             backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-
-        document.getElementById('back-to-top').addEventListener('click', function (e) {
+        }
+    });
+    if (backToTop) {
+        backToTop.addEventListener('click', function (e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
+    }
+});
+</script>
+
+
 <!-- Modales -->
 
 <!-- Modal 1 -->
@@ -742,6 +745,45 @@ menuItems.forEach(item => {
 </div>
 
 <script>
+// Menú responsive
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector("nav.menu ul");
+if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", !expanded);
+        menu.classList.toggle("show");
+    });
+}
+
+// Submenús en móvil (mejorado)
+const menuItems = document.querySelectorAll("nav.menu li");
+menuItems.forEach(item => {
+    const submenu = item.querySelector(".submenu");
+    const link = item.querySelector("a");
+    if (submenu && link) {
+        link.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+                const isSubmenuVisible = submenu.classList.contains("show");
+                e.preventDefault(); // evita navegación inmediata
+                submenu.classList.toggle("show");
+                
+                // Cierra otros submenús abiertos
+                document.querySelectorAll(".submenu.show").forEach(other => {
+                    if (other !== submenu) other.classList.remove("show");
+                });
+
+                // Si el submenú ya estaba visible, ahora sí permite navegar
+                if (isSubmenuVisible) {
+                    window.location.href = this.href;
+                }
+            }
+        });
+    }
+});
+
+
+
 function abrirModal(id) {
   document.getElementById(id).style.display = "block";
 }
