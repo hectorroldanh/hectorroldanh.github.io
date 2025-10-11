@@ -8,6 +8,8 @@
     <meta name="keywords" content="Héctor Emilio Roldán Hoyos, escritor, poeta, ensayista, novelas, poesía, ensayo, literatura colombiana">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Enlaza Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="indexstyles.css">
 </head>
 <body>
@@ -297,16 +299,19 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
-  <section id="contacto" class="section-light">
-    <div class="container">
-      <h2 class="section-title reveal">Contacto</h2>
-      <div class="divider"></div>
-      <div class="contacto-container reveal">
+<!-- CONTACTO -->
+<section id="contacto" class="section-light">
+  <div class="container">
+    <h2 class="section-title reveal">Contacto</h2>
+    <div class="divider"></div>
+    <div class="contacto-container reveal">
+      <!-- Contenedor de dos columnas -->
+      <div class="contacto-columns">
+        <!-- Columna izquierda: Información de contacto -->
         <div class="contacto-info">
           <div class="contacto-item">
-            <div style="font-size:1.2rem;color:var(--color-primary)"><i class="fas fa-envelope"></i></div>
-            <div><strong>Correo</strong><br><a href="mailto:roldanpublicaciones@gmail.com">roldanpublicaciones@gmail.com</a></div>
+            <div style="font-size:1.0rem;color:var(--color-primary)"><i class="fas fa-envelope"></i></div>
+            <div><strong>Correo</strong><br><a href="mailto:hectorroldanh@gmail.com">hectorroldanh@gmail.com</a></div>
           </div>
           <div style="height:12px"></div>
           <div class="contacto-item">
@@ -318,23 +323,52 @@
             <div style="font-size:1.2rem;color:var(--color-primary)"><i class="fas fa-map-marker-alt"></i></div>
             <div><strong>Ubicación</strong><br>Pereira — Colombia</div>
           </div>
+          <div style="height:12px"></div>
+          <div class="contacto-item">
+            <a class="social-link facebook-link" href="https://www.facebook.com/hectorroldanh" target="_blank">
+              <i class="fab fa-facebook"></i> <!-- Ícono de Facebook -->
+              www.facebook.com/hectorroldanh
+            </a>
+          </div>
+          <div style="height:12px"></div>
+          <div class="contacto-item">
+            <a class="social-link instagram-link" href="https://www.instagram.com/hectorroldanh" target="_blank">
+              <i class="fab fa-instagram"></i> <!-- Ícono de Instagram -->
+              www.instagram.com/hectorroldanh
+            </a>
+          </div>
+          <div style="height:12px"></div>
+          <div class="contacto-item">
+            <a class="social-link youtube-link" href="https://www.youtube.com/@hectorroldanh" target="_blank">
+              <i class="fab fa-youtube"></i> <!-- Ícono de YouTube -->
+              www.youtube.com/@hectorroldanh
+            </a>
+          </div>
+          <div style="height:12px"></div>
+          <div class="contacto-item">
+            <a class="social-link tiktok-link" href="https://www.tiktok.com/@hectorroldanh" target="_blank">
+              <i class="fab fa-tiktok"></i> <!-- Ícono de TikTok -->
+              www.tiktok.com/@hectorroldanh
+            </a>
+          </div>
         </div>
 
+        <!-- Columna derecha: Formulario de contacto -->
         <div class="contacto-form">
-          <!-- Formspree endpoint: ajusta si necesitas otro -->
-          <form id="form-contacto" action="https://formspree.io/f/xnnblpop" method="POST" novalidate>
+          <form id="form-contacto" action="https://formspree.io/f/mldpplqa" method="POST" novalidate>
             <input type="text" name="name" placeholder="Nombre completo" required aria-label="Nombre completo">
             <input type="email" name="email" placeholder="Correo electrónico" required aria-label="Correo electrónico">
             <input type="text" name="subject" placeholder="Asunto" aria-label="Asunto">
             <textarea name="message" placeholder="Mensaje" rows="6" required aria-label="Mensaje"></textarea>
-
-                <p><a href="legal.html">Aviso legal, términos y políticas del sitio web</a></p>
-
+            <p><a href="legal.html">Aviso legal, términos y políticas del sitio web</a></p>
             <button type="submit">Enviar mensaje</button>
           </form>
         </div>
       </div>
     </div>
+  </div>
+
+
   </section>
 
     <!-- FOOTER -->
